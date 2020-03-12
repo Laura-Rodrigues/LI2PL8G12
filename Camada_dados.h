@@ -5,6 +5,8 @@
 #ifndef PROJETORASTROS_CAMADA_DADOS_H
 #define PROJETORASTROS_CAMADA_DADOS_H
 
+#include "Definiçoes.h"
+
 ESTADO *inicializar_estado();
 int obter_jogador_atual(ESTADO *estado);
 int obter_numero_de_jogadas(ESTADO *estado);
