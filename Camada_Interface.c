@@ -4,7 +4,7 @@
 
 #include <stdio.h>
 #include "Camada_Interface.h"
-#include "Definiçoes.h"
+#include "Camada_dados.h
 
 // Função que permite mostrar o tabuleiro;
 void mostrar_tabuleiro(ESTADO estado){

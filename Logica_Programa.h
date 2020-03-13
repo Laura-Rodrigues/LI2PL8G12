@@ -5,7 +5,7 @@
 #ifndef PROJETORASTROS_LOGICA_PROGRAMA_H
 #define PROJETORASTROS_LOGICA_PROGRAMA_H
 
-#include "Definiçoes.h"
+#include "Camada_dados.h"
 
 int jogada_valida (ESTADO *estado, COORDENADA c);
 int jogar(ESTADO *estado, COORDENADA c);

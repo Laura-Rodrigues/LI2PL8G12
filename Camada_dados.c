@@ -3,7 +3,6 @@
 //
 
 #include "Camada_dados.h"
-#include "Definiçoes.h"
 
 // AS ÚNICAS FUNÇÕES QUE ALTERAM O ESTADO SÃO AQUI;
 
@@ -36,7 +35,7 @@ int obter_jogador_atual(ESTADO *estado){
 
 
 //Esta função permite obter quantas jogadas foram efetuadas (cada jogada tem o movimento de dois jogadores).
-int obter_numero_de_jogadas(ESTADO *estado{
+int obter_numero_de_jogadas(ESTADO *estado){
     return (estado->num_jogadas);
 }
 

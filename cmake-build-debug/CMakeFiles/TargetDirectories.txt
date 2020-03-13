@@ -1,0 +1,3 @@
+/home/mariana/GitHub/LI2-PL8-Grp12/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/mariana/GitHub/LI2-PL8-Grp12/cmake-build-debug/CMakeFiles/ProjetoRastros.dir
+/home/mariana/GitHub/LI2-PL8-Grp12/cmake-build-debug/CMakeFiles/edit_cache.dir
