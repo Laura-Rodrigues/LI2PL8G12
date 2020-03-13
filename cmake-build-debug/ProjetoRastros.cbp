@@ -90,9 +90,6 @@
 		<Unit filename="/home/mariana/GitHub/LI2-PL8-Grp12/Camada_dados.h">
 			<Option target="ProjetoRastros"/>
 		</Unit>
-		<Unit filename="/home/mariana/GitHub/LI2-PL8-Grp12/Definiçoes.h">
-			<Option target="ProjetoRastros"/>
-		</Unit>
 		<Unit filename="/home/mariana/GitHub/LI2-PL8-Grp12/Logica_Programa.c">
 			<Option target="ProjetoRastros"/>
 		</Unit>

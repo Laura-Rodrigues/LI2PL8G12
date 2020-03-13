@@ -5,6 +5,7 @@ CMakeFiles/ProjetoRastros.dir/Camada_Interface.c.o
  /home/mariana/GitHub/LI2-PL8-Grp12/Camada_Interface.c
  /home/mariana/GitHub/LI2-PL8-Grp12/Camada_Interface.h
  /home/mariana/GitHub/LI2-PL8-Grp12/Camada_dados.h
+ /home/mariana/GitHub/LI2-PL8-Grp12/Logica_Programa.h
 CMakeFiles/ProjetoRastros.dir/Camada_dados.c.o
  /home/mariana/GitHub/LI2-PL8-Grp12/Camada_dados.c
  /home/mariana/GitHub/LI2-PL8-Grp12/Camada_dados.h
@@ -16,5 +17,8 @@ CMakeFiles/ProjetoRastros.dir/Mapa.c.o
  /home/mariana/GitHub/LI2-PL8-Grp12/Mapa.c
  /home/mariana/GitHub/LI2-PL8-Grp12/Mapa.h
 CMakeFiles/ProjetoRastros.dir/main.c.o
+ /home/mariana/GitHub/LI2-PL8-Grp12/Camada_Interface.h
+ /home/mariana/GitHub/LI2-PL8-Grp12/Camada_dados.h
+ /home/mariana/GitHub/LI2-PL8-Grp12/Logica_Programa.h
  /home/mariana/GitHub/LI2-PL8-Grp12/Mapa.h
  /home/mariana/GitHub/LI2-PL8-Grp12/main.c
