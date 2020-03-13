@@ -4,6 +4,7 @@
 
 #include <stdio.h>
 #include "Camada_Interface.h"
+#include "Logica_Programa.h"
 #include "Definiçoes.h"
 #include <string.h>
 
