@@ -8,6 +8,8 @@
 #include "Camada_Interface.h"
 #include "Camada_dados.h"
 
+#define BUF_SIZE 1024
+
 // Função que permite mostrar o tabuleiro;
 void mostrar_tabuleiro(ESTADO estado){
     for (int i = 0; i < 8; i++) {
