@@ -8,5 +8,6 @@
 #include "Definiçoes.h"
 
 void mostrar_tabuleiro(ESTADO estado);
+int interpretador(ESTADO *e);
 
 #endif //PROJETORASTROS_CAMADA_INTERFACE_H
