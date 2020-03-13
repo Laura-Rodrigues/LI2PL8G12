@@ -20,11 +20,10 @@ ESTADO *inicializar_estado(){
     COORDENADA coordenada_inicial = {4,4};
     e.ultima_jogada = coordenada_inicial;
     COORDENADA jog1 = {3,4};
-    COORDENADA jog2 = {3,4};
-    JOGADA jogada1 = {jog1,jog2};
+    JOGADA jogada1 = {jog1};
     e.jogadas[0] = jogada1;
-    e.num_jogadas = 1;
-    e.jogador_atual = 2;
+    e.num_jogadas = 0;
+    e.jogador_atual = 1;
     return &e;
 };
 
