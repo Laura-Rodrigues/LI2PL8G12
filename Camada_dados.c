@@ -3,23 +3,25 @@
 //
 
 #include "Camada_dados.h"
+#include <stdio.h>
+#include <stdlib.h>
 
 // AS ÚNICAS FUNÇÕES QUE ALTERAM O ESTADO SÃO AQUI;
 
 
 //Esta função deverá criar um estado vazio (com o tabuleiro inicializado)
 ESTADO *inicializar_estado(){
-    ESTADO *e;
+    ESTADO *e = (ESTADO *) malloc(sizeof(ESTADO));
     int j, i;
     for ( i = 0; i < 8; i++){
         for ( j = 0; j < 8; j++){
             if ( i == 4 && j == 4) e->tab[i][j] =  BRANCA;
             else e->tab[i][j] = VAZIO;
         }
-    } //tabuleiro
+    }
     COORDENADA coordenada_inicial = {4,4};
     e->ultima_jogada = coordenada_inicial;
-    COORDENADA jog1 = {3,4};
+    COORDENADA jog1 = {4,4};
     JOGADA jogada1 = {jog1};
     e->jogadas[0] = jogada1;
     e->num_jogadas = 0;
