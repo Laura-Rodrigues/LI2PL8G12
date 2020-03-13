@@ -10,6 +10,7 @@
 
 int jogada_valida (ESTADO *estado, COORDENADA c){
     //função que retorna 1 ou 0 dependendo se for ou não válida
+    return 1;
 }
 
 int jogar(ESTADO *estado, COORDENADA c){

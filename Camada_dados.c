@@ -9,22 +9,22 @@
 
 //Esta função deverá criar um estado vazio (com o tabuleiro inicializado)
 ESTADO *inicializar_estado(){
-    ESTADO e;
+    ESTADO *e;
     int j, i;
     for ( i = 0; i < 8; i++){
         for ( j = 0; j < 8; j++){
-            if ( i == 4 && j == 4) e.tab[i][j] =  BRANCA;
-            else e.tab[i][j] = VAZIO;
+            if ( i == 4 && j == 4) e->tab[i][j] =  BRANCA;
+            else e->tab[i][j] = VAZIO;
         }
     } //tabuleiro
     COORDENADA coordenada_inicial = {4,4};
-    e.ultima_jogada = coordenada_inicial;
+    e->ultima_jogada = coordenada_inicial;
     COORDENADA jog1 = {3,4};
     JOGADA jogada1 = {jog1};
-    e.jogadas[0] = jogada1;
-    e.num_jogadas = 0;
-    e.jogador_atual = 1;
-    return &e;
+    e->jogadas[0] = jogada1;
+    e->num_jogadas = 0;
+    e->jogador_atual = 1;
+    return e;
 };
 
 //Esta função permite obter o número do jogador atual

@@ -13,7 +13,7 @@
 #define BUF_SIZE 1024
 
 
-void mostrar_tabuleiro(ESTADO estado);
+void mostrar_tabuleiro(ESTADO *estado);
 int interpretador(ESTADO *e);
 
 #endif //PROJETORASTROS_CAMADA_INTERFACE_H
