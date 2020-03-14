@@ -6,45 +6,13 @@
 
 #IncludeRegexTransform: 
 
-/home/mariana/GitHub/LI2-PL8-Grp12/Camada_Interface.c
+/home/mariana/GitHub/LI2-PL8-Grp12/Camada_dados.c
+Camada_dados.h
+/home/mariana/GitHub/LI2-PL8-Grp12/Camada_dados.h
 stdio.h
 -
-string.h
+stdlib.h
 -
-Logica_Programa.h
-/home/mariana/GitHub/LI2-PL8-Grp12/Logica_Programa.h
-Camada_Interface.h
-/home/mariana/GitHub/LI2-PL8-Grp12/Camada_Interface.h
-Camada_dados.h
-/home/mariana/GitHub/LI2-PL8-Grp12/Camada_dados.h
-
-/home/mariana/GitHub/LI2-PL8-Grp12/Camada_Interface.h
-stdio.h
--
-string.h
--
-Logica_Programa.h
-/home/mariana/GitHub/LI2-PL8-Grp12/Logica_Programa.h
-Camada_Interface.h
-/home/mariana/GitHub/LI2-PL8-Grp12/Camada_Interface.h
-Camada_dados.h
-/home/mariana/GitHub/LI2-PL8-Grp12/Camada_dados.h
 
 /home/mariana/GitHub/LI2-PL8-Grp12/Camada_dados.h
-
-/home/mariana/GitHub/LI2-PL8-Grp12/Logica_Programa.h
-Camada_dados.h
-/home/mariana/GitHub/LI2-PL8-Grp12/Camada_dados.h
-
-/home/mariana/GitHub/LI2-PL8-Grp12/Mapa.h
-
-/home/mariana/GitHub/LI2-PL8-Grp12/main.c
-stdio.h
--
-Mapa.h
-/home/mariana/GitHub/LI2-PL8-Grp12/Mapa.h
-Camada_dados.h
-/home/mariana/GitHub/LI2-PL8-Grp12/Camada_dados.h
-Camada_Interface.h
-/home/mariana/GitHub/LI2-PL8-Grp12/Camada_Interface.h
 
