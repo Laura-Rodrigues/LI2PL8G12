@@ -15,7 +15,7 @@ int jogada_valida (ESTADO *estado, COORDENADA c){
 
 int jogar(ESTADO *estado, COORDENADA c){
     if (jogada_valida(estado,c)){
-        estado -> tab[c.linha][c.coluna] = BRANCA;
+        estado -> tab[c.coluna][c.linha] = BRANCA;
     }
     return 0;
 }
