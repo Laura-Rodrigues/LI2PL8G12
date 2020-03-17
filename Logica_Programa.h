@@ -7,6 +7,7 @@
 
 #include "Camada_dados.h"
 
+int vizinha(ESTADO *e, COORDENADA c);
 int jogada_valida (ESTADO *estado, COORDENADA c);
 int jogar(ESTADO *estado, COORDENADA c);
 
