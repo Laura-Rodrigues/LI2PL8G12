@@ -49,7 +49,7 @@ int jogar(ESTADO *estado, COORDENADA c){
         altera_tabuleiro(estado, obter_ultima_jogada(estado), PRETA);
     }
     if(fim (c)){
-        printf("Fim do Jogo");
+        return 1;
     }
     return 0;
 }
