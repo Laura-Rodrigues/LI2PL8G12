@@ -4,22 +4,24 @@
 
 #include "Logica_Programa.h"
 #include "Camada_dados.h"
+#include <stdio.h>
 
 /* Esta função deverá receber o estado atual e uma coordenada e modificar o estado ao jogar na casa correta se a jogada for válida.
  * A função devolve verdadeiro (valor diferente de zero) se for possível jogar e falso (zero) caso não seja possível.*/
 
 // Testa se a Coordenada é vizinha da Coordenada anterior e se encontra-se dentro do tabuleiro
 int vizinha(ESTADO *e, COORDENADA c){
+    COORDENADA ultjogada = obter_ultima_jogada(e);
     if(((((e -> ultima_jogada).linha) == (c.linha)) && ((((e -> ultima_jogada).coluna)+1) == (c.coluna))) ||
-            (((((((e -> ultima_jogada).linha)+1) == (c.linha)) && ((((e -> ultima_jogada).coluna)+1) == (c.coluna))) ||
-            (((((e -> ultima_jogada).linha)+1) == (c.linha)) && ((((e -> ultima_jogada).coluna)) == (c.coluna))) ||
-            (((((e -> ultima_jogada).linha)+1) == (c.linha)) && ((((e -> ultima_jogada).coluna)-1) == (c.coluna))) ||
-            ((((e -> ultima_jogada).linha) == (c.linha)) && ((((e -> ultima_jogada).coluna)+1) == (c.coluna))) ||
-            ((((e -> ultima_jogada).linha) == (c.linha)) && ((((e -> ultima_jogada).coluna)-1) == (c.coluna))) ||
-            (((((e -> ultima_jogada).linha)-1) == (c.linha)) && ((((e -> ultima_jogada).coluna)+1) == (c.coluna))) ||
-            (((((e -> ultima_jogada).linha)-1) == (c.linha)) && ((((e -> ultima_jogada).coluna)) == (c.coluna))) ||
-            (((((e -> ultima_jogada).linha)-1) == (c.linha)) && ((((e -> ultima_jogada).coluna)-1) == (c.coluna)))) &&
-                    ((c.linha) < 8) && ((c.linha) >= 0) && ((c.coluna) < 8) && ((c.coluna) >= 0))){
+      (((((((e -> ultima_jogada).linha)+1) == (c.linha)) && ((((e -> ultima_jogada).coluna)+1) == (c.coluna))) ||
+      (((((e -> ultima_jogada).linha)+1) == (c.linha)) && ((((e -> ultima_jogada).coluna)) == (c.coluna))) ||
+      (((((e -> ultima_jogada).linha)+1) == (c.linha)) && ((((e -> ultima_jogada).coluna)-1) == (c.coluna))) ||
+      ((((e -> ultima_jogada).linha) == (c.linha)) && ((((e -> ultima_jogada).coluna)+1) == (c.coluna))) ||
+      ((((e -> ultima_jogada).linha) == (c.linha)) && ((((e -> ultima_jogada).coluna)-1) == (c.coluna))) ||
+      (((((e -> ultima_jogada).linha)-1) == (c.linha)) && ((((e -> ultima_jogada).coluna)+1) == (c.coluna))) ||
+      (((((e -> ultima_jogada).linha)-1) == (c.linha)) && ((((e -> ultima_jogada).coluna)) == (c.coluna))) ||
+      (((((e -> ultima_jogada).linha)-1) == (c.linha)) && ((((e -> ultima_jogada).coluna)-1) == (c.coluna)))) &&
+      ((c.linha) < 8) && ((c.linha) >= 0) && ((c.coluna) < 8) && ((c.coluna) >= 0))){
         return 1;
     } else return 0;
 }

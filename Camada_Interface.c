@@ -29,6 +29,13 @@ void mostrar_tabuleiro(ESTADO *estado){
 int interpretador(ESTADO *e) {
     char linha[BUF_SIZE];
     char col[2], lin[2];
+    int numerojogadas = obter_numero_de_jogadas (e);
+    int njogador = obter_jogador_atual (e);
+    if (numerojogadas == 0) {
+        printf( "#0 PL1 -> e5 \n");
+        printf ("#%d PL%d -> ", numerojogadas+1, njogador );
+    }
+    else  printf ("#%d PL%d ->", numerojogadas, njogador );
     if(fgets(linha, BUF_SIZE, stdin) == NULL)
         return 0;
 

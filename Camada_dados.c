@@ -2,6 +2,7 @@
 // Created by laura on 12/03/20.
 //
 
+#include "Camada_Interface.h"
 #include "Camada_dados.h"
 #include <stdio.h>
 #include <stdlib.h>
@@ -26,6 +27,7 @@ ESTADO *inicializar_estado(){
     e->jogadas[0] = jogada1;
     e->num_jogadas = 0;
     e->jogador_atual = 1;
+    mostrar_tabuleiro(e);
     return e;
 };
 
@@ -44,6 +46,13 @@ int obter_numero_de_jogadas(ESTADO *estado){
 CASA obter_estado_casa(ESTADO *e, COORDENADA c){
     int i = c.coluna;
     int j = c.linha;
-    CASA final = (e-> tab[j][i]);
+    CASA final = (e-> tab[i][j]);
     return final;
+}
+
+
+COORDENADA obter_ultima_jogada (ESTADO *estado){
+    COORDENADA ultima;
+    ultima = estado->ultima_jogada;
+    return ultima;
 }
