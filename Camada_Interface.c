@@ -12,6 +12,7 @@
 // Função que permite mostrar o tabuleiro;
 void mostrar_tabuleiro(ESTADO *estado){
     for (int i = 0; i < 8; i++) {
+        printf("%c ", '8' - i );
         for (int j = 0; j < 8; j++) {
             COORDENADA c = {i,j};
             if (obter_estado_casa(estado ,c) == DOIS) printf("2 ");
@@ -22,7 +23,13 @@ void mostrar_tabuleiro(ESTADO *estado){
         }
         printf("\n");
     }
+    printf("  ");
+    for(int i = 0; i < 8; i++) {
+        printf("%c ", 'a' + i);
+    };
+
 }
+
 
 // Interpretador
 int interpretador(ESTADO *e) {
