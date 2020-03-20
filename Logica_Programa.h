@@ -28,6 +28,8 @@ int vizinha(ESTADO *e, COORDENADA c);
 */
 int jogada_valida (ESTADO *estado, COORDENADA c);
 
+int vizivalide(ESTADO *e);
+
 /**
 \brief Testa se a Coordenada é igual à final
 @param c A coordenada
