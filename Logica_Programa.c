@@ -30,6 +30,23 @@ int jogada_valida (ESTADO *estado, COORDENADA c){
     else return 0;
 }
 
+//Testar se tem vizinhos validos
+int vizivalide(ESTADO *e){
+    COORDENADA c = {obter_ultima_jogada(e).coluna +1,obter_ultima_jogada(e).linha +1};
+    COORDENADA c1 = {obter_ultima_jogada(e).coluna +1,obter_ultima_jogada(e).linha };
+    COORDENADA c2 = {obter_ultima_jogada(e).coluna +1,obter_ultima_jogada(e).linha -1};
+    COORDENADA c3 = {obter_ultima_jogada(e).coluna ,obter_ultima_jogada(e).linha +1};
+    COORDENADA c4 = {obter_ultima_jogada(e).coluna +1,obter_ultima_jogada(e).linha -1};
+    COORDENADA c5 = {obter_ultima_jogada(e).coluna -1,obter_ultima_jogada(e).linha +1};
+    COORDENADA c6 = {obter_ultima_jogada(e).coluna -1,obter_ultima_jogada(e).linha};
+    COORDENADA c7 = {obter_ultima_jogada(e).coluna -1,obter_ultima_jogada(e).linha -1};
+    if (obter_estado_casa(e,c) == PRETA && obter_estado_casa(e,c1) == PRETA && obter_estado_casa(e,c2) == PRETA && obter_estado_casa(e,c3) == PRETA && obter_estado_casa(e,c4) == PRETA &&
+            obter_estado_casa(e,c5) == PRETA && obter_estado_casa(e,c6) == PRETA && obter_estado_casa(e,c7) == PRETA){
+        return 1;
+    } else return 0;
+}
+
+
 //Testa se a Coordenada é igual á final
 int fim(COORDENADA c){
     if ((c.coluna) == 7 && (c.linha)== 0){
@@ -38,8 +55,10 @@ int fim(COORDENADA c){
     } else if((c.coluna) == 0 && (c.linha) == 7){
         printf("Jogador número 2, Ganhou!!!");
         return 1;
-    }
-    else return 0;
+    }if (vizivalide(e)){
+        printf("Vizinhos inválidos, Ambos Perdem");
+        return 1;
+    } else return 0;
 }
 
 
