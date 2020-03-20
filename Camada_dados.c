@@ -17,7 +17,7 @@ ESTADO *inicializar_estado(){
         for ( j = 0; j < 8; j++){
             if ( i == 4 && j == 4) e->tab[i][j] =  BRANCA;
             else if ( i == 7 && j == 0) e->tab[i][j] = UM;
-            else if (i == 0 && i == 7) e->tab[i][j] = DOIS;
+            else if (i == 0 && j == 7) e->tab[i][j] = DOIS;
             else e->tab[i][j] = VAZIO;
         }
     }
@@ -56,4 +56,8 @@ COORDENADA obter_ultima_jogada (ESTADO *estado){
     COORDENADA ultima;
     ultima = estado->ultima_jogada;
     return ultima;
+}
+
+void altera_tabuleiro (ESTADO *estado, COORDENADA c, CASA novo){
+    estado->tab[c.linha][c.coluna] = novo;
 }
