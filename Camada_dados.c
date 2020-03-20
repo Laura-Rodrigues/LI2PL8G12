@@ -59,5 +59,5 @@ COORDENADA obter_ultima_jogada (ESTADO *estado){
 }
 
 void altera_tabuleiro (ESTADO *estado, COORDENADA c, CASA novo){
-    estado->tab[c.linha][c.coluna] = novo;
+    estado->tab[8-(c.linha)][c.coluna] = novo;
 }
