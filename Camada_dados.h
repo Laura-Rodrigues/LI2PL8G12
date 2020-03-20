@@ -82,8 +82,11 @@ int obter_numero_de_jogadas(ESTADO *estado);
 */
 CASA obter_estado_casa(ESTADO *e, COORDENADA c);
 
-
-
+/**
+\brief Devolve a coordenada da última jogada
+@param e Apontador para o estado
+@returns Coordenada da última jogada
+*/
 COORDENADA obter_ultima_jogada (ESTADO *estado);
 
 #endif //PROJETORASTROS_CAMADA_DADOS_H
