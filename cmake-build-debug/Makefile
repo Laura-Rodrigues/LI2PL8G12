@@ -48,10 +48,10 @@ RM = /snap/clion/107/bin/cmake/linux/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/laura/Desktop/LI2-PL8-Grp12
+CMAKE_SOURCE_DIR = /home/mariana/GitHub/LI2-PL8-Grp12/LI2PL8G12
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/laura/Desktop/LI2-PL8-Grp12/cmake-build-debug
+CMAKE_BINARY_DIR = /home/mariana/GitHub/LI2-PL8-Grp12/LI2PL8G12/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/laura/Desktop/LI2-PL8-Grp12/cmake-build-debug/CMakeFiles /home/laura/Desktop/LI2-PL8-Grp12/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mariana/GitHub/LI2-PL8-Grp12/LI2PL8G12/cmake-build-debug/CMakeFiles /home/mariana/GitHub/LI2-PL8-Grp12/LI2PL8G12/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/laura/Desktop/LI2-PL8-Grp12/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mariana/GitHub/LI2-PL8-Grp12/LI2PL8G12/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -204,33 +204,6 @@ Logica_Programa.c.s:
 	$(MAKE) -f CMakeFiles/ProjetoRastros.dir/build.make CMakeFiles/ProjetoRastros.dir/Logica_Programa.c.s
 .PHONY : Logica_Programa.c.s
 
-Mapa.o: Mapa.c.o
-
-.PHONY : Mapa.o
-
-# target to build an object file
-Mapa.c.o:
-	$(MAKE) -f CMakeFiles/ProjetoRastros.dir/build.make CMakeFiles/ProjetoRastros.dir/Mapa.c.o
-.PHONY : Mapa.c.o
-
-Mapa.i: Mapa.c.i
-
-.PHONY : Mapa.i
-
-# target to preprocess a source file
-Mapa.c.i:
-	$(MAKE) -f CMakeFiles/ProjetoRastros.dir/build.make CMakeFiles/ProjetoRastros.dir/Mapa.c.i
-.PHONY : Mapa.c.i
-
-Mapa.s: Mapa.c.s
-
-.PHONY : Mapa.s
-
-# target to generate assembly for a file
-Mapa.c.s:
-	$(MAKE) -f CMakeFiles/ProjetoRastros.dir/build.make CMakeFiles/ProjetoRastros.dir/Mapa.c.s
-.PHONY : Mapa.c.s
-
 main.o: main.c.o
 
 .PHONY : main.o
@@ -276,9 +249,6 @@ help:
 	@echo "... Logica_Programa.o"
 	@echo "... Logica_Programa.i"
 	@echo "... Logica_Programa.s"
-	@echo "... Mapa.o"
-	@echo "... Mapa.i"
-	@echo "... Mapa.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

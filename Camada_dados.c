@@ -17,7 +17,7 @@ ESTADO *inicializar_estado(){
         for ( j = 0; j < 8; j++){
             if ( i == 4 && j == 4) e->tab[i][j] =  BRANCA;
             else if ( i == 7 && j == 0) e->tab[i][j] = UM;
-            else if (i == 0 && i == 7) e->tab[i][j] = DOIS;
+            else if ( i == 0 && j == 7) e->tab[i][j] = DOIS;
             else e->tab[i][j] = VAZIO;
         }
     }
@@ -37,7 +37,6 @@ int obter_jogador_atual(ESTADO *estado){
     return (estado->jogador_atual);
 }
 
-
 //Esta função permite obter quantas jogadas foram efetuadas (cada jogada tem o movimento de dois jogadores).
 int obter_numero_de_jogadas(ESTADO *estado){
     return (estado->num_jogadas);
@@ -56,4 +55,9 @@ COORDENADA obter_ultima_jogada (ESTADO *estado){
     COORDENADA ultima;
     ultima = estado->ultima_jogada;
     return ultima;
+}
+
+//Função que acessa o estado e altera o tabuleiro;
+void altera_tabuleiro (ESTADO *estado, COORDENADA c, CASA novo){
+    estado -> tab[c.coluna][c.linha] = novo;
 }

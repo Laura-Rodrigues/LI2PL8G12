@@ -14,14 +14,11 @@
 int vizinha(ESTADO *e, COORDENADA c){
     COORDENADA ultjogada = obter_ultima_jogada(e);
     int r;
-    if (c.linha == ultjogada.linha && c.coluna == ultjogada.coluna) r=0;
-    else {
-        if (abs(c.linha - ultjogada.linha) <= 1) {
-            if (abs(c.coluna - ultjogada.coluna) <= 1)
+    if (abs(c.linha - ultjogada.linha) <= 1) {
+        if (abs(c.coluna - ultjogada.coluna) <= 1)
                 r = 1;
         }
         else r = 0;
-    }
     return r;
 }
 
@@ -41,17 +38,19 @@ int fim(COORDENADA c){
     } else if((c.coluna) == 0 && (c.linha) == 7){
         printf("Jogador número 2, Ganhou!!!");
         return 1;
-    } else return 0;
+    }
+    else return 0;
 }
 
 
 int jogar(ESTADO *estado, COORDENADA c){
     if (jogada_valida(estado,c)){
-        estado -> tab[c.coluna][c.linha] = BRANCA;
-        estado -> tab[(estado -> ultima_jogada).coluna][(estado -> ultima_jogada).linha] = PRETA;
+        altera_tabuleiro(estado, c, BRANCA);
+        altera_tabuleiro(estado, obter_ultima_jogada(estado), PRETA);
     }
     if(fim (c)){
         printf("Fim do Jogo");
     }
     return 0;
 }
+

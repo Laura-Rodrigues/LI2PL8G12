@@ -84,9 +84,17 @@ CASA obter_estado_casa(ESTADO *e, COORDENADA c);
 
 /**
 \brief Devolve a coordenada da última jogada
-@param e Apontador para o estado
+@param estado Apontador para o estado
 @returns Coordenada da última jogada
 */
 COORDENADA obter_ultima_jogada (ESTADO *estado);
+
+/**
+\brief Devolve a coordenada da última jogada
+@param estado Apontador para o estado
+@param novo Casa
+@param c A coordenada
+*/
+void altera_tabuleiro (ESTADO *estado, COORDENADA c, CASA novo);
 
 #endif //PROJETORASTROS_CAMADA_DADOS_H
