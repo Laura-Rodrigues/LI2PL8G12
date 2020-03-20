@@ -5,7 +5,6 @@
 #include <stdio.h>
 #include <string.h>
 #include "Logica_Programa.h"
-#include "Camada_Interface.h"
 #include "Camada_dados.h"
 
 #define BUF_SIZE 1024

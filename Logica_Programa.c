@@ -2,7 +2,6 @@
 // Created by laura on 12/03/20.
 //
 
-#include "Logica_Programa.h"
 #include "Camada_dados.h"
 #include <stdio.h>
 

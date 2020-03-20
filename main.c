@@ -1,5 +1,3 @@
-#include <stdio.h>
-#include "Mapa.h"
 #include "Camada_dados.h"
 #include "Camada_Interface.h"
 

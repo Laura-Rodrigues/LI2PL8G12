@@ -4,7 +4,6 @@
 
 #include "Camada_Interface.h"
 #include "Camada_dados.h"
-#include <stdio.h>
 #include <stdlib.h>
 
 // AS ÚNICAS FUNÇÕES QUE ALTERAM O ESTADO SÃO AQUI;
@@ -50,7 +49,7 @@ CASA obter_estado_casa(ESTADO *e, COORDENADA c){
     return final;
 }
 
-
+//Esta função deve aceder ao estado e returnar a ultima jogada;
 COORDENADA obter_ultima_jogada (ESTADO *estado){
     COORDENADA ultima;
     ultima = estado->ultima_jogada;
