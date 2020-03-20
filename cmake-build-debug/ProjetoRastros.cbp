@@ -96,12 +96,6 @@
 		<Unit filename="/home/laura/Desktop/LI2-PL8-Grp12/Logica_Programa.h">
 			<Option target="ProjetoRastros"/>
 		</Unit>
-		<Unit filename="/home/laura/Desktop/LI2-PL8-Grp12/Mapa.c">
-			<Option target="ProjetoRastros"/>
-		</Unit>
-		<Unit filename="/home/laura/Desktop/LI2-PL8-Grp12/Mapa.h">
-			<Option target="ProjetoRastros"/>
-		</Unit>
 		<Unit filename="/home/laura/Desktop/LI2-PL8-Grp12/main.c">
 			<Option target="ProjetoRastros"/>
 		</Unit>

@@ -70,22 +70,9 @@ CMakeFiles/ProjetoRastros.dir/main.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/ProjetoRastros.dir/main.c.s"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/laura/Desktop/LI2-PL8-Grp12/main.c -o CMakeFiles/ProjetoRastros.dir/main.c.s
 
-CMakeFiles/ProjetoRastros.dir/Mapa.c.o: CMakeFiles/ProjetoRastros.dir/flags.make
-CMakeFiles/ProjetoRastros.dir/Mapa.c.o: ../Mapa.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/laura/Desktop/LI2-PL8-Grp12/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/ProjetoRastros.dir/Mapa.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ProjetoRastros.dir/Mapa.c.o   -c /home/laura/Desktop/LI2-PL8-Grp12/Mapa.c
-
-CMakeFiles/ProjetoRastros.dir/Mapa.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/ProjetoRastros.dir/Mapa.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/laura/Desktop/LI2-PL8-Grp12/Mapa.c > CMakeFiles/ProjetoRastros.dir/Mapa.c.i
-
-CMakeFiles/ProjetoRastros.dir/Mapa.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/ProjetoRastros.dir/Mapa.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/laura/Desktop/LI2-PL8-Grp12/Mapa.c -o CMakeFiles/ProjetoRastros.dir/Mapa.c.s
-
 CMakeFiles/ProjetoRastros.dir/Logica_Programa.c.o: CMakeFiles/ProjetoRastros.dir/flags.make
 CMakeFiles/ProjetoRastros.dir/Logica_Programa.c.o: ../Logica_Programa.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/laura/Desktop/LI2-PL8-Grp12/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/ProjetoRastros.dir/Logica_Programa.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/laura/Desktop/LI2-PL8-Grp12/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/ProjetoRastros.dir/Logica_Programa.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ProjetoRastros.dir/Logica_Programa.c.o   -c /home/laura/Desktop/LI2-PL8-Grp12/Logica_Programa.c
 
 CMakeFiles/ProjetoRastros.dir/Logica_Programa.c.i: cmake_force
@@ -98,7 +85,7 @@ CMakeFiles/ProjetoRastros.dir/Logica_Programa.c.s: cmake_force
 
 CMakeFiles/ProjetoRastros.dir/Camada_Interface.c.o: CMakeFiles/ProjetoRastros.dir/flags.make
 CMakeFiles/ProjetoRastros.dir/Camada_Interface.c.o: ../Camada_Interface.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/laura/Desktop/LI2-PL8-Grp12/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/ProjetoRastros.dir/Camada_Interface.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/laura/Desktop/LI2-PL8-Grp12/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/ProjetoRastros.dir/Camada_Interface.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ProjetoRastros.dir/Camada_Interface.c.o   -c /home/laura/Desktop/LI2-PL8-Grp12/Camada_Interface.c
 
 CMakeFiles/ProjetoRastros.dir/Camada_Interface.c.i: cmake_force
@@ -111,7 +98,7 @@ CMakeFiles/ProjetoRastros.dir/Camada_Interface.c.s: cmake_force
 
 CMakeFiles/ProjetoRastros.dir/Camada_dados.c.o: CMakeFiles/ProjetoRastros.dir/flags.make
 CMakeFiles/ProjetoRastros.dir/Camada_dados.c.o: ../Camada_dados.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/laura/Desktop/LI2-PL8-Grp12/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/ProjetoRastros.dir/Camada_dados.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/laura/Desktop/LI2-PL8-Grp12/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/ProjetoRastros.dir/Camada_dados.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ProjetoRastros.dir/Camada_dados.c.o   -c /home/laura/Desktop/LI2-PL8-Grp12/Camada_dados.c
 
 CMakeFiles/ProjetoRastros.dir/Camada_dados.c.i: cmake_force
@@ -125,7 +112,6 @@ CMakeFiles/ProjetoRastros.dir/Camada_dados.c.s: cmake_force
 # Object files for target ProjetoRastros
 ProjetoRastros_OBJECTS = \
 "CMakeFiles/ProjetoRastros.dir/main.c.o" \
-"CMakeFiles/ProjetoRastros.dir/Mapa.c.o" \
 "CMakeFiles/ProjetoRastros.dir/Logica_Programa.c.o" \
 "CMakeFiles/ProjetoRastros.dir/Camada_Interface.c.o" \
 "CMakeFiles/ProjetoRastros.dir/Camada_dados.c.o"
@@ -134,13 +120,12 @@ ProjetoRastros_OBJECTS = \
 ProjetoRastros_EXTERNAL_OBJECTS =
 
 ProjetoRastros: CMakeFiles/ProjetoRastros.dir/main.c.o
-ProjetoRastros: CMakeFiles/ProjetoRastros.dir/Mapa.c.o
 ProjetoRastros: CMakeFiles/ProjetoRastros.dir/Logica_Programa.c.o
 ProjetoRastros: CMakeFiles/ProjetoRastros.dir/Camada_Interface.c.o
 ProjetoRastros: CMakeFiles/ProjetoRastros.dir/Camada_dados.c.o
 ProjetoRastros: CMakeFiles/ProjetoRastros.dir/build.make
 ProjetoRastros: CMakeFiles/ProjetoRastros.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/laura/Desktop/LI2-PL8-Grp12/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking C executable ProjetoRastros"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/laura/Desktop/LI2-PL8-Grp12/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking C executable ProjetoRastros"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/ProjetoRastros.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

@@ -74,12 +74,12 @@ preinstall:
 CMakeFiles/ProjetoRastros.dir/all:
 	$(MAKE) -f CMakeFiles/ProjetoRastros.dir/build.make CMakeFiles/ProjetoRastros.dir/depend
 	$(MAKE) -f CMakeFiles/ProjetoRastros.dir/build.make CMakeFiles/ProjetoRastros.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/laura/Desktop/LI2-PL8-Grp12/cmake-build-debug/CMakeFiles --progress-num=1,2,3,4,5,6 "Built target ProjetoRastros"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/laura/Desktop/LI2-PL8-Grp12/cmake-build-debug/CMakeFiles --progress-num=1,2,3,4,5 "Built target ProjetoRastros"
 .PHONY : CMakeFiles/ProjetoRastros.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/ProjetoRastros.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/laura/Desktop/LI2-PL8-Grp12/cmake-build-debug/CMakeFiles 6
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/laura/Desktop/LI2-PL8-Grp12/cmake-build-debug/CMakeFiles 5
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/ProjetoRastros.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/laura/Desktop/LI2-PL8-Grp12/cmake-build-debug/CMakeFiles 0
 .PHONY : CMakeFiles/ProjetoRastros.dir/rule

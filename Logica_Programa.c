@@ -51,7 +51,7 @@ int jogar(ESTADO *estado, COORDENADA c){
         estado -> tab[(estado -> ultima_jogada).coluna][(estado -> ultima_jogada).linha] = PRETA;
     }
     if(fim (c)){
-        printf("Fim do Jogo");
+        return 1;
     }
     return 0;
 }

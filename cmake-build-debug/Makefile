@@ -204,33 +204,6 @@ Logica_Programa.c.s:
 	$(MAKE) -f CMakeFiles/ProjetoRastros.dir/build.make CMakeFiles/ProjetoRastros.dir/Logica_Programa.c.s
 .PHONY : Logica_Programa.c.s
 
-Mapa.o: Mapa.c.o
-
-.PHONY : Mapa.o
-
-# target to build an object file
-Mapa.c.o:
-	$(MAKE) -f CMakeFiles/ProjetoRastros.dir/build.make CMakeFiles/ProjetoRastros.dir/Mapa.c.o
-.PHONY : Mapa.c.o
-
-Mapa.i: Mapa.c.i
-
-.PHONY : Mapa.i
-
-# target to preprocess a source file
-Mapa.c.i:
-	$(MAKE) -f CMakeFiles/ProjetoRastros.dir/build.make CMakeFiles/ProjetoRastros.dir/Mapa.c.i
-.PHONY : Mapa.c.i
-
-Mapa.s: Mapa.c.s
-
-.PHONY : Mapa.s
-
-# target to generate assembly for a file
-Mapa.c.s:
-	$(MAKE) -f CMakeFiles/ProjetoRastros.dir/build.make CMakeFiles/ProjetoRastros.dir/Mapa.c.s
-.PHONY : Mapa.c.s
-
 main.o: main.c.o
 
 .PHONY : main.o
@@ -276,9 +249,6 @@ help:
 	@echo "... Logica_Programa.o"
 	@echo "... Logica_Programa.i"
 	@echo "... Logica_Programa.s"
-	@echo "... Mapa.o"
-	@echo "... Mapa.i"
-	@echo "... Mapa.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
