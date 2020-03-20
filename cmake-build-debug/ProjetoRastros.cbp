@@ -8,104 +8,104 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/home/mariana/GitHub/LI2-PL8-Grp12/cmake-build-debug"/>
+				<Option working_dir="/home/laura/Desktop/LI2-PL8-Grp12/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/mariana/GitHub/LI2-PL8-Grp12/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/mariana/GitHub/LI2-PL8-Grp12/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/mariana/GitHub/LI2-PL8-Grp12/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/mariana/GitHub/LI2-PL8-Grp12/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/laura/Desktop/LI2-PL8-Grp12/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/laura/Desktop/LI2-PL8-Grp12/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/laura/Desktop/LI2-PL8-Grp12/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/laura/Desktop/LI2-PL8-Grp12/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/home/mariana/GitHub/LI2-PL8-Grp12/cmake-build-debug"/>
+				<Option working_dir="/home/laura/Desktop/LI2-PL8-Grp12/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/mariana/GitHub/LI2-PL8-Grp12/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/mariana/GitHub/LI2-PL8-Grp12/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/mariana/GitHub/LI2-PL8-Grp12/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/mariana/GitHub/LI2-PL8-Grp12/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/laura/Desktop/LI2-PL8-Grp12/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/laura/Desktop/LI2-PL8-Grp12/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/laura/Desktop/LI2-PL8-Grp12/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/laura/Desktop/LI2-PL8-Grp12/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="ProjetoRastros">
-				<Option output="/home/mariana/GitHub/LI2-PL8-Grp12/cmake-build-debug/ProjetoRastros" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/mariana/GitHub/LI2-PL8-Grp12/cmake-build-debug"/>
+				<Option output="/home/laura/Desktop/LI2-PL8-Grp12/cmake-build-debug/ProjetoRastros" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/laura/Desktop/LI2-PL8-Grp12/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
 					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include-fixed"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
 					<Add directory="/usr/include/x86_64-linux-gnu"/>
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/mariana/GitHub/LI2-PL8-Grp12/cmake-build-debug/Makefile&quot;  VERBOSE=1 ProjetoRastros"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/mariana/GitHub/LI2-PL8-Grp12/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/mariana/GitHub/LI2-PL8-Grp12/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/mariana/GitHub/LI2-PL8-Grp12/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/laura/Desktop/LI2-PL8-Grp12/cmake-build-debug/Makefile&quot;  VERBOSE=1 ProjetoRastros"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/laura/Desktop/LI2-PL8-Grp12/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/laura/Desktop/LI2-PL8-Grp12/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/laura/Desktop/LI2-PL8-Grp12/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="ProjetoRastros/fast">
-				<Option output="/home/mariana/GitHub/LI2-PL8-Grp12/cmake-build-debug/ProjetoRastros" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/mariana/GitHub/LI2-PL8-Grp12/cmake-build-debug"/>
+				<Option output="/home/laura/Desktop/LI2-PL8-Grp12/cmake-build-debug/ProjetoRastros" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/laura/Desktop/LI2-PL8-Grp12/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
 					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include-fixed"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
 					<Add directory="/usr/include/x86_64-linux-gnu"/>
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/mariana/GitHub/LI2-PL8-Grp12/cmake-build-debug/Makefile&quot;  VERBOSE=1 ProjetoRastros/fast"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/mariana/GitHub/LI2-PL8-Grp12/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/mariana/GitHub/LI2-PL8-Grp12/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/mariana/GitHub/LI2-PL8-Grp12/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/laura/Desktop/LI2-PL8-Grp12/cmake-build-debug/Makefile&quot;  VERBOSE=1 ProjetoRastros/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/laura/Desktop/LI2-PL8-Grp12/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/laura/Desktop/LI2-PL8-Grp12/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/laura/Desktop/LI2-PL8-Grp12/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/home/mariana/GitHub/LI2-PL8-Grp12/cmake-build-debug"/>
+				<Option working_dir="/home/laura/Desktop/LI2-PL8-Grp12/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/mariana/GitHub/LI2-PL8-Grp12/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/mariana/GitHub/LI2-PL8-Grp12/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/mariana/GitHub/LI2-PL8-Grp12/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/mariana/GitHub/LI2-PL8-Grp12/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/laura/Desktop/LI2-PL8-Grp12/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/laura/Desktop/LI2-PL8-Grp12/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/laura/Desktop/LI2-PL8-Grp12/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/laura/Desktop/LI2-PL8-Grp12/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/mariana/GitHub/LI2-PL8-Grp12/Camada_Interface.c">
+		<Unit filename="/home/laura/Desktop/LI2-PL8-Grp12/Camada_Interface.c">
 			<Option target="ProjetoRastros"/>
 		</Unit>
-		<Unit filename="/home/mariana/GitHub/LI2-PL8-Grp12/Camada_Interface.h">
+		<Unit filename="/home/laura/Desktop/LI2-PL8-Grp12/Camada_Interface.h">
 			<Option target="ProjetoRastros"/>
 		</Unit>
-		<Unit filename="/home/mariana/GitHub/LI2-PL8-Grp12/Camada_dados.c">
+		<Unit filename="/home/laura/Desktop/LI2-PL8-Grp12/Camada_dados.c">
 			<Option target="ProjetoRastros"/>
 		</Unit>
-		<Unit filename="/home/mariana/GitHub/LI2-PL8-Grp12/Camada_dados.h">
+		<Unit filename="/home/laura/Desktop/LI2-PL8-Grp12/Camada_dados.h">
 			<Option target="ProjetoRastros"/>
 		</Unit>
-		<Unit filename="/home/mariana/GitHub/LI2-PL8-Grp12/Logica_Programa.c">
+		<Unit filename="/home/laura/Desktop/LI2-PL8-Grp12/Logica_Programa.c">
 			<Option target="ProjetoRastros"/>
 		</Unit>
-		<Unit filename="/home/mariana/GitHub/LI2-PL8-Grp12/Logica_Programa.h">
+		<Unit filename="/home/laura/Desktop/LI2-PL8-Grp12/Logica_Programa.h">
 			<Option target="ProjetoRastros"/>
 		</Unit>
-		<Unit filename="/home/mariana/GitHub/LI2-PL8-Grp12/Mapa.c">
+		<Unit filename="/home/laura/Desktop/LI2-PL8-Grp12/Mapa.c">
 			<Option target="ProjetoRastros"/>
 		</Unit>
-		<Unit filename="/home/mariana/GitHub/LI2-PL8-Grp12/Mapa.h">
+		<Unit filename="/home/laura/Desktop/LI2-PL8-Grp12/Mapa.h">
 			<Option target="ProjetoRastros"/>
 		</Unit>
-		<Unit filename="/home/mariana/GitHub/LI2-PL8-Grp12/main.c">
+		<Unit filename="/home/laura/Desktop/LI2-PL8-Grp12/main.c">
 			<Option target="ProjetoRastros"/>
 		</Unit>
-		<Unit filename="/home/mariana/GitHub/LI2-PL8-Grp12/CMakeLists.txt">
+		<Unit filename="/home/laura/Desktop/LI2-PL8-Grp12/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

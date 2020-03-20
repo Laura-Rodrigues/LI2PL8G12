@@ -4,11 +4,11 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/home/mariana/GitHub/LI2-PL8-Grp12/Camada_Interface.c" "/home/mariana/GitHub/LI2-PL8-Grp12/cmake-build-debug/CMakeFiles/ProjetoRastros.dir/Camada_Interface.c.o"
-  "/home/mariana/GitHub/LI2-PL8-Grp12/Camada_dados.c" "/home/mariana/GitHub/LI2-PL8-Grp12/cmake-build-debug/CMakeFiles/ProjetoRastros.dir/Camada_dados.c.o"
-  "/home/mariana/GitHub/LI2-PL8-Grp12/Logica_Programa.c" "/home/mariana/GitHub/LI2-PL8-Grp12/cmake-build-debug/CMakeFiles/ProjetoRastros.dir/Logica_Programa.c.o"
-  "/home/mariana/GitHub/LI2-PL8-Grp12/Mapa.c" "/home/mariana/GitHub/LI2-PL8-Grp12/cmake-build-debug/CMakeFiles/ProjetoRastros.dir/Mapa.c.o"
-  "/home/mariana/GitHub/LI2-PL8-Grp12/main.c" "/home/mariana/GitHub/LI2-PL8-Grp12/cmake-build-debug/CMakeFiles/ProjetoRastros.dir/main.c.o"
+  "/home/laura/Desktop/LI2-PL8-Grp12/Camada_Interface.c" "/home/laura/Desktop/LI2-PL8-Grp12/cmake-build-debug/CMakeFiles/ProjetoRastros.dir/Camada_Interface.c.o"
+  "/home/laura/Desktop/LI2-PL8-Grp12/Camada_dados.c" "/home/laura/Desktop/LI2-PL8-Grp12/cmake-build-debug/CMakeFiles/ProjetoRastros.dir/Camada_dados.c.o"
+  "/home/laura/Desktop/LI2-PL8-Grp12/Logica_Programa.c" "/home/laura/Desktop/LI2-PL8-Grp12/cmake-build-debug/CMakeFiles/ProjetoRastros.dir/Logica_Programa.c.o"
+  "/home/laura/Desktop/LI2-PL8-Grp12/Mapa.c" "/home/laura/Desktop/LI2-PL8-Grp12/cmake-build-debug/CMakeFiles/ProjetoRastros.dir/Mapa.c.o"
+  "/home/laura/Desktop/LI2-PL8-Grp12/main.c" "/home/laura/Desktop/LI2-PL8-Grp12/cmake-build-debug/CMakeFiles/ProjetoRastros.dir/main.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 
