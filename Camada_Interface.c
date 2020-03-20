@@ -14,8 +14,8 @@ void mostrar_tabuleiro(ESTADO *estado){
     for (int i = 0; i < 8; i++) {
         for (int j = 0; j < 8; j++) {
             COORDENADA c = {i,j};
-            if (i == 0 && j == 7) printf("2 ");
-            else if (i == 7 && j == 0) printf("1 ");
+            if (obter_estado_casa(estado ,c) == DOIS) printf("2 ");
+            else if (obter_estado_casa(estado ,c) == UM) printf("1 ");
             else if (obter_estado_casa(estado ,c) == VAZIO) printf(". ");
             else if (obter_estado_casa(estado ,c) == PRETA) printf("# ");
             else if (obter_estado_casa(estado ,c) == BRANCA) printf("* ");

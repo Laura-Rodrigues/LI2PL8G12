@@ -14,7 +14,7 @@ Definição do estado e das funções que o manipulam
 /**
 \brief Tipo de dados para a casa
 */
-typedef enum {VAZIO, BRANCA, PRETA} CASA;
+typedef enum {VAZIO, BRANCA, PRETA, UM, DOIS} CASA;
 
 /**
 \brief Tipo de dados para as coordenadas
