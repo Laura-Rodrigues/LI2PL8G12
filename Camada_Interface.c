@@ -57,6 +57,7 @@ int interpretador(ESTADO *e) {
         COORDENADA coord = {*col -'a', *lin -'1'};
         jogar(e, coord);
         mostrar_tabuleiro(e);
+        interpretador(e);
     }
     return 1;
 }
