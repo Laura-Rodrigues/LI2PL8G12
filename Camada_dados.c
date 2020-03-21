@@ -58,6 +58,39 @@ COORDENADA obter_ultima_jogada (ESTADO *estado){
     return ultima;
 }
 
-void altera_tabuleiro (ESTADO *estado, COORDENADA c, CASA novo){
-    estado->tab[8-(c.linha)][c.coluna] = novo;
+void altera_tabuleiro (ESTADO *estado, COORDENADA c){
+    estado->tab[7-(c.linha)][c.coluna] = BRANCA;
+    estado->tab[7-(estado->ultima_jogada).linha][(estado->ultima_jogada).coluna]=PRETA;
+}
+
+void altera_ultimajogada (ESTADO *e, COORDENADA c){
+    e->ultima_jogada = c;
+}
+
+void altera_jogadas (ESTADO *e, COORDENADA c){
+    int i = (e->num_jogadas)/2;
+    JOGADA jog1;
+    if (e->jogador_atual == 1){
+        jog1.jogador1 = c;
+    }
+    else jog1.jogador2 = c;
+    e->jogadas[i] = jog1;
+}
+
+void altera_jogadoratual(ESTADO *e){
+    if (e->jogador_atual == 1) e->jogador_atual = 2;
+    else e->jogador_atual = 1;
+}
+
+void altera_numjogadas (ESTADO *e){
+    e->num_jogadas = e->num_jogadas +1;
+}
+
+void altera_estado (ESTADO *e, COORDENADA c){
+    altera_tabuleiro(e, c);
+    altera_ultimajogada(e,c);
+    altera_jogadas(e, c);
+    altera_jogadoratual(e);
+    altera_numjogadas(e);
+
 }
