@@ -90,11 +90,45 @@ CASA obter_estado_casa(ESTADO *e, COORDENADA c);
 COORDENADA obter_ultima_jogada (ESTADO *estado);
 
 /**
-\brief Devolve a coordenada da última jogada
+\brief Altera o tabuleiro
 @param estado Apontador para o estado
-@param novo Casa
 @param c A coordenada
 */
-void altera_tabuleiro (ESTADO *estado, COORDENADA c, CASA novo);
+void altera_tabuleiro (ESTADO *estado, COORDENADA c);
+
+/**
+\brief Altera a última jogada, para a coordenada dada
+@param e Apontador para o estado
+@param c A coordenada
+*/
+void altera_ultimajogada (ESTADO *e, COORDENADA c);
+
+/**
+\brief Altera as jogadas
+@param e Apontador para o estado
+@param c A coordenada
+*/
+void altera_jogadas (ESTADO *e, COORDENADA c);
+
+/**
+\brief Altera o jogador atual
+@param e Apontador para o estado
+@param c A coordenada
+*/
+void altera_jogadoratual(ESTADO *e);
+
+/**
+\brief Aumenta o numero de jogadas
+@param e Apontador para o estado
+@param c A coordenada
+*/
+void altera_numjogadas (ESTADO *e);
+
+/**
+\brief Altera o estado
+@param e Apontador para o estado
+@param c A coordenada
+*/
+void altera_estado (ESTADO *e, COORDENADA c);
 
 #endif //PROJETORASTROS_CAMADA_DADOS_H
