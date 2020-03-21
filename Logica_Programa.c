@@ -64,8 +64,7 @@ int fim(ESTADO *e, COORDENADA c){
 
 int jogar(ESTADO *estado, COORDENADA c){
     if (jogada_valida(estado,c)){
-        altera_tabuleiro(estado, c, BRANCA);
-        altera_tabuleiro(estado, obter_ultima_jogada(estado), PRETA);
+        altera_estado(estado,c);
     }
     if(fim (estado,c)){
         return 1;
