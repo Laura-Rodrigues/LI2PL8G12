@@ -31,14 +31,27 @@ void mostrar_tabuleiro(ESTADO *estado){
 
 }
 
+void prompt (ESTADO*e){
+    int numerojogadas = obter_numero_de_jogadas (e) +1;
+    int njogador = obter_jogador_atual (e);
+    int njogadoratual;
+    if (njogador == 1) njogadoratual = 2;
+    else njogadoratual = 1;
+    if (numerojogadas -1 == 0) {
+        printf( "#0 PL1 -> e5 \n");
+        printf ("#%d PL%d -> ", numerojogadas, njogadoratual);
+    }
+    else printf ("#%d PL%d -> ", numerojogadas, njogadoratual);
+}
+
 
 // Interpretador
 int interpretador(ESTADO *e) {
     char linha[BUF_SIZE];
     char col[2], lin[2];
+    prompt(e);
     if(fgets(linha, BUF_SIZE, stdin) == NULL)
         return 0;
-
     if(strlen(linha) == 3 && sscanf(linha, "%[a-h]%[1-8]", col, lin) == 2) {
         COORDENADA coord = {*col -'a', *lin -'1'};
         jogar(e, coord);
