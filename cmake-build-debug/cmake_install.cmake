@@ -1,4 +1,4 @@
-# Install script for directory: /home/mariana/GitHub/LI2-PL8-Grp12/LI2PL8G12
+# Install script for directory: /home/laura/Desktop/LI2PL8G12
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/mariana/GitHub/LI2-PL8-Grp12/LI2PL8G12/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/laura/Desktop/LI2PL8G12/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

@@ -13,12 +13,11 @@
 // Testa se a Coordenada é vizinha da Coordenada anterior e se encontra-se dentro do tabuleiro
 int vizinha(ESTADO *e, COORDENADA c){
     COORDENADA ultjogada = obter_ultima_jogada(e);
-    int r;
+    int r=0;
     if (abs(c.linha - ultjogada.linha) <= 1) {
         if (abs(c.coluna - ultjogada.coluna) <= 1)
                 r = 1;
         }
-        else r = 0;
     return r;
 }
 

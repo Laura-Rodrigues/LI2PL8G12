@@ -6,37 +6,13 @@
 
 #IncludeRegexTransform: 
 
-/home/laura/Desktop/LI2-PL8-Grp12/Camada_Interface.h
-stdio.h
--
-string.h
--
-Logica_Programa.h
-/home/laura/Desktop/LI2-PL8-Grp12/Logica_Programa.h
-Camada_Interface.h
-/home/laura/Desktop/LI2-PL8-Grp12/Camada_Interface.h
-Camada_dados.h
-/home/laura/Desktop/LI2-PL8-Grp12/Camada_dados.h
+/home/laura/Desktop/LI2PL8G12/Camada_dados.h
 
-/home/laura/Desktop/LI2-PL8-Grp12/Camada_dados.c
-Camada_Interface.h
-/home/laura/Desktop/LI2-PL8-Grp12/Camada_Interface.h
+/home/laura/Desktop/LI2PL8G12/Logica_Programa.c
 Camada_dados.h
-/home/laura/Desktop/LI2-PL8-Grp12/Camada_dados.h
-stdlib.h
--
-
-/home/laura/Desktop/LI2-PL8-Grp12/Camada_dados.h
-
-/home/laura/Desktop/LI2-PL8-Grp12/Logica_Programa.c
-Camada_dados.h
-/home/laura/Desktop/LI2-PL8-Grp12/Camada_dados.h
+/home/laura/Desktop/LI2PL8G12/Camada_dados.h
 stdio.h
 -
 stdlib.h
 -
-
-/home/laura/Desktop/LI2-PL8-Grp12/Logica_Programa.h
-Camada_dados.h
-/home/laura/Desktop/LI2-PL8-Grp12/Camada_dados.h
 
