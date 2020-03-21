@@ -27,6 +27,13 @@ Definição do interpretador e mostrar tabuleiro e das funções associadas
 */
 void mostrar_tabuleiro(ESTADO *estado);
 
+
+/**
+\brief Permite apresentar um prompt
+@param e Apontador para o estado
+*/
+void prompt (ESTADO*e);
+
 /**
 \brief Interpretador
 @param e Apontador para o estado
