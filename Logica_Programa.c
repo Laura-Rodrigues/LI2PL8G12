@@ -48,7 +48,7 @@ int vizivalide(ESTADO *e){
 
 
 //Testa se a Coordenada é igual á final
-int fim(COORDENADA c){
+int fim(ESTADO *e, COORDENADA c){
     if ((c.coluna) == 7 && (c.linha)== 0){
         printf("Jogador número 1, Ganhou!!!!");
         return 1;
@@ -67,7 +67,7 @@ int jogar(ESTADO *estado, COORDENADA c){
         altera_tabuleiro(estado, c, BRANCA);
         altera_tabuleiro(estado, obter_ultima_jogada(estado), PRETA);
     }
-    if(fim (c)){
+    if(fim (estado,c)){
         return 1;
     }
     return 0;
