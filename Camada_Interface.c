@@ -30,25 +30,21 @@ void mostrar_tabuleiro(ESTADO *estado){
     printf("\n");
 
 }
-
 void prompt (ESTADO*e){
-    int numerojogadas = obter_numero_de_jogadas (e) +1;
+    int numerojogadas = obter_numero_de_jogadas (e);
     int njogador = obter_jogador_atual (e);
-    int njogadoratual;
-    if (njogador == 1) njogadoratual = 2;
-    else njogadoratual = 1;
-    if (numerojogadas -1 == 0) {
-        printf( "#0 PL1 -> e5 \n");
-        printf ("#%d PL%d -> ", numerojogadas, njogadoratual);
-    }
-    else printf ("#%d PL%d -> ", numerojogadas, njogadoratual);
+    int n_mov = obter_num_mov(e);
+    printf ("#%02d PLAYER%d (%d) -> ", n_mov , njogador,numerojogadas);
 }
-
 
 // Interpretador
 int interpretador(ESTADO *e) {
     char linha[BUF_SIZE];
     char col[2], lin[2];
+    if ( obter_numero_de_jogadas(e) == 0 ){
+        printf( "#00 PLAYER1 (0) -> e5 \n" );
+        faz_primeira_jogada(e);
+    }
     prompt(e);
     if (strcmp (linha, "Q\n") == 0) return 0;
     if(fgets(linha, BUF_SIZE, stdin) == NULL)
