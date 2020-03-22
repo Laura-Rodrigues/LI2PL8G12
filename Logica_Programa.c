@@ -25,7 +25,8 @@ int vizinha(ESTADO *e, COORDENADA c){
 
 //Testa se a Jogada é válida
 int jogada_valida (ESTADO *estado, COORDENADA c){
-    if((obter_estado_casa(estado,c) == VAZIO) && vizinha(estado, c))
+    COORDENADA final = {7-c.linha, c.coluna};
+    if((obter_estado_casa(estado,final) == VAZIO) && vizinha(estado, c))
         return 1;
     else return 0;
 }
