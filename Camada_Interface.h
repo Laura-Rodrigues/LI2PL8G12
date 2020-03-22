@@ -38,6 +38,12 @@ int ler(FILE *Projeto_Rastos);
 void prompt (ESTADO*e);
 
 /**
+\brief Permite dar uma resposta no final do jogo
+@param resultado Um inteiro
+@returns 0; 
+int Resposta (int resultado);
+
+/**
 \brief Interpretador
 @param e Apontador para o estado
 @returns 0 ou 1
