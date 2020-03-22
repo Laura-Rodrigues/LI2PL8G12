@@ -68,10 +68,6 @@ int Resposta (int resultado){
             printf("O Jogador 2 venceu!");
             break;
         }
-        case 3: {
-            printf("Não há jogada possível. Empate!");
-            break;
-        }
     }
     return 0;
 }
@@ -91,8 +87,9 @@ int interpretador(ESTADO *e) {
         return 0;
     if(strlen(linha) == 3 && sscanf(linha, "%[a-h]%[1-8]", col, lin) == 2) {
         COORDENADA coord = {*col -'a', *lin -'1'};
-        if ( (jogar(e, coord)) != 0){
-            Resposta (jogar(e, coord));
+        int resultado = jogar(e, coord);
+        if ( resultado  != 0 ){
+            Resposta (resultado);
             return 0;
         }
         mostrar_tabuleiro(e);
