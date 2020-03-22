@@ -22,31 +22,38 @@ int vizinha(ESTADO *e, COORDENADA c){
     return r;
 }
 
+//Função que troca a coluna pela linha e vice-versa
+COORDENADA troca_ordem (COORDENADA c){
+    COORDENADA final = {7-c.linha, c.coluna};
+    return final;
+}
 
 //Testa se a Jogada é válida
 int jogada_valida (ESTADO *estado, COORDENADA c){
-    COORDENADA final = {7-c.linha, c.coluna};
+    COORDENADA final = troca_ordem (c);
     if((obter_estado_casa(estado,final) == VAZIO) && vizinha(estado, c))
         return 1;
     else return 0;
 }
-
 //Testar se tem vizinhos validos
-int vizivalide(ESTADO *e){
-    COORDENADA c = {obter_ultima_jogada(e).coluna +1,obter_ultima_jogada(e).linha +1};
-    COORDENADA c1 = {obter_ultima_jogada(e).coluna +1,obter_ultima_jogada(e).linha };
-    COORDENADA c2 = {obter_ultima_jogada(e).coluna +1,obter_ultima_jogada(e).linha -1};
-    COORDENADA c3 = {obter_ultima_jogada(e).coluna ,obter_ultima_jogada(e).linha +1};
-    COORDENADA c4 = {obter_ultima_jogada(e).coluna +1,obter_ultima_jogada(e).linha -1};
-    COORDENADA c5 = {obter_ultima_jogada(e).coluna -1,obter_ultima_jogada(e).linha +1};
-    COORDENADA c6 = {obter_ultima_jogada(e).coluna -1,obter_ultima_jogada(e).linha};
-    COORDENADA c7 = {obter_ultima_jogada(e).coluna -1,obter_ultima_jogada(e).linha -1};
-    if (obter_estado_casa(e,c) == PRETA && obter_estado_casa(e,c1) == PRETA && obter_estado_casa(e,c2) == PRETA && obter_estado_casa(e,c3) == PRETA && obter_estado_casa(e,c4) == PRETA &&
-            obter_estado_casa(e,c5) == PRETA && obter_estado_casa(e,c6) == PRETA && obter_estado_casa(e,c7) == PRETA){
-        return 1;
-    } else return 0;
+int vizivalide(ESTADO *e, COORDENADA c){
+    COORDENADA c0 = {c.coluna +1,c.linha +1};
+    COORDENADA c1 = {c.coluna +1,c.linha };
+    COORDENADA c2 = {c.coluna +1,c.linha -1};
+    COORDENADA c3 = {c.coluna ,c.linha +1};
+    COORDENADA c4 = {c.coluna +1,c.linha -1};
+    COORDENADA c5 = {c.coluna -1,c.linha +1};
+    COORDENADA c6 = {c.coluna -1,c.linha};
+    COORDENADA c7 = {c.coluna -1,c.linha -1};
+    COORDENADA arr[8] = {c0,c1,c2,c3,c4,c5,c6,c7};
+    int r = 0, resultado = 0;
+    for (int i = 0; i < 8; i++){
+        if (obter_estado_casa(e, troca_ordem(arr[i])) == PRETA ) r++;
+    }
+    printf("%d \n", r);
+    if ( r == 8 ) resultado = 1;
+    return resultado;
 }
-
 
 //Testa se a Coordenada é igual á final
 int fim(ESTADO *e, COORDENADA c){
