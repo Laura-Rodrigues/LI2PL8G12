@@ -14,6 +14,7 @@
 int vizinha(ESTADO *e, COORDENADA c){
     COORDENADA ultjogada = obter_ultima_jogada(e);
     int r=0;
+    if (ultjogada.coluna == c.coluna && ultjogada.linha == c.linha) return r;
     if (abs(c.linha - ultjogada.linha) <= 1) {
         if (abs(c.coluna - ultjogada.coluna) <= 1)
                 r = 1;
