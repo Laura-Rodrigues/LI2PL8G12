@@ -88,13 +88,13 @@ void altera_jogadas (ESTADO *e, COORDENADA c){
     e->jogadas[i] = jog1;
 }
 
+void altera_numjogadas (ESTADO *e){
+    if ( e -> jogador_atual == 1) e->num_jogadas += 1;
+}
+
 void altera_jogadoratual(ESTADO *e){
     if (e->jogador_atual == 1) e->jogador_atual = 2;
     else e->jogador_atual = 1;
-}
-
-void altera_numjogadas (ESTADO *e){
-    if ( e -> jogador_atual == 1) e->num_jogadas += 1;
 }
 
 void altera_num_mov (ESTADO *e){
