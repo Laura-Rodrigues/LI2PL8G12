@@ -37,6 +37,27 @@ void prompt (ESTADO*e){
     printf ("#%02d PLAYER%d (%d) -> ", n_mov , njogador,numerojogadas);
 }
 
+int gr(FILE *ficheiro){
+    FILE *fp = fopen("ficheiro", "w");
+    if(fp==NULL){
+        fclose(fp);
+        return 0;
+    } else {
+        fprintf(fp,"Ola\n");
+        fclose(fp);
+    }
+    return 1;
+}
+
+int ler(FILE *ficheiro){
+    FILE *fp = fopen("Projeto_Rastos", "r");
+    int c;
+    while((c = fgetc(fp)) != EOF){
+        printf("%c", c);
+    }
+    return 1;
+}
+
 // Interpretador
 int interpretador(ESTADO *e) {
     char linha[BUF_SIZE];
