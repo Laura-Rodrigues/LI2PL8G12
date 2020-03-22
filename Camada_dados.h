@@ -51,6 +51,8 @@ typedef struct {
     int num_jogadas; //num_jogadas - indica quantas jogadas foram efetuadas
     /** O jogador atual */
     int jogador_atual; //jogador_atual - indica qual é o jogador a jogar
+    /** Número de movimentos*/
+    int num_movimentos; //Número total de movimentos feitos
 } ESTADO;
 
 /**
@@ -90,6 +92,19 @@ CASA obter_estado_casa(ESTADO *e, COORDENADA c);
 COORDENADA obter_ultima_jogada (ESTADO *estado);
 
 /**
+\brief Devolve o número de movimentos feitos
+@param estado Apontador para o estado
+@returns O inteiro correspondente ao número de movimentos
+*/
+int obter_num_mov (ESTADO *e);
+
+/**
+\brief Altera detalhes do estado inicial
+@param estado Apontador para o estado
+*/
+void faz_primeira_jogada (ESTADO *e);
+
+/**
 \brief Altera o tabuleiro
 @param estado Apontador para o estado
 @param c A coordenada
@@ -113,16 +128,20 @@ void altera_jogadas (ESTADO *e, COORDENADA c);
 /**
 \brief Altera o jogador atual
 @param e Apontador para o estado
-@param c A coordenada
 */
 void altera_jogadoratual(ESTADO *e);
 
 /**
 \brief Aumenta o numero de jogadas
 @param e Apontador para o estado
-@param c A coordenada
 */
 void altera_numjogadas (ESTADO *e);
+
+/**
+\brief Aumenta o numero de movimentos
+@param e Apontador para o estado
+*/
+void altera_num_mov (ESTADO *e);
 
 /**
 \brief Altera o estado
