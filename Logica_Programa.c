@@ -50,7 +50,6 @@ int vizivalide(ESTADO *e, COORDENADA c){
     for (int i = 0; i < 8; i++){
         if (obter_estado_casa(e, troca_ordem(arr[i])) == PRETA ) r++;
     }
-    printf("%d \n", r);
     if ( r == 8 ) resultado = 1;
     return resultado;
 }
