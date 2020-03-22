@@ -49,10 +49,10 @@ int vizivalide(ESTADO *e){
 
 //Testa se a Coordenada é igual á final
 int fim(ESTADO *e, COORDENADA c){
-    if ((c.coluna) == 7 && (c.linha)== 0){
+    if ((c.coluna) == 0 && (c.linha)== 0){
         printf("Jogador número 1, Ganhou!!!!");
         return 1;
-    } else if((c.coluna) == 0 && (c.linha) == 7){
+    } else if((c.coluna) == 7 && (c.linha) == 7){
         printf("Jogador número 2, Ganhou!!!");
         return 1;
     }if (vizivalide(e)){
