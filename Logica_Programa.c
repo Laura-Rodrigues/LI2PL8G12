@@ -50,25 +50,19 @@ int vizivalide(ESTADO *e){
 //Testa se a Coordenada é igual á final
 int fim(ESTADO *e, COORDENADA c){
     if ((c.coluna) == 0 && (c.linha)== 0){
-        printf("Jogador número 1, Ganhou!!!!");
         return 1;
     } else if((c.coluna) == 7 && (c.linha) == 7){
-        printf("Jogador número 2, Ganhou!!!");
-        return 1;
+        return 2;
     }if (vizivalide(e)){
-        printf("Vizinhos inválidos, Ambos Perdem");
-        return 1;
+        return 3;
     } else return 0;
 }
 
-
 int jogar(ESTADO *estado, COORDENADA c){
+    int resultado;
     if (jogada_valida(estado,c)){
         altera_estado(estado,c);
     }
-    if(fim (estado,c)){
-        return 1;
-    }
-    return 0;
+    resultado = fim(estado,c);
+    return resultado;
 }
-
