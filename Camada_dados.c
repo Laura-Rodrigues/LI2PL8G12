@@ -2,7 +2,7 @@
 // Created by laura on 12/03/20.
 //
 
-#include "Camada_Interface.h"
+
 #include "Camada_dados.h"
 #include <stdlib.h>
 
@@ -29,7 +29,6 @@ ESTADO *inicializar_estado(){
     e->num_jogadas = 0;
     e->jogador_atual = 1;
     e->num_movimentos = 0;
-    mostrar_tabuleiro(e);
     return e;
 };
 
