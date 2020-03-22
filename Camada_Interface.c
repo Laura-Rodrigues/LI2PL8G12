@@ -50,7 +50,7 @@ int gr(FILE *ficheiro){
 }
 
 int ler(FILE *ficheiro){
-    FILE *fp = fopen("Projeto_Rastos", "r");
+    FILE *fp = fopen("ficheiro", "r");
     int c;
     while((c = fgetc(fp)) != EOF){
         printf("%c", c);
