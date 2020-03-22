@@ -104,7 +104,7 @@ void altera_estado (ESTADO *e, COORDENADA c){
     altera_tabuleiro(e, c);
     altera_ultimajogada(e,c);
     altera_jogadas(e, c);
-    altera_jogadoratual(e);
     altera_numjogadas(e);
+    altera_jogadoratual(e);
     altera_num_mov(e);
 }
