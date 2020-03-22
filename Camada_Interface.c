@@ -58,6 +58,24 @@ int ler(FILE *ficheiro){
     return 1;
 }
 
+int Resposta (int resultado){
+    switch (resultado){
+        case 1: {
+            printf("O Jogador 1 venceu!");
+            break;
+        }
+        case 2: {
+            printf("O Jogador 2 venceu!");
+            break;
+        }
+        case 3: {
+            printf("Não há jogada possível. Empate!");
+            break;
+        }
+    }
+    return 0;
+}
+
 // Interpretador
 int interpretador(ESTADO *e) {
     char linha[BUF_SIZE];
@@ -73,7 +91,10 @@ int interpretador(ESTADO *e) {
         return 0;
     if(strlen(linha) == 3 && sscanf(linha, "%[a-h]%[1-8]", col, lin) == 2) {
         COORDENADA coord = {*col -'a', *lin -'1'};
-        if (jogar(e, coord) ==1) return 0;
+        if ( (jogar(e, coord)) != 0){
+            Resposta (jogar(e, coord));
+            return 0;
+        }
         mostrar_tabuleiro(e);
         interpretador(e);
     }
