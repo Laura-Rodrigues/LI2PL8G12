@@ -65,6 +65,7 @@ int interpretador(ESTADO *e) {
     if ( obter_numero_de_jogadas(e) == 0 ){
         printf( "#00 PLAYER1 (0) -> e5 \n" );
         faz_primeira_jogada(e);
+        mostrar_tabuleiro(e);
     }
     prompt(e);
     if (strcmp (linha, "Q\n") == 0) return 0;
