@@ -58,11 +58,18 @@ int vizivalide(ESTADO *e, COORDENADA c){
 int fim(ESTADO *e, COORDENADA c){
     if ((c.coluna) == 0 && (c.linha)== 0){
         return 1;
-    } else if((c.coluna) == 7 && (c.linha) == 7){
+    } 
+    else if((c.coluna) == 7 && (c.linha) == 7){
         return 2;
-    }if (vizivalide(e)){
-        return 3;
-    } else return 0;
+    }
+    else if (vizivalide(e,c) == 1){
+        int i = obter_jogador_atual(e);
+        int jogador;
+        if ( i == 1) jogador = 2;
+        else jogador = 1;
+        return jogador;
+    } 
+else return 0;
 }
 
 int jogar(ESTADO *estado, COORDENADA c){
