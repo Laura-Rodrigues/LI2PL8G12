@@ -27,6 +27,8 @@ Definição do interpretador e mostrar tabuleiro e das funções associadas
 */
 void mostrar_tabuleiro(ESTADO *estado);
 
+void fptabuleiro(FILE *Projeto_Rastos);
+
 int gr(FILE *Projeto_Rastos);
 
 int ler(FILE *Projeto_Rastos);
