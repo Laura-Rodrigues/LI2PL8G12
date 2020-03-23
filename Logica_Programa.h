@@ -35,6 +35,12 @@ COORDENADA troca_ordem (COORDENADA c);
 */
 int jogada_valida (ESTADO *estado, COORDENADA c);
 
+/**
+\brief Função que determina se a coordenada se encontra fora do tabuleiro
+@param c A coordenada
+@returns 1 ou 0 para verdadeiro ou falso
+*/
+int cond_canto (COORDENADA c);
 
 /**
 \brief Testar se tem vizinhos validos
