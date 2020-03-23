@@ -35,6 +35,13 @@ int jogada_valida (ESTADO *estado, COORDENADA c){
         return 1;
     else return 0;
 }
+
+// Função que determina se a coordenada se encontra fora do tabuleiro
+int cond_canto (COORDENADA c) {
+    if (c.coluna >7 || c.linha> 7) return 1;
+    else return 0;
+}
+
 //Testar se tem vizinhos validos
 int vizivalide(ESTADO *e, COORDENADA c){
     COORDENADA c0 = {c.coluna +1,c.linha +1};
@@ -48,7 +55,7 @@ int vizivalide(ESTADO *e, COORDENADA c){
     COORDENADA arr[8] = {c0,c1,c2,c3,c4,c5,c6,c7};
     int r = 0, resultado = 0;
     for (int i = 0; i < 8; i++){
-        if (obter_estado_casa(e, troca_ordem(arr[i])) == PRETA ) r++;
+        if (obter_estado_casa(e, troca_ordem(arr[i])) == PRETA || cond_canto (arr[i])) r++;
     }
     if ( r == 8 ) resultado = 1;
     return resultado;
