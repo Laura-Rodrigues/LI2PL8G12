@@ -89,6 +89,7 @@ int interpretador(ESTADO *e) {
         COORDENADA coord = {*col -'a', *lin -'1'};
         int resultado = jogar(e, coord);
         if ( resultado  != 0 ){
+            mostrar_tabuleiro(e);
             Resposta (resultado);
             return 0;
         }
