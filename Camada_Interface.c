@@ -6,6 +6,7 @@
 #include <string.h>
 #include "Logica_Programa.h"
 #include "Camada_dados.h"
+#include "Funções Ficheiro.h"
 
 #define BUF_SIZE 1024
 
@@ -35,48 +36,6 @@ void prompt (ESTADO*e){
     int njogador = obter_jogador_atual (e);
     int n_mov = obter_num_mov(e);
     printf ("#%02d PLAYER%d (%d) -> ", n_mov , njogador,numerojogadas);
-}
-
-void fptabuleiro(FILE *Projeto_Rastos){
-    for (int i = 0; i < 8; i++) {
-        fprintf(Projeto_Rastos, "%c ", '8' - i );
-        for (int j = 0; j < 8; j++) {
-            COORDENADA c = {i,j};
-            if (obter_estado_casa(inicializar_estado(),c) == DOIS) fprintf(Projeto_Rastos, "2 ");
-            else if (obter_estado_casa(inicializar_estado() ,c) == UM) fprintf(Projeto_Rastos, "1 ");
-            else if (obter_estado_casa(inicializar_estado() ,c) == VAZIO) fprintf(Projeto_Rastos, ". ");
-            else if (obter_estado_casa(inicializar_estado() ,c) == PRETA) fprintf(Projeto_Rastos, "# ");
-            else if (obter_estado_casa(inicializar_estado() ,c) == BRANCA) fprintf(Projeto_Rastos, "* ");
-        }
-        fprintf(Projeto_Rastos, "\n");
-    }
-    fprintf(Projeto_Rastos, "  ");
-    for(int i = 0; i < 8; i++) {
-        fprintf(Projeto_Rastos, "%c ", 'a' + i);
-    };
-    fprintf(Projeto_Rastos, "\n");
-}
-
-
-int gr(FILE *Projeto_Rastos){
-    FILE *fp = fopen("Projeto_Rastos", "w");
-    if(fp==NULL){
-        fclose(fp);
-        return 0;
-    } else {
-        fptabuleiro(fp);
-        fclose(fp);
-    }
-    return 1;
-}
-
-int ler(FILE *ficheiro){
-    FILE *fp = fopen("ficheiro", "r");
-    int c;
-    while((c = fgetc(fp)) != EOF){
-        printf("%c", c);
-    }
-    return 1;
 }
 
 int Resposta (int resultado){
