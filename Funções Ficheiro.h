@@ -5,7 +5,7 @@
 #ifndef PROJETOLI2_GR_E_LER_H
 #define PROJETOLI2_GR_E_LER_H
 
-#include "Camada de dados.h"
+#include "Camada_dados.h"
 
 void fptabuleiro(FILE *Projeto_Rastos, ESTADO *e);
 int gr(FILE *Projeto_Rastos, ESTADO *e);
