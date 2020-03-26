@@ -6,8 +6,8 @@
 int main(){
     ESTADO *e = inicializar_estado();
     interpretador(e);
-//    FILE *fp = fopen("Projeto_Rastos", "w");
-//    gr(fp,e);
+//    ler("Projeto_Rastos");
+//    gr("Projeto_Rastos",e);
     free(e);
     return 0;
 }

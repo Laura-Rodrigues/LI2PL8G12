@@ -17,12 +17,14 @@ Camada_Interface.h
 /home/laura/Desktop/LI2PL8G12/Camada_Interface.h
 Camada_dados.h
 /home/laura/Desktop/LI2PL8G12/Camada_dados.h
-Funções Ficheiro.h
-/home/laura/Desktop/LI2PL8G12/Funções Ficheiro.h
+Funcoes_Ficheiro.h
+/home/laura/Desktop/LI2PL8G12/Funcoes_Ficheiro.h
 
 /home/laura/Desktop/LI2PL8G12/Camada_dados.h
 
-/home/laura/Desktop/LI2PL8G12/Funções Ficheiro.h
+/home/laura/Desktop/LI2PL8G12/Funcoes_Ficheiro.h
+bits/types/FILE.h
+-
 Camada_dados.h
 /home/laura/Desktop/LI2PL8G12/Camada_dados.h
 
@@ -35,8 +37,8 @@ Camada_dados.h
 /home/laura/Desktop/LI2PL8G12/Camada_dados.h
 Camada_Interface.h
 /home/laura/Desktop/LI2PL8G12/Camada_Interface.h
-Funções Ficheiro.h
-/home/laura/Desktop/LI2PL8G12/Funções Ficheiro.h
+Funcoes_Ficheiro.h
+/home/laura/Desktop/LI2PL8G12/Funcoes_Ficheiro.h
 stdlib.h
 -
 
