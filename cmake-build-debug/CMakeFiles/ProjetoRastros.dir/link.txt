@@ -1,1 +1,1 @@
-/usr/bin/cc -g   CMakeFiles/ProjetoRastros.dir/main.c.o CMakeFiles/ProjetoRastros.dir/Logica_Programa.c.o CMakeFiles/ProjetoRastros.dir/Camada_Interface.c.o CMakeFiles/ProjetoRastros.dir/Camada_dados.c.o  -o ProjetoRastros 
+/usr/bin/cc -g   CMakeFiles/ProjetoRastros.dir/main.c.o CMakeFiles/ProjetoRastros.dir/Logica_Programa.c.o CMakeFiles/ProjetoRastros.dir/Camada_Interface.c.o CMakeFiles/ProjetoRastros.dir/Camada_dados.c.o CMakeFiles/ProjetoRastros.dir/Funcoes_Ficheiro.c.o  -o ProjetoRastros 

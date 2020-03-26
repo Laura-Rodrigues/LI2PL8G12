@@ -1,12 +1,11 @@
 //
-// Created by luis on 22/03/20.
+// Created by laura on 26/03/20.
 //
 
+#include "Funcoes_Ficheiro.h"
+#include "Camada_Interface.h"
+#include "Camada_dados.h"
 #include <bits/types/FILE.h>
-#include "Gr e ler.h"
-#include "Camada de Interface.h"
-#include "Camada de dados.h"
-
 
 void fptabuleiro(FILE *Projeto_Rastos, ESTADO *e){
     for (int i = 0; i < 8; i++) {

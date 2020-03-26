@@ -90,6 +90,12 @@
 		<Unit filename="/home/laura/Desktop/LI2PL8G12/Camada_dados.h">
 			<Option target="ProjetoRastros"/>
 		</Unit>
+		<Unit filename="/home/laura/Desktop/LI2PL8G12/Funcoes_Ficheiro.c">
+			<Option target="ProjetoRastros"/>
+		</Unit>
+		<Unit filename="/home/laura/Desktop/LI2PL8G12/Funcoes_Ficheiro.h">
+			<Option target="ProjetoRastros"/>
+		</Unit>
 		<Unit filename="/home/laura/Desktop/LI2PL8G12/Logica_Programa.c">
 			<Option target="ProjetoRastros"/>
 		</Unit>

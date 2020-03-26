@@ -177,6 +177,33 @@ Camada_dados.c.s:
 	$(MAKE) -f CMakeFiles/ProjetoRastros.dir/build.make CMakeFiles/ProjetoRastros.dir/Camada_dados.c.s
 .PHONY : Camada_dados.c.s
 
+Funcoes_Ficheiro.o: Funcoes_Ficheiro.c.o
+
+.PHONY : Funcoes_Ficheiro.o
+
+# target to build an object file
+Funcoes_Ficheiro.c.o:
+	$(MAKE) -f CMakeFiles/ProjetoRastros.dir/build.make CMakeFiles/ProjetoRastros.dir/Funcoes_Ficheiro.c.o
+.PHONY : Funcoes_Ficheiro.c.o
+
+Funcoes_Ficheiro.i: Funcoes_Ficheiro.c.i
+
+.PHONY : Funcoes_Ficheiro.i
+
+# target to preprocess a source file
+Funcoes_Ficheiro.c.i:
+	$(MAKE) -f CMakeFiles/ProjetoRastros.dir/build.make CMakeFiles/ProjetoRastros.dir/Funcoes_Ficheiro.c.i
+.PHONY : Funcoes_Ficheiro.c.i
+
+Funcoes_Ficheiro.s: Funcoes_Ficheiro.c.s
+
+.PHONY : Funcoes_Ficheiro.s
+
+# target to generate assembly for a file
+Funcoes_Ficheiro.c.s:
+	$(MAKE) -f CMakeFiles/ProjetoRastros.dir/build.make CMakeFiles/ProjetoRastros.dir/Funcoes_Ficheiro.c.s
+.PHONY : Funcoes_Ficheiro.c.s
+
 Logica_Programa.o: Logica_Programa.c.o
 
 .PHONY : Logica_Programa.o
@@ -246,6 +273,9 @@ help:
 	@echo "... Camada_dados.o"
 	@echo "... Camada_dados.i"
 	@echo "... Camada_dados.s"
+	@echo "... Funcoes_Ficheiro.o"
+	@echo "... Funcoes_Ficheiro.i"
+	@echo "... Funcoes_Ficheiro.s"
 	@echo "... Logica_Programa.o"
 	@echo "... Logica_Programa.i"
 	@echo "... Logica_Programa.s"

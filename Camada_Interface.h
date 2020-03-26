@@ -15,7 +15,7 @@ Definição do interpretador e mostrar tabuleiro e das funções associadas
 #include "Logica_Programa.h"
 #include "Camada_Interface.h"
 #include "Camada_dados.h"
-#include "Funções Ficheiro.h"
+#include "Funcoes_Ficheiro.h"
 
 /**
 \brief Definição do tamanho do buf

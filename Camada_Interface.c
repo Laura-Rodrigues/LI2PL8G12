@@ -6,7 +6,7 @@
 #include <string.h>
 #include "Logica_Programa.h"
 #include "Camada_dados.h"
-#include "Funções Ficheiro.h"
+#include "Funcoes_Ficheiro.h"
 
 #define BUF_SIZE 1024
 
