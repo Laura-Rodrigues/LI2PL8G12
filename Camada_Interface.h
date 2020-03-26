@@ -15,6 +15,7 @@ Definição do interpretador e mostrar tabuleiro e das funções associadas
 #include "Logica_Programa.h"
 #include "Camada_Interface.h"
 #include "Camada_dados.h"
+#include "Funções Ficheiro.h"
 
 /**
 \brief Definição do tamanho do buf
@@ -26,12 +27,6 @@ Definição do interpretador e mostrar tabuleiro e das funções associadas
 @param estado Apontador para o estado
 */
 void mostrar_tabuleiro(ESTADO *estado);
-
-void fptabuleiro(FILE *Projeto_Rastos);
-
-int gr(FILE *Projeto_Rastos);
-
-int ler(FILE *Projeto_Rastos);
 
 /**
 \brief Permite apresentar um prompt
