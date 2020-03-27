@@ -61,6 +61,15 @@ int obter_num_mov (ESTADO *e){
     return e->num_movimentos;
 }
 
+COORDENADA obter_jogada (ESTADO *e, int njogada, int jogador){
+    COORDENADA r;
+    JOGADA jogada = e-> jogadas [njogada];
+    if ( jogador == 1) r = jogada.jogador1;
+    else r = jogada.jogador2;
+    return r;
+}
+
+
 void faz_primeira_jogada (ESTADO *e){
     altera_numjogadas(e);
     altera_jogadoratual(e);
