@@ -48,21 +48,23 @@ int ler(FILE *Projeto_Rastos){
     }
     return 1;
 }
-
 int movs ( ESTADO *e) {
     char c1, c2;
     int i, l1, l2;
     int jogada = obter_numero_de_jogadas(e);
     int mov = obter_num_mov(e);
-    for ( i = 0; i < jogada; i++, mov = mov - 2*i) {
+    for ( i = 0; i < jogada; i++, mov -= 2) {
         COORDENADA jog1 = obter_jogada(e, i, 1);
         c1 = jog1.coluna + 'a';
         l1 = jog1.linha + 1;
         COORDENADA jog2 = obter_jogada(e, i, 2);
         c2 = jog2.coluna + 'a';
         l2 = jog2.linha + 1;
-        if ((mov % 2) == 0) printf("%02d: %c%d %c%d \n",i+1, c1, l1, c2,l2);
-        else printf("%02d: %c%d \n", i+1,c1, l1);
+        if (mov < 2 && mov %2 != 0){
+            printf("%02d: %c%d \n", i+1, c1, l1);
+        }
+        else
+            printf("%02d: %c%d %c%d \n", i+1, c1, l1, c2, l2);
+
     }
 }
-
