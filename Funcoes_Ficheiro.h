@@ -11,6 +11,7 @@
 void fptabuleiro(FILE *Projeto_Rastros, ESTADO *e);
 int gr(FILE *Projeto_Rastros, ESTADO *e);
 int ler(FILE *Projeto_Rastros);
+int movs ( ESTADO *e);
 
 
 #endif //PROJETORASTROS_FUNCOES_FICHEIRO_H
