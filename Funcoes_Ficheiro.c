@@ -7,29 +7,29 @@
 #include "Camada_dados.h"
 #include <bits/types/FILE.h>
 
-void fptabuleiro(FILE *Projeto_Rastos, ESTADO *e){
+void fptabuleiro(FILE *Projeto_Rastros, ESTADO *e){
     for (int i = 0; i < 8; i++) {
-        fprintf(Projeto_Rastos, "%c ", '8' - i );
+        fprintf(Projeto_Rastros, "%c ", '8' - i );
         for (int j = 0; j < 8; j++) {
             COORDENADA c = {i,j};
-            if (obter_estado_casa(e,c) == DOIS) fprintf(Projeto_Rastos, "2 ");
-            else if (obter_estado_casa(e ,c) == UM) fprintf(Projeto_Rastos, "1 ");
-            else if (obter_estado_casa(e ,c) == VAZIO) fprintf(Projeto_Rastos, ". ");
-            else if (obter_estado_casa(e ,c) == PRETA) fprintf(Projeto_Rastos, "# ");
-            else if (obter_estado_casa(e ,c) == BRANCA) fprintf(Projeto_Rastos, "* ");
+            if (obter_estado_casa(e,c) == DOIS) fprintf(Projeto_Rastros, "2 ");
+            else if (obter_estado_casa(e ,c) == UM) fprintf(Projeto_Rastros, "1 ");
+            else if (obter_estado_casa(e ,c) == VAZIO) fprintf(Projeto_Rastros, ". ");
+            else if (obter_estado_casa(e ,c) == PRETA) fprintf(Projeto_Rastros, "# ");
+            else if (obter_estado_casa(e ,c) == BRANCA) fprintf(Projeto_Rastros, "* ");
         }
-        fprintf(Projeto_Rastos, "\n");
+        fprintf(Projeto_Rastros, "\n");
     }
-    fprintf(Projeto_Rastos, "  ");
+    fprintf(Projeto_Rastros, "  ");
     for(int i = 0; i < 8; i++) {
-        fprintf(Projeto_Rastos, "%c ", 'a' + i);
+        fprintf(Projeto_Rastros, "%c ", 'a' + i);
     };
-    fprintf(Projeto_Rastos, "\n");
+    fprintf(Projeto_Rastros, "\n");
 }
 
 
-int gr(FILE *Projeto_Rastos, ESTADO *e){
-    FILE *fp = fopen("Projeto_Rastos", "w");
+int gr(FILE *Projeto_Rastros, ESTADO *e){
+    FILE *fp = fopen("Projeto_Rastros", "w");
     if(fp==NULL){
         fclose(fp);
         return 0;
@@ -40,8 +40,8 @@ int gr(FILE *Projeto_Rastos, ESTADO *e){
     return 1;
 }
 
-int ler(FILE *Projeto_Rastos){
-    FILE *fp = fopen("Projeto_Rastos", "r");
+int ler(FILE *Projeto_Rastros){
+    FILE *fp = fopen("Projeto_Rastros", "r");
     int c;
     while((c = fgetc(fp)) != EOF){
         printf("%c", c);

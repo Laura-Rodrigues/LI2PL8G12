@@ -52,6 +52,7 @@ int Resposta (int resultado){
     return 0;
 }
 
+
 // Interpretador
 int interpretador(ESTADO *e) {
     char linha[BUF_SIZE];
