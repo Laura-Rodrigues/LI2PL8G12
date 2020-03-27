@@ -24,8 +24,7 @@ ESTADO *inicializar_estado(){
     COORDENADA coordenada_inicial = {4,4};
     e->ultima_jogada = coordenada_inicial;
     COORDENADA jog1 = {4,4};
-    JOGADA jogada1 = {jog1};
-    e->jogadas[0] = jogada1;
+    e->jogadas[0].jogador1 = jog1;
     e->num_jogadas = 0;
     e->jogador_atual = 1;
     e->num_movimentos = 0;
@@ -81,11 +80,13 @@ void altera_jogadas (ESTADO *e, COORDENADA c){
     int i = (e->num_jogadas);
     JOGADA jog1;
     if (e->jogador_atual == 1){
-        jog1.jogador1 = c;
+        e->jogadas[i].jogador1 = c;
     }
-    else jog1.jogador2 = c;
-    e->jogadas[i] = jog1;
+    else {
+        e->jogadas[i-1].jogador2 = c;
+    }
 }
+
 
 void altera_numjogadas (ESTADO *e){
     if ( e -> jogador_atual == 1) e->num_jogadas += 1;
