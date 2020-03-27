@@ -8,9 +8,9 @@
 #include <bits/types/FILE.h>
 #include "Camada_dados.h"
 
-void fptabuleiro(FILE *Projeto_Rastos, ESTADO *e);
-int gr(FILE *Projeto_Rastos, ESTADO *e);
-int ler(FILE *Projeto_Rastos);
+void fptabuleiro(FILE *Projeto_Rastros, ESTADO *e);
+int gr(FILE *Projeto_Rastros, ESTADO *e);
+int ler(FILE *Projeto_Rastros);
 
 
 #endif //PROJETORASTROS_FUNCOES_FICHEIRO_H
