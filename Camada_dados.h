@@ -98,6 +98,13 @@ COORDENADA obter_ultima_jogada (ESTADO *estado);
 */
 int obter_num_mov (ESTADO *e);
 
+
+
+
+
+COORDENADA obter_jogada (ESTADO *e, int njogada, int jogador);
+
+
 /**
 \brief Altera detalhes do estado inicial
 @param estado Apontador para o estado
