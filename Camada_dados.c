@@ -87,7 +87,6 @@ void altera_ultimajogada (ESTADO *e, COORDENADA c){
 
 void altera_jogadas (ESTADO *e, COORDENADA c){
     int i = (e->num_jogadas);
-    JOGADA jog1;
     if (e->jogador_atual == 1){
         e->jogadas[i].jogador1 = c;
     }
