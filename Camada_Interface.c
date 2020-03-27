@@ -62,7 +62,6 @@ int interpretador(ESTADO *e) {
         faz_primeira_jogada(e);
         mostrar_tabuleiro(e);
     }
-    movs(e);
     prompt(e);
     if (strcmp (linha, "Q\n") == 0) return 0;
     if(fgets(linha, BUF_SIZE, stdin) == NULL)
