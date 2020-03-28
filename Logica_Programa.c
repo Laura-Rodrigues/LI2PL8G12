@@ -87,6 +87,6 @@ int jogar(ESTADO *estado, COORDENADA c){
     }
     resultado = fim(estado,c);
     if (resultado != 1 && r == 0)
-        printf("Jogada Inválida!\n");
+       resultado = 3;
     return resultado;
 }
