@@ -9,8 +9,13 @@
 #include "Camada_dados.h"
 
 void fptabuleiro(FILE *Projeto_Rastros, ESTADO *e);
-int gr(FILE *Projeto_Rastros, ESTADO *e);
-int ler(FILE *Projeto_Rastros);
+
+int movsficheiro (ESTADO *e, FILE *nome);
+
+int gr(char nomeficheiro[], ESTADO *e);
+
+int ler(char nomeficheiro[], ESTADO *e);
+
 int movs ( ESTADO *e);
 
 
