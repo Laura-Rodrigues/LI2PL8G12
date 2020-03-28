@@ -69,10 +69,15 @@ int interpretador(ESTADO *e) {
     if(strlen(linha) == 3 && sscanf(linha, "%[a-h]%[1-8]", col, lin) == 2) {
         COORDENADA coord = {*col -'a', *lin -'1'};
         int resultado = jogar(e, coord);
-        if ( resultado  != 0 ){
-            mostrar_tabuleiro(e);
-            Resposta (resultado);
-            return 0;
+        if ( resultado == 3){
+            printf("Jogada inválida! \n");
+        }
+        else {
+            if ( resultado  != 0 ){
+                mostrar_tabuleiro(e);
+                Resposta (resultado);
+                return 0;
+            }
         }
         mostrar_tabuleiro(e);
         interpretador(e);
