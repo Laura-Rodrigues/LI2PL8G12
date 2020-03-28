@@ -82,5 +82,22 @@ int interpretador(ESTADO *e) {
         mostrar_tabuleiro(e);
         interpretador(e);
     }
+    else{
+        char nome_ficheiro[BUF_SIZE];
+        if (sscanf(linha, "movs")){
+            movs(e);
+            interpretador(e);
+        }
+        if (sscanf(linha, "gr %s", nome_ficheiro)) {
+            gr(nome_ficheiro, e);
+            printf("Guardado! \n");
+            interpretador(e);
+        }
+        if (sscanf(linha, "ler %s", nome_ficheiro)) {
+            printf("O ficheiro: \n");
+            ler(nome_ficheiro, e);
+            interpretador(e);
+        }
+    }
     return 1;
 }
