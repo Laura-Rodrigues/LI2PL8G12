@@ -27,21 +27,41 @@ void fptabuleiro(FILE *Projeto_Rastros, ESTADO *e){
     fprintf(Projeto_Rastros, "\n");
 }
 
+int movsficheiro (ESTADO *e, char nome [1000]) {
+    char c1, c2;
+    int i, l1, l2;
+    int jogada = obter_numero_de_jogadas(e);
+    int mov = obter_num_mov(e);
+    for ( i = 0; i < jogada; i++, mov -= 2) {
+        COORDENADA jog1 = obter_jogada(e, i, 1);
+        c1 = jog1.coluna + 'a';
+        l1 = jog1.linha + 1;
+        COORDENADA jog2 = obter_jogada(e, i, 2);
+        c2 = jog2.coluna + 'a';
+        l2 = jog2.linha + 1;
+        if (mov < 2 && mov %2 != 0){
+            fprintf(nome,"%02d: %c%d \n", i+1, c1, l1);
+        }
+        else
+            fprintf(nome,"%02d: %c%d %c%d \n", i+1, c1, l1, c2, l2);
 
-int gr(FILE *Projeto_Rastros, ESTADO *e){
-    FILE *fp = fopen("Projeto_Rastros", "w");
+    }
+}
+
+int gr( char nomeficheiro[], ESTADO *e){
+    FILE *fp = fopen(nomeficheiro, "w");
     if(fp==NULL){
         fclose(fp);
         return 0;
     } else {
         fptabuleiro(fp,e);
+        movsficheiro (e, fp);
         fclose(fp);
     }
     return 1;
 }
-
-int ler(FILE *Projeto_Rastros){
-    FILE *fp = fopen("Projeto_Rastros", "r");
+int ler(char nomeficheiro[], ESTADO *e){
+    FILE *fp = fopen(nomeficheiro, "r");
     int c;
     while((c = fgetc(fp)) != EOF){
         printf("%c", c);
