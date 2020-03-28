@@ -6,8 +6,6 @@
 int main(){
     ESTADO *e = inicializar_estado();
     interpretador(e);
-//    ler("Projeto_Rastros");
-//    gr("Projeto_Rastros",e);
     free(e);
     return 0;
 }
