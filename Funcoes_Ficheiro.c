@@ -27,7 +27,7 @@ void fptabuleiro(FILE *Projeto_Rastros, ESTADO *e){
     fprintf(Projeto_Rastros, "\n");
 }
 
-int movsficheiro (ESTADO *e, char nome [1000]) {
+int movsficheiro (ESTADO *e, FILE *nome){
     char c1, c2;
     int i, l1, l2;
     int jogada = obter_numero_de_jogadas(e);
