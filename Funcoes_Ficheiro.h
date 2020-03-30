@@ -10,7 +10,7 @@
 
 void fptabuleiro(FILE *Projeto_Rastros, ESTADO *e);
 
-int movsficheiro (ESTADO *e, char *nome);
+int movsficheiro (ESTADO *e, FILE *nome);
 
 int gr(char nomeficheiro[], ESTADO *e);
 
