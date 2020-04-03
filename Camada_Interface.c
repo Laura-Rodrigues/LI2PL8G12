@@ -56,57 +56,54 @@ int Resposta (int resultado){
 int interpretador(ESTADO *e) {
     char linha[BUF_SIZE];
     char col[2], lin[2];
-    if ( obter_numero_de_jogadas(e) == 0 ){
-        printf( "#00 PLAYER1 (0) -> e5 \n" );
+    char nome_ficheiro[BUF_SIZE];
+    int joga;
+    if (obter_numero_de_jogadas(e) == 0) {
+        printf("#00 PLAYER1 (0) -> e5 \n");
         faz_primeira_jogada(e);
         mostrar_tabuleiro(e);
     }
     prompt(e);
-    if (strcmp (linha, "Q\n") == 0) return 0;
-    if(fgets(linha, BUF_SIZE, stdin) == NULL)
+    if (strcmp(linha, "Q\n") == 0) return 0;
+    if (fgets(linha, BUF_SIZE, stdin) == NULL)
         return 0;
-    if(strlen(linha) == 3 && sscanf(linha, "%[a-h]%[1-8]", col, lin) == 2) {
-        COORDENADA coord = {*col -'a', *lin -'1'};
+    if (strlen(linha) == 3 && sscanf(linha, "%[a-h]%[1-8]", col, lin) == 2) {
+        COORDENADA coord = {*col - 'a', *lin - '1'};
         int resultado = jogar(e, coord);
-        if ( resultado == 3){
-        printf("Jogada inválida! \n");
+        if (resultado == 3) {
+            printf("Jogada inválida! \n");
         }
-        else
-            if ( resultado  != 0 ){
-                mostrar_tabuleiro(e);
-                Resposta (resultado);
-                return 0;
+        else if (resultado != 0) {
+            mostrar_tabuleiro(e);
+            Resposta(resultado);
+            return 0;
         }
         mostrar_tabuleiro(e);
         interpretador(e);
     }
-    else{
-        char nome_ficheiro[BUF_SIZE];
-        int joga;
-        if (sscanf(linha, "pos %d", &joga)) {
-            if (joga < 0 || joga > obter_numero_de_jogadas(e)){
-                printf("Número de jogada inválido");
-                interpretador(e);
-            }
-            else {
-                pos(e, joga);
-                interpretador(e);
-            }
-        } 
-        else if (sscanf(linha, "movs")){
-            movs(e);
+    else if (sscanf(linha, "pos %d", &joga)) {
+        if (joga < 0 || joga > obter_numero_de_jogadas(e)) {
+            printf("Número de jogada inválido");
             interpretador(e);
         }
-        else if (sscanf(linha, "gr %s", nome_ficheiro)) {
-            gr(nome_ficheiro, e);
-            printf("Guardado! \n");
+        else {
+            pos(e, joga);
             interpretador(e);
         }
-        else if (sscanf(linha, "ler %s", nome_ficheiro)) {
-            printf("O ficheiro: \n");
-            ler(nome_ficheiro, e);
-            interpretador(e);
-        }
+    }
+    else if (strcmp(linha, "movs")) {
+        movs(e);
+        interpretador(e);
+    }
+    else if (sscanf(linha, "gr %s", nome_ficheiro)) {
+        gr(nome_ficheiro, e);
+        printf("Guardado! \n");
+        interpretador(e);
+    }
+    else if (sscanf(linha, "ler %s", nome_ficheiro)) {
+        printf("O ficheiro: \n");
+        ler(nome_ficheiro, e);
+        interpretador(e);
     }
     return 1;
 }
