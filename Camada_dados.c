@@ -29,7 +29,7 @@ ESTADO *inicializar_estado(){
     e->jogador_atual = 1;
     e->num_movimentos = 0;
     return e;
-};
+}
 
 //Esta função permite obter o número do jogador atual
 int obter_jogador_atual(ESTADO *estado){
