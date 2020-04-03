@@ -82,7 +82,7 @@ int interpretador(ESTADO *e) {
     }
     else{
         char nome_ficheiro[BUF_SIZE];
-        int *joga;
+        int joga;
         if (sscanf(linha, "pos %d", joga)) {
             if (joga < 0 || joga > obter_numero_de_jogadas(e)){
                 printf("Número de jogada inválido");
