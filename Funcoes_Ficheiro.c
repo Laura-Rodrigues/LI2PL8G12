@@ -64,10 +64,12 @@ int gr( char nomeficheiro[], ESTADO *e){
 
 int ler(char nomeficheiro[], ESTADO *e){
     FILE *fp = fopen(nomeficheiro, "r");
-    int c;
+    char c;
     while((c = fgetc(fp)) != EOF){
         printf("%c", c);
     }
+    //inicializar_estado(e);
+
     return 1;
 }
 int movs (ESTADO *e) {
