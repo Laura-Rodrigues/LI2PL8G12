@@ -53,7 +53,6 @@ int Resposta (int resultado){
 }
 
 
-// Interpretador
 int interpretador(ESTADO *e) {
     char linha[BUF_SIZE];
     char col[2], lin[2];
@@ -70,30 +69,40 @@ int interpretador(ESTADO *e) {
         COORDENADA coord = {*col -'a', *lin -'1'};
         int resultado = jogar(e, coord);
         if ( resultado == 3){
-            printf("Jogada inválida! \n");
+        printf("Jogada inválida! \n");
         }
-        else {
+        else
             if ( resultado  != 0 ){
                 mostrar_tabuleiro(e);
                 Resposta (resultado);
                 return 0;
-            }
         }
         mostrar_tabuleiro(e);
         interpretador(e);
     }
     else{
         char nome_ficheiro[BUF_SIZE];
-        if (sscanf(linha, "movs")){
+        int *joga;
+        if (sscanf(linha, "pos %d", joga)) {
+            if (joga < 0 || joga > obter_numero_de_jogadas(e)){
+                printf("Número de jogada inválido");
+                interpretador(e);
+            }
+            else {
+                pos(e, joga);
+                interpretador(e);
+            }
+        } 
+        else if (sscanf(linha, "movs")){
             movs(e);
             interpretador(e);
         }
-        if (sscanf(linha, "gr %s", nome_ficheiro)) {
+        else if (sscanf(linha, "gr %s", nome_ficheiro)) {
             gr(nome_ficheiro, e);
             printf("Guardado! \n");
             interpretador(e);
         }
-        if (sscanf(linha, "ler %s", nome_ficheiro)) {
+        else if (sscanf(linha, "ler %s", nome_ficheiro)) {
             printf("O ficheiro: \n");
             ler(nome_ficheiro, e);
             interpretador(e);
