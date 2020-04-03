@@ -18,5 +18,8 @@ int ler(char nomeficheiro[], ESTADO *e);
 
 int movs ( ESTADO *e);
 
+int pos (ESTADO *e, int i);
+
+
 
 #endif //PROJETORASTROS_FUNCOES_FICHEIRO_H
