@@ -18,7 +18,7 @@ int ler(char nomeficheiro[], ESTADO *e);
 
 int movs ( ESTADO *e);
 
-int pos (ESTADO *e, int i);
+ESTADO* pos (ESTADO *e, int dado);
 
 
 
