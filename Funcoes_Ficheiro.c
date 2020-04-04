@@ -32,18 +32,26 @@ int movsficheiro (ESTADO *e, FILE *nome) {
     int i, l1, l2;
     int jogada = obter_numero_de_jogadas(e);
     int mov = obter_num_mov(e);
-    for ( i = 0; i < jogada; i++, mov -= 2) {
-        COORDENADA jog1 = obter_jogada(e, i, 1);
-        c1 = jog1.coluna + 'a';
-        l1 = jog1.linha + 1;
-        COORDENADA jog2 = obter_jogada(e, i, 2);
-        c2 = jog2.coluna + 'a';
-        l2 = jog2.linha + 1;
-        if (mov < 2 && mov %2 != 0){
-            fprintf(nome,"%02d: %c%d \n", i+1, c1, l1);
+    for ( i = 0; i <= jogada && mov > 0; i++) {
+        if ( i == 0) {
+            fprintf(nome,"00: e5 \n");
+            mov--;
         }
-        else
-            fprintf(nome,"%02d: %c%d %c%d \n", i+1, c1, l1, c2, l2);
+        else {
+            COORDENADA jog1 = obter_jogada(e, i, 1);
+            c1 = jog1.coluna + 'a';
+            l1 = jog1.linha + 1;
+            COORDENADA jog2 = obter_jogada(e, i, 2);
+            c2 = jog2.coluna + 'a';
+            l2 = jog2.linha + 1;
+            if (mov < 2 && mov %2 != 0){
+                fprintf(nome,"%02d: %c%d \n", i, c1, l1);
+            }
+            else{
+                fprintf(nome,"%02d: %c%d %c%d \n", i, c1, l1, c2, l2);
+                mov -= 2;
+            }
+        }
 
     }
     return 0;
