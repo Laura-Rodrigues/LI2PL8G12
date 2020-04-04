@@ -57,16 +57,19 @@ int interpretador(ESTADO *e) {
     char linha[BUF_SIZE];
     char col[2], lin[2];
     char nome_ficheiro[BUF_SIZE];
-    int joga;
-    if (obter_numero_de_jogadas(e) == 0) {
-        printf("#00 PLAYER1 (0) -> e5 \n");
+    int joga;    
+    if (obter_numero_de_jogadas(e) == 0 && obter_num_mov(e) == 0) {
+        printf("#00 PLAYER2 (0) -> e5 \n");
         faz_primeira_jogada(e);
         mostrar_tabuleiro(e);
     }
+    else
+        if (obter_numero_de_jogadas(e) == 0)
+            faz_primeira_jogada(e);
     prompt(e);
-    if (strcmp(linha, "Q\n") == 0) return 0;
     if (fgets(linha, BUF_SIZE, stdin) == NULL)
         return 0;
+    if (strcmp(linha, "Q\n") == 0) return 0;
     if (strlen(linha) == 3 && sscanf(linha, "%[a-h]%[1-8]", col, lin) == 2) {
         COORDENADA coord = {*col - 'a', *lin - '1'};
         int resultado = jogar(e, coord);
@@ -87,11 +90,11 @@ int interpretador(ESTADO *e) {
             interpretador(e);
         }
         else {
-            pos(e, joga);
+            e = pos(e, joga);
             interpretador(e);
         }
     }
-    else if (strcmp(linha, "movs")) {
+    else if (strcmp(linha, "movs\n") == 0) {
         movs(e);
         interpretador(e);
     }
@@ -103,6 +106,10 @@ int interpretador(ESTADO *e) {
     else if (sscanf(linha, "ler %s", nome_ficheiro)) {
         printf("O ficheiro: \n");
         ler(nome_ficheiro, e);
+        interpretador(e);
+    }
+    else{
+        printf("Comando inválido! Tente outra vez!\n");
         interpretador(e);
     }
     return 1;
