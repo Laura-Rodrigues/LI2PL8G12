@@ -37,7 +37,7 @@ void prompt (ESTADO*e);
 /**
 \brief Permite dar uma resposta no final do jogo
 @param resultado Um inteiro
-@returns 0; 
+@returns Qual dos jogadores ganhou
 */
 int Resposta (int resultado);
 
