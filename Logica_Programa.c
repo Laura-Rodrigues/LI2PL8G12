@@ -31,7 +31,7 @@ COORDENADA troca_ordem (COORDENADA c){
 //Testa se a Jogada é válida
 int jogada_valida (ESTADO *estado, COORDENADA c){
     COORDENADA final = troca_ordem (c);
-    if((obter_estado_casa(estado,final) == VAZIO) && vizinha(estado, c))
+    if(((obter_estado_casa(estado,final) == VAZIO) || (obter_estado_casa(estado,final) == UM) || (obter_estado_casa(estado,final) == DOIS)) && vizinha(estado, c))
         return 1;
     else return 0;
 }
