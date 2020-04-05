@@ -5,7 +5,7 @@
 #ifndef PROJETORASTROS_FUNCOES_FICHEIRO_H
 #define PROJETORASTROS_FUNCOES_FICHEIRO_H
 
-#include <bits/types/FILE.h>
+#include <stdio.h>
 #include "Camada_dados.h"
 
 /**
