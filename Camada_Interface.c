@@ -85,13 +85,23 @@ int interpretador(ESTADO *e) {
         interpretador(e);
     }
     else if (sscanf(linha, "pos %d", &joga)) {
-        if (joga < 0 || joga > obter_numero_de_jogadas(e)) {
-            printf("Número de jogada inválido");
+        if ( obter_pos(e) != 0){
+            strcpy(nome_ficheiro, "v_ant_estado");
+            ler (nome_ficheiro, e);
+        }
+        if (joga < 0 || joga > obter_numero_de_jogadas(e) || (joga == obter_numero_de_jogadas(e) && obter_jogador_atual(e) == 1)) {
+            printf("Número de jogada inválido.\n");
             interpretador(e);
         }
         else {
-            e = pos(e, joga);
-            interpretador(e);
+            if (obter_pos(e) == 0){
+                strcpy(nome_ficheiro, "v_ant_estado");
+                gr (nome_ficheiro, e);
+                e = pos(e, joga);
+                interpretador(e);
+            }
+            else {e = pos(e, joga);
+                interpretador(e);}
         }
     }
     else if (strcmp(linha, "movs\n") == 0) {
