@@ -28,6 +28,7 @@ ESTADO *inicializar_estado(){
     e->num_jogadas = 0;
     e->jogador_atual = 2;
     e->num_movimentos = 0;
+    e->alt_pos = 0;
     return e;
 }
 
@@ -69,11 +70,18 @@ COORDENADA obter_jogada (ESTADO *e, int njogada, int jogador){
     return r;
 }
 
+int obter_pos (ESTADO *e){
+    return e->alt_pos;
+}
 
 void faz_primeira_jogada (ESTADO *e){
     altera_numjogadas(e);
     altera_jogadoratual(e);
     altera_num_mov(e);
+}
+
+void altera_pos (ESTADO* e){
+    e->alt_pos = 0;
 }
 
 void altera_tabuleiro (ESTADO *estado, COORDENADA c){
@@ -110,6 +118,7 @@ void altera_num_mov (ESTADO *e){
 }
 
 void altera_estado (ESTADO *e, COORDENADA c){
+    altera_pos(e);
     altera_tabuleiro(e, c);
     altera_ultimajogada(e,c);
     altera_jogadas(e, c);
