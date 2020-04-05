@@ -84,8 +84,8 @@ int jogar(ESTADO *estado, COORDENADA c){
     if (jogada_valida(estado,c)){
         r = 1;
         altera_estado(estado,c);
+        resultado = fim(estado,c);
     }
-    resultado = fim(estado,c);
     if (resultado != 1 && r == 0)
        resultado = 3;
     return resultado;
