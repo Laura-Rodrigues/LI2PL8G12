@@ -53,6 +53,8 @@ typedef struct {
     int jogador_atual; //jogador_atual - indica qual é o jogador a jogar
     /** Número de movimentos*/
     int num_movimentos; //Número total de movimentos feitos
+    /**Jogada anterior foi pos **/
+    int alt_pos; // Se for 1 então jogada anterior foi pos; se for 0, a jogada anterior não foi a pos
 } ESTADO;
 
 /**
@@ -101,17 +103,30 @@ int obter_num_mov (ESTADO *e);
 /**
 \brief Permite obter a jogada
 @param e Apontador para o estado
-@param njogada Apontador para o número da jogada
-@param jogador Apontador para o jogador
+@param njogada inteiro para o número da jogada
+@param jogador inteiro que indica o jogador
 @returns Coordenada
 */
 COORDENADA obter_jogada (ESTADO *e, int njogada, int jogador);
+
+/**
+\brief Permite obter o valor da variavel alt_pos
+@param e Apontador para o estado
+@returns int
+*/
+int obter_pos (ESTADO *e);
 
 /**
 \brief Altera detalhes do estado inicial
 @param estado Apontador para o estado
 */
 void faz_primeira_jogada (ESTADO *e);
+
+/**
+\brief Permite alterar o valor da variavel alt_pos
+@param e Apontador para o estado
+*/
+void altera_pos (ESTADO* e);
 
 /**
 \brief Altera o tabuleiro
