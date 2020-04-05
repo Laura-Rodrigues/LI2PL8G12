@@ -121,8 +121,6 @@ int movs (ESTADO *e) {
     return 0;
 }
 
-
-
 ESTADO* pos (ESTADO *e, int dado){
     int m = obter_num_mov(e);
     JOGADAS t;
@@ -140,7 +138,9 @@ ESTADO* pos (ESTADO *e, int dado){
     }
     mostrar_tabuleiro(e);
     movs(e);
-    e -> num_movimentos = m;
+    e -> num_movimentos = m+1;
+    e -> alt_pos = 1;
     return e;
 }
+
 
