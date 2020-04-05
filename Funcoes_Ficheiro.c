@@ -5,7 +5,7 @@
 #include "Funcoes_Ficheiro.h"
 #include "Camada_Interface.h"
 #include "Camada_dados.h"
-#include <bits/types/FILE.h>
+#include <stdio.h>
 
 void fptabuleiro(FILE *Projeto_Rastros, ESTADO *e){
     for (int i = 0; i < 8; i++) {
@@ -71,26 +71,30 @@ int gr( char nomeficheiro[], ESTADO *e){
 }
 
 int ler(char nomeficheiro[], ESTADO *e){
-    FILE *fp = fopen(nomeficheiro, "r");
-    int c;
-    while((c = fgetc(fp)) != EOF){
-        printf("%c", c);
-        for(int i = 0; i < 8; i++){
-            for(int j = 1; j < 9; j++){
-                COORDENADA co = {j,i};
-                if(c == '.') (e-> tab[7-i][j]) = VAZIO;
-                else if(c == '#') (e-> tab[7-i][j]) = PRETA;
-                else if(c == '*') {
-                    (e-> tab[7-i][j]) = BRANCA;
-                    (e-> ultima_jogada) = co;
+    FILE *fp = fopen(nomeficheiro, "r+");
+    char c;
+    for( int i = 0; i < 9; i++){
+        for ( int j = 0; j < 9; j++) {
+            if (i == 8 && j == 0) printf("  ");
+            else {
+                fscanf(fp, "%c ", &c);       //(c = fgetc(fp));
+                printf("%c ", c);
+                if (c == '*') {
+                    COORDENADA c0 = {i, j - 1};
+                    (e->tab[i][j - 1] = BRANCA);
+                    e->ultima_jogada = c0;
                 }
-                else if(c == '1') (e-> tab[7-i][j]) = UM;
-                else if(c == '2') (e-> tab[7-i][j]) = DOIS;
+                if (c == '#') (e->tab[i][j - 1] = PRETA);
+                if (c == '.') (e->tab[i][j - 1] = VAZIO);
             }
         }
+        printf("\n");
     }
+    printf( " \n");
+    mostrar_tabuleiro(e);
     return 1;
 }
+
 
 int movs (ESTADO *e) {
     char c1, c2;
