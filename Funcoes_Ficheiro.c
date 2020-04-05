@@ -72,15 +72,25 @@ int gr( char nomeficheiro[], ESTADO *e){
 
 int ler(char nomeficheiro[], ESTADO *e){
     FILE *fp = fopen(nomeficheiro, "r");
-    char c;
+    int c;
     while((c = fgetc(fp)) != EOF){
         printf("%c", c);
+        for(int i = 0; i < 8; i++){
+            for(int j = 1; j < 9; j++){
+                COORDENADA co = {j,i};
+                if(c == '.') (e-> tab[7-i][j]) = VAZIO;
+                else if(c == '#') (e-> tab[7-i][j]) = PRETA;
+                else if(c == '*') {
+                    (e-> tab[7-i][j]) = BRANCA;
+                    (e-> ultima_jogada) = co;
+                }
+                else if(c == '1') (e-> tab[7-i][j]) = UM;
+                else if(c == '2') (e-> tab[7-i][j]) = DOIS;
+            }
+        }
     }
-    //inicializar_estado(e);
-
     return 1;
 }
-
 
 int movs (ESTADO *e) {
     char c1, c2;
