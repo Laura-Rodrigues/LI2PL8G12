@@ -70,6 +70,7 @@ int gr( char nomeficheiro[], ESTADO *e){
     return 1;
 }
 
+
 ESTADO *ler(char nomeficheiro[], ESTADO *e){
     FILE *fp = fopen(nomeficheiro, "r+");
     char s[BUF_SIZE];
@@ -80,23 +81,18 @@ ESTADO *ler(char nomeficheiro[], ESTADO *e){
     faz_primeira_jogada(e);
     while ((fgets(s, BUF_SIZE, fp)) != NULL){
         if (sscanf( s, "0%d: %c%d %c%d", &jog, &i,&j, &k, &l)){
-            if ( jog != 0){
-                COORDENADA c0 = {i- 'a', j-1};
+            printf ( "%s  \n \n", s);
+            COORDENADA c0 = {i- 'a', j-1};
+            COORDENADA c1 = {k -'a' , l -1};
+            if ( jog != 0 && jogada_valida(e, c0))
                 altera_estado(e, c0);
-                COORDENADA c1 = {k -'a' , l -1};
+            if (jog != 0 && jogada_valida(e, c1))
                 altera_estado(e, c1);
-            }
-        }
-        else
-            if (sscanf( s, "0%d: %c%d", &jog, &i,&j)) {
-                COORDENADA c0 = {i -'a', j - 1 };
-                if (jog != 0)
-                    altera_estado(e, c0);
         }
     }
+    fclose ( fp );
     return e;
 }
-
 
 int movs (ESTADO *e) {
     char c1, c2;
