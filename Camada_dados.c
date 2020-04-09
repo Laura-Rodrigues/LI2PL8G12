@@ -74,6 +74,10 @@ int obter_pos (ESTADO *e){
     return e->alt_pos;
 }
 
+void aumenta_pos (ESTADO* e, int i){
+    e->alt_pos = i + 1;
+}
+
 void faz_primeira_jogada (ESTADO *e){
     altera_numjogadas(e);
     altera_jogadoratual(e);
