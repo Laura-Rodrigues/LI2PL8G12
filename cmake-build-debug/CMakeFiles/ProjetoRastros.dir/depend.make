@@ -15,6 +15,12 @@ CMakeFiles/ProjetoRastros.dir/Funcoes_Ficheiro.c.o: ../Funcoes_Ficheiro.c
 CMakeFiles/ProjetoRastros.dir/Funcoes_Ficheiro.c.o: ../Funcoes_Ficheiro.h
 CMakeFiles/ProjetoRastros.dir/Funcoes_Ficheiro.c.o: ../Logica_Programa.h
 
+CMakeFiles/ProjetoRastros.dir/Listas/listas.c.o: ../Listas/listas.c
+CMakeFiles/ProjetoRastros.dir/Listas/listas.c.o: ../Listas/listas.h
+
+CMakeFiles/ProjetoRastros.dir/Listas/main.c.o: ../Listas/listas.h
+CMakeFiles/ProjetoRastros.dir/Listas/main.c.o: ../Listas/main.c
+
 CMakeFiles/ProjetoRastros.dir/Logica_Programa.c.o: ../Camada_dados.h
 CMakeFiles/ProjetoRastros.dir/Logica_Programa.c.o: ../Logica_Programa.c
 

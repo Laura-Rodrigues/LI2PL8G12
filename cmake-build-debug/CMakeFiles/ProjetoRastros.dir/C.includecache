@@ -6,13 +6,15 @@
 
 #IncludeRegexTransform: 
 
-/home/laura/Desktop/LI2PL8G12/Camada_dados.h
-
-/home/laura/Desktop/LI2PL8G12/Logica_Programa.c
-Camada_dados.h
-/home/laura/Desktop/LI2PL8G12/Camada_dados.h
+/home/laura/Desktop/LI2PL8G12/Listas/listas.c
 stdio.h
 -
 stdlib.h
 -
+string.h
+-
+listas.h
+/home/laura/Desktop/LI2PL8G12/Listas/listas.h
+
+/home/laura/Desktop/LI2PL8G12/Listas/listas.h
 

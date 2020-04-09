@@ -8,9 +8,19 @@
 #include "listas.h"
 
 
-LISTA criar_lista(){}
+LISTA criar_lista(){
+    LISTA lista;
+    lista = malloc (sizeof(Nodo));
+    lista->prox = NULL;
+    return lista;
+}
 
-LISTA insere_cabeca(LISTA L, void *valor){}
+LISTA insere_cabeca(LISTA L, void *valor){
+    LISTA lista = criar_lista();
+    lista->valor = valor;
+    lista->prox = L;
+    return lista;
+}
 
 void *devolve_cabeca(LISTA L){}
 
