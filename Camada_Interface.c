@@ -115,7 +115,7 @@ int interpretador(ESTADO *e) {
     }
     else if (sscanf(linha, "ler %s", nome_ficheiro)) {
         printf("O ficheiro: \n");
-        ler(nome_ficheiro, e);
+        e = ler(nome_ficheiro, e);
         interpretador(e);
     }
     else{

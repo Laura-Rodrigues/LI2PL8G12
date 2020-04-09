@@ -35,9 +35,9 @@ int gr(char nomeficheiro[], ESTADO *e);
 \brief Lê o tabuleiro e atualiza o estado
 @param e Apontador para o estado
 @param nomeficheiro Apontador para o ficheiro
-@returns 1
+@returns o estado alterado
 */
-int ler(char nomeficheiro[], ESTADO *e);
+ESTADO *ler(char nomeficheiro[], ESTADO *e);
 
 /**
 \brief Mostra a lista de movimentos

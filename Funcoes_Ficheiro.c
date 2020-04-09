@@ -70,29 +70,33 @@ int gr( char nomeficheiro[], ESTADO *e){
     return 1;
 }
 
-int ler(char nomeficheiro[], ESTADO *e){
+ESTADO *ler(char nomeficheiro[], ESTADO *e){
     FILE *fp = fopen(nomeficheiro, "r+");
-    char c;
-    for( int i = 0; i < 9; i++){
-        for ( int j = 0; j < 9; j++) {
-            if (i == 8 && j == 0) printf("  ");
-            else {
-                fscanf(fp, "%c ", &c);       //(c = fgetc(fp));
-                printf("%c ", c);
-                if (c == '*') {
-                    COORDENADA c0 = {i, j - 1};
-                    (e->tab[i][j - 1] = BRANCA);
-                    e->ultima_jogada = c0;
-                }
-                if (c == '#') (e->tab[i][j - 1] = PRETA);
-                if (c == '.') (e->tab[i][j - 1] = VAZIO);
+    char s[BUF_SIZE];
+    int jog = 0;
+    int j ,l;
+    char i,k;
+    e = inicializar_estado();
+    faz_primeira_jogada(e);
+    while ((fgets(s, BUF_SIZE, fp)) != NULL){
+        if (sscanf( s, "0%d: %c%d %c%d", &jog, &i,&j, &k, &l)){
+            if ( jog != 0){
+                COORDENADA c0 = {i- 'a', j-1};
+                altera_estado(e, c0);
+                COORDENADA c1 = {k -'a' , l -1};
+                altera_estado(e, c1);
             }
         }
-        printf("\n");
+        else
+            if (sscanf( s, "0%d: %c%d", &jog, &i,&j)) {
+                COORDENADA c0 = {i -'a', j - 1 };
+                if (jog != 0)
+                    altera_estado(e, c0);
+        }
     }
-    printf( " \n");
     mostrar_tabuleiro(e);
-    return 1;
+    movs (e);
+    return e;
 }
 
 
