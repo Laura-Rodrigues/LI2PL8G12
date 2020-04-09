@@ -112,9 +112,14 @@ int interpretador(ESTADO *e) {
         movs(e);
         interpretador(e);
     }
-    else if (sscanf(linha, "gr %s", nome_ficheiro)) {
-        gr(nome_ficheiro, e);
-        printf("Guardado! \n");
+   else if (sscanf(linha, "gr %s", nome_ficheiro)) {
+        if ( strcmp(nome_ficheiro, "v_ant_estado") == 0){
+            printf("Nome inválido. \n");
+        }
+        else {
+            gr(nome_ficheiro, e);
+            printf("Guardado! \n");
+        }
         interpretador(e);
     }
     else if (sscanf(linha, "ler %s", nome_ficheiro)) {
