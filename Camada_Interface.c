@@ -57,7 +57,7 @@ int interpretador(ESTADO *e) {
     char linha[BUF_SIZE];
     char col[2], lin[2];
     char nome_ficheiro[BUF_SIZE];
-    int joga, i;    
+    int joga, i = obter_pos(e);    
     if (obter_numero_de_jogadas(e) == 0 && obter_num_mov(e) == 0) {
         printf("#00 PLAYER2 (0) -> e5 \n");
         faz_primeira_jogada(e);
@@ -85,13 +85,12 @@ int interpretador(ESTADO *e) {
         interpretador(e);
     }
     else if (sscanf(linha, "pos %d", &joga)) {
-        i = obter_pos(e);
         if ( i != 0 ){
             strcpy(nome_ficheiro, "v_ant_estado");
             e = ler (nome_ficheiro, e);
             aumenta_pos(e, i-1);
         }
-        if (joga < 0 || joga > obter_numero_de_jogadas(e) || (joga == obter_numero_de_jogadas(e) && obter_jogador_atual(e) == 1)) {
+        if (joga < 0 || joga >= obter_numero_de_jogadas(e)) {
             printf("Número de jogada inválido.\n");
             interpretador(e);
         }
