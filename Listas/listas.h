@@ -12,22 +12,46 @@ typedef struct listas {
     LISTA prox;
 } Nodo;
 
-// Cria uma lista vazia
+
+/**
+\brief Cria uma lista vazia
+@returns lista
+*/
 LISTA criar_lista();
 
-// Insere um valor na cabeça da lista
+/**
+\brief Insere um valor na cabeça da lista
+@param L Apontador para a lista
+@param valor Apontador para a cabeça da lista
+@returns
+*/
 LISTA insere_cabeca(LISTA L, void *valor);
 
-// Devolve a cabeça da lista
+/**
+\brief Devolve a cabeça da lista
+@param L Apontador para a lista
+*/
 void *devolve_cabeca(LISTA L);
 
-// Devolve a cauda da lista
+/**
+\brief Devolve a cauda da lista
+@param L Apontador para a lista
+@returns
+*/
 LISTA proximo(LISTA L);
 
-// Remove a cabeça da lista (libertando o espaço ocupado) e devolve a cauda
+/**
+\brief Remove a cabeça da lista (libertando o espaço ocupado) e devolve a cauda
+@param L Apontador para a lista
+@returns
+*/
 LISTA remove_cabeca(LISTA L);
 
-// Devolve verdareiro se a lista é vazia
+/**
+\brief Devolve verdareiro se a lista é vazia
+@param L Apontador para a lista
+@returns
+*/
 int lista_esta_vazia(LISTA L);
 
 #endif //PROJETORASTROS_LISTAS_H
