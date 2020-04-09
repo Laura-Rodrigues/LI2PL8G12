@@ -39,7 +39,7 @@ int jogada_valida (ESTADO *estado, COORDENADA c){
 
 // Função que determina se a coordenada se encontra fora do tabuleiro
 int cond_canto (COORDENADA c) {
-    if (c.coluna >7 || c.linha> 7) return 1;
+    if (c.coluna > 7 || c.linha > 7 || c.coluna < 0 || c.linha < 0) return 1;
     else return 0;
 }
 
