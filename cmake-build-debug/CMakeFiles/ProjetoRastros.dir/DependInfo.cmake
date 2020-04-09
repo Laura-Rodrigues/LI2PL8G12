@@ -7,6 +7,8 @@ set(CMAKE_DEPENDS_CHECK_C
   "/home/laura/Desktop/LI2PL8G12/Camada_Interface.c" "/home/laura/Desktop/LI2PL8G12/cmake-build-debug/CMakeFiles/ProjetoRastros.dir/Camada_Interface.c.o"
   "/home/laura/Desktop/LI2PL8G12/Camada_dados.c" "/home/laura/Desktop/LI2PL8G12/cmake-build-debug/CMakeFiles/ProjetoRastros.dir/Camada_dados.c.o"
   "/home/laura/Desktop/LI2PL8G12/Funcoes_Ficheiro.c" "/home/laura/Desktop/LI2PL8G12/cmake-build-debug/CMakeFiles/ProjetoRastros.dir/Funcoes_Ficheiro.c.o"
+  "/home/laura/Desktop/LI2PL8G12/Listas/listas.c" "/home/laura/Desktop/LI2PL8G12/cmake-build-debug/CMakeFiles/ProjetoRastros.dir/Listas/listas.c.o"
+  "/home/laura/Desktop/LI2PL8G12/Listas/main.c" "/home/laura/Desktop/LI2PL8G12/cmake-build-debug/CMakeFiles/ProjetoRastros.dir/Listas/main.c.o"
   "/home/laura/Desktop/LI2PL8G12/Logica_Programa.c" "/home/laura/Desktop/LI2PL8G12/cmake-build-debug/CMakeFiles/ProjetoRastros.dir/Logica_Programa.c.o"
   "/home/laura/Desktop/LI2PL8G12/main.c" "/home/laura/Desktop/LI2PL8G12/cmake-build-debug/CMakeFiles/ProjetoRastros.dir/main.c.o"
   )

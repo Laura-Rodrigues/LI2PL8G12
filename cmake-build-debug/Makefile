@@ -204,6 +204,60 @@ Funcoes_Ficheiro.c.s:
 	$(MAKE) -f CMakeFiles/ProjetoRastros.dir/build.make CMakeFiles/ProjetoRastros.dir/Funcoes_Ficheiro.c.s
 .PHONY : Funcoes_Ficheiro.c.s
 
+Listas/listas.o: Listas/listas.c.o
+
+.PHONY : Listas/listas.o
+
+# target to build an object file
+Listas/listas.c.o:
+	$(MAKE) -f CMakeFiles/ProjetoRastros.dir/build.make CMakeFiles/ProjetoRastros.dir/Listas/listas.c.o
+.PHONY : Listas/listas.c.o
+
+Listas/listas.i: Listas/listas.c.i
+
+.PHONY : Listas/listas.i
+
+# target to preprocess a source file
+Listas/listas.c.i:
+	$(MAKE) -f CMakeFiles/ProjetoRastros.dir/build.make CMakeFiles/ProjetoRastros.dir/Listas/listas.c.i
+.PHONY : Listas/listas.c.i
+
+Listas/listas.s: Listas/listas.c.s
+
+.PHONY : Listas/listas.s
+
+# target to generate assembly for a file
+Listas/listas.c.s:
+	$(MAKE) -f CMakeFiles/ProjetoRastros.dir/build.make CMakeFiles/ProjetoRastros.dir/Listas/listas.c.s
+.PHONY : Listas/listas.c.s
+
+Listas/main.o: Listas/main.c.o
+
+.PHONY : Listas/main.o
+
+# target to build an object file
+Listas/main.c.o:
+	$(MAKE) -f CMakeFiles/ProjetoRastros.dir/build.make CMakeFiles/ProjetoRastros.dir/Listas/main.c.o
+.PHONY : Listas/main.c.o
+
+Listas/main.i: Listas/main.c.i
+
+.PHONY : Listas/main.i
+
+# target to preprocess a source file
+Listas/main.c.i:
+	$(MAKE) -f CMakeFiles/ProjetoRastros.dir/build.make CMakeFiles/ProjetoRastros.dir/Listas/main.c.i
+.PHONY : Listas/main.c.i
+
+Listas/main.s: Listas/main.c.s
+
+.PHONY : Listas/main.s
+
+# target to generate assembly for a file
+Listas/main.c.s:
+	$(MAKE) -f CMakeFiles/ProjetoRastros.dir/build.make CMakeFiles/ProjetoRastros.dir/Listas/main.c.s
+.PHONY : Listas/main.c.s
+
 Logica_Programa.o: Logica_Programa.c.o
 
 .PHONY : Logica_Programa.o
@@ -276,6 +330,12 @@ help:
 	@echo "... Funcoes_Ficheiro.o"
 	@echo "... Funcoes_Ficheiro.i"
 	@echo "... Funcoes_Ficheiro.s"
+	@echo "... Listas/listas.o"
+	@echo "... Listas/listas.i"
+	@echo "... Listas/listas.s"
+	@echo "... Listas/main.o"
+	@echo "... Listas/main.i"
+	@echo "... Listas/main.s"
 	@echo "... Logica_Programa.o"
 	@echo "... Logica_Programa.i"
 	@echo "... Logica_Programa.s"
