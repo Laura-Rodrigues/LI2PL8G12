@@ -117,6 +117,13 @@ COORDENADA obter_jogada (ESTADO *e, int njogada, int jogador);
 int obter_pos (ESTADO *e);
 
 /**
+\brief Altera a variavel da alt_pos e incrementa um
+@param e Apontador para o estado
+@param i Inteiro
+*/
+void aumenta_pos (ESTADO* e, int i);
+
+/**
 \brief Altera detalhes do estado inicial
 @param estado Apontador para o estado
 */
