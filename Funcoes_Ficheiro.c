@@ -81,7 +81,6 @@ ESTADO *ler(char nomeficheiro[], ESTADO *e){
     faz_primeira_jogada(e);
     while ((fgets(s, BUF_SIZE, fp)) != NULL){
         if (sscanf( s, "0%d: %c%d %c%d", &jog, &i,&j, &k, &l)){
-            printf ( "%s  \n \n", s);
             COORDENADA c0 = {i- 'a', j-1};
             COORDENADA c1 = {k -'a' , l -1};
             if ( jog != 0 && jogada_valida(e, c0))
