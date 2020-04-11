@@ -123,7 +123,7 @@ int movs (ESTADO *e) {
 }
 
 ESTADO* pos (ESTADO *e, int dado){
-    int m = obter_num_mov(e),, i = obter_pos(e);
+    int m = obter_num_mov(e), i = obter_pos(e);
     JOGADAS t;
     for (int i = 1;i <= dado; i++) {
         t[i].jogador1 = obter_jogada(e, i, 1);

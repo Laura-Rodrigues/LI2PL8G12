@@ -22,9 +22,17 @@ LISTA insere_cabeca(LISTA L, void *valor){
     return lista;
 }
 
-void *devolve_cabeca(LISTA L){}
 
-LISTA proximo(LISTA L){}
+void *devolve_cabeca(LISTA L){
+    void *c;
+    if(L == NULL) c = NULL;
+    else c = L->valor;
+    return c;
+}
+
+LISTA proximo(LISTA L){
+    return L->prox;
+}
 
 LISTA remove_cabeca(LISTA L){}
 

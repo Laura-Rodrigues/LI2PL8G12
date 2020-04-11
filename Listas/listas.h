@@ -23,7 +23,7 @@ LISTA criar_lista();
 \brief Insere um valor na cabeça da lista
 @param L Apontador para a lista
 @param valor Apontador para a cabeça da lista
-@returns
+@returns lista
 */
 LISTA insere_cabeca(LISTA L, void *valor);
 

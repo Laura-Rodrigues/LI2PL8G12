@@ -125,7 +125,7 @@ int interpretador(ESTADO *e) {
         printf("O ficheiro: \n");
         e = ler(nome_ficheiro, e);
         mostrar_tabuleiro(e);
-        movs(e)
+        movs(e);
         interpretador(e);
     }
     else{
