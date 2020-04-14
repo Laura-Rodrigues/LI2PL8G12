@@ -144,4 +144,22 @@ ESTADO* pos (ESTADO *e, int dado){
     return e;
 }
 
+LISTA listvizinho(ESTADO *e, COORDENADA c){
+    LISTA l = criar_lista();
+    COORDENADA c0 = {c.coluna +1,c.linha +1};
+    COORDENADA c1 = {c.coluna +1,c.linha };
+    COORDENADA c2 = {c.coluna +1,c.linha -1};
+    COORDENADA c3 = {c.coluna ,c.linha +1};
+    COORDENADA c4 = {c.coluna +1,c.linha -1};
+    COORDENADA c5 = {c.coluna -1,c.linha +1};
+    COORDENADA c6 = {c.coluna -1,c.linha};
+    COORDENADA c7 = {c.coluna -1,c.linha -1};
+    COORDENADA ls[8] = {c0,c1,c2,c3,c4,c5,c6,c7};
+    for(int i = 0; i < 8; i++){
+        if(obter_estado_casa(e,ls[i]) == VAZIO)
+            insere_cabeca(l,ls[i]);
+    }
+    return l;
+}
+
 
