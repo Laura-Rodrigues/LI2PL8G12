@@ -57,6 +57,7 @@ ESTADO* pos (ESTADO *e, int dado);
 //Função que guarda numa lista aas casas vizinhas vazias
 LISTA listvizinho(ESTADO *e, COORDENADA c);
 
-
+//Função que calcula a distancia da coordenada à casa objetivo
+int *distcasa(int nj, COORDENADA c);
 
 #endif //PROJETORASTROS_FUNCOES_FICHEIRO_H
