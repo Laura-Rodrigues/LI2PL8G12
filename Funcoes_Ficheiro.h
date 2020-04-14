@@ -54,6 +54,9 @@ int movs ( ESTADO *e);
 */
 ESTADO* pos (ESTADO *e, int dado);
 
+//Função que guarda numa lista aas casas vizinhas vazias
+LISTA listvizinho(ESTADO *e, COORDENADA c);
+
 
 
 #endif //PROJETORASTROS_FUNCOES_FICHEIRO_H
