@@ -1,3 +1,3 @@
 /home/laura/Desktop/LI2PL8G12/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/laura/Desktop/LI2PL8G12/cmake-build-debug/CMakeFiles/ProjetoRastros.dir
 /home/laura/Desktop/LI2PL8G12/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/laura/Desktop/LI2PL8G12/cmake-build-debug/CMakeFiles/ProjetoRastros.dir

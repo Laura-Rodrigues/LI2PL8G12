@@ -22,7 +22,6 @@ LISTA insere_cabeca(LISTA L, void *valor){
     return lista;
 }
 
-
 void *devolve_cabeca(LISTA L){
     void *c;
     if(L == NULL) c = NULL;
@@ -31,9 +30,25 @@ void *devolve_cabeca(LISTA L){
 }
 
 LISTA proximo(LISTA L){
-    return L->prox;
+   LISTA c=L->prox;
+    if(L == NULL) c = NULL;
+    return c;
+  /*   LISTA x;
+    if(L==NULL) x = NULL;
+    else x = L->prox;
+    return x;*/
 }
 
-LISTA remove_cabeca(LISTA L){}
+LISTA remove_cabeca(LISTA L){
+    LISTA cabeca;
+    cabeca = L;
+    L = proximo (L);
+    free (cabeca);
+    return L;
+}
 
-int lista_esta_vazia(LISTA L){}
+int lista_esta_vazia(LISTA L){
+    int x = 0;
+    if (L == NULL) x = 1;
+    return x;
+}
