@@ -162,4 +162,30 @@ LISTA listvizinho(ESTADO *e, COORDENADA c){
     return l;
 }
 
+int *distcasa(int nj, COORDENADA c){
+    int cc = c.coluna, cl = c.linha;
+    int cd = 0, ld = 0;
+    if( nj == 1){
+        while(cl != 0){
+            cd++;
+            cl--;
+        }
+        while(cc != 0){
+            ld++;
+            cc--;
+        }
+    } else {
+        while(cl != 7){
+            cd++;
+            cl++;
+        }
+        while(cc != 7){
+            ld++;
+            cc++;
+        }
+    }
+    int arr[2] = {cc,cl};
+    return arr;
+}
+
 
