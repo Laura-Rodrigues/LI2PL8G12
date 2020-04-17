@@ -79,6 +79,13 @@ int obter_jogador_atual(ESTADO *estado);
 int obter_numero_de_jogadas(ESTADO *estado);
 
 /**
+\brief Função que troca a coluna pela linha e vice-versa
+@param c A coordenada
+@returns A nova coordenada
+*/
+COORDENADA troca_ordem (COORDENADA c);
+
+/**
 \brief Devolve o estado de uma casa
 @param e Apontador para o estado
 @param c A coordenada
