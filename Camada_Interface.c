@@ -111,7 +111,12 @@ int interpretador(ESTADO *e) {
         movs(e);
         interpretador(e);
     }
-   else if (sscanf(linha, "gr %s", nome_ficheiro)) {
+    else if (strcmp(linha, "jog\n") == 0) {
+        c = jog(e);
+        jogar(e, c);
+        mostrar_tabuleiro(e);
+    }
+    else if (sscanf(linha, "gr %s", nome_ficheiro)) {
         if ( strcmp(nome_ficheiro, "v_ant_estado") == 0){
             printf("Nome inválido. \n");
         }
