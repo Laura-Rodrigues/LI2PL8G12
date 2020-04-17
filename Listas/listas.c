@@ -6,6 +6,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include "listas.h"
+#include "../Camada_dados.h"
 
 
 LISTA criar_lista(){
@@ -15,7 +16,7 @@ LISTA criar_lista(){
     return lista;
 }
 
-LISTA insere_cabeca(LISTA L, void *valor){
+LISTA insere_cabeca(LISTA L, COORDENADA *valor){
     LISTA lista = criar_lista();
     lista->valor = valor;
     lista->prox = L;
@@ -23,7 +24,7 @@ LISTA insere_cabeca(LISTA L, void *valor){
 }
 
 void *devolve_cabeca(LISTA L){
-    void *c;
+    COORDENADA *c;
     if(L == NULL) c = NULL;
     else c = L->valor;
     return c;

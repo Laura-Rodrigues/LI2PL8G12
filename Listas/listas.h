@@ -5,10 +5,12 @@
 #ifndef PROJETORASTROS_LISTAS_H
 #define PROJETORASTROS_LISTAS_H
 
+#include "../Camada_dados.h"
+
 typedef struct listas *LISTA;
 
 typedef struct listas {
-    void *valor;
+    COORDENADA *valor;
     LISTA prox;
 } Nodo;
 
@@ -25,7 +27,7 @@ LISTA criar_lista();
 @param valor Apontador para a cabeça da lista
 @returns lista
 */
-LISTA insere_cabeca(LISTA L, void *valor);
+LISTA insere_cabeca(LISTA L, COORDENADA *valor);
 
 /**
 \brief Devolve a cabeça da lista
