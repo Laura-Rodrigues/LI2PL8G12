@@ -5,7 +5,9 @@
 #include "Funcoes_Ficheiro.h"
 #include "Camada_Interface.h"
 #include "Camada_dados.h"
+#include "Listas/listas.h"
 #include <stdio.h>
+#include <stdlib.h>
 
 void fptabuleiro(FILE *Projeto_Rastros, ESTADO *e){
     for (int i = 0; i < 8; i++) {
@@ -144,48 +146,65 @@ ESTADO* pos (ESTADO *e, int dado){
     return e;
 }
 
-LISTA listvizinho(ESTADO *e, COORDENADA c){
-    LISTA l = criar_lista();
+COORDENADA coordvizinho(ESTADO *e, int i){
+    COORDENADA c = obter_ultima_jogada(e);
     COORDENADA c0 = {c.coluna +1,c.linha +1};
     COORDENADA c1 = {c.coluna +1,c.linha };
     COORDENADA c2 = {c.coluna +1,c.linha -1};
     COORDENADA c3 = {c.coluna ,c.linha +1};
-    COORDENADA c4 = {c.coluna +1,c.linha -1};
+    COORDENADA c4 = {c.coluna ,c.linha -1};
     COORDENADA c5 = {c.coluna -1,c.linha +1};
     COORDENADA c6 = {c.coluna -1,c.linha};
     COORDENADA c7 = {c.coluna -1,c.linha -1};
     COORDENADA ls[8] = {c0,c1,c2,c3,c4,c5,c6,c7};
-    for(int i = 0; i < 8; i++){
-        if(obter_estado_casa(e,ls[i]) == VAZIO)
-            insere_cabeca(l,ls[i]);
-    }
-    return l;
+    return ls[i];
 }
 
-int *distcasa(int nj, COORDENADA c){
-    int cc = c.coluna, cl = c.linha;
+int det_dist(COORDENADA c, int nj){
+    int cc = c.coluna, cl = c.linha, total;
     int cd = 0, ld = 0;
     if( nj == 1){
-        while(cl != 0){
-            cd++;
-            cl--;
-        }
-        while(cc != 0){
-            ld++;
-            cc--;
-        }
+        total = cc+cl;
     } else {
-        while(cl != 7){
-            cd++;
-            cl++;
-        }
-        while(cc != 7){
-            ld++;
-            cc++;
+        total = abs(cc-7) + abs(cl-7);
+    }
+    return total;
+}
+
+COORDENADA jog ( ESTADO *e ){
+    COORDENADA ls[8];
+    LISTA L = criar_lista();
+    int i, k = 0, j, h = 0, max = 32, dist;
+    void *lis, *t;
+    for(i = 0; i < 8; i++) {
+        ls[i] = coordvizinho(e, i);
+        if(obter_estado_casa(e,troca_ordem(ls[i])) == VAZIO)
+            k++;
+    }
+    COORDENADA f[k];
+    for ( i = 0; h < k && i < 8 ; i++){
+        if(obter_estado_casa(e,troca_ordem(ls[i])) == VAZIO){
+            f[h] = ls[i];
+            h++;
         }
     }
-    int arr[2] = {cc,cl};
-    return arr;
+    j = obter_jogador_atual(e);
+    for ( i = 0; i < k ; i++){
+        dist = det_dist(f[i], j);
+        if ( dist < max){
+            max = dist;
+            t = &f[i];
+        }
+        else {
+            lis = &f[i];
+            L = insere_cabeca(L, lis);
+        }
+        L = insere_cabeca(L, t);
+    }
+    COORDENADA *c = (COORDENADA *) devolve_cabeca(L);
+    printf("A jogada recomendada é: %c%d. \n", c->coluna+'a', c->linha+1);
+    return *c;
 }
+
 
 
