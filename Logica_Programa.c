@@ -22,12 +22,6 @@ int vizinha(ESTADO *e, COORDENADA c){
     return r;
 }
 
-//Função que troca a coluna pela linha e vice-versa
-COORDENADA troca_ordem (COORDENADA c){
-    COORDENADA final = {7-c.linha, c.coluna};
-    return final;
-}
-
 //Testa se a Jogada é válida
 int jogada_valida (ESTADO *estado, COORDENADA c){
     COORDENADA final = troca_ordem (c);
