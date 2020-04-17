@@ -34,10 +34,6 @@ LISTA proximo(LISTA L){
    LISTA c=L->prox;
     if(L == NULL) c = NULL;
     return c;
-  /*   LISTA x;
-    if(L==NULL) x = NULL;
-    else x = L->prox;
-    return x;*/
 }
 
 LISTA remove_cabeca(LISTA L){
