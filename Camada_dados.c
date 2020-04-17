@@ -43,6 +43,12 @@ int obter_numero_de_jogadas(ESTADO *estado){
     return (estado->num_jogadas);
 }
 
+//Função que troca a coluna pela linha e vice-versa
+COORDENADA troca_ordem (COORDENADA c){
+    COORDENADA final = {7-c.linha, c.coluna};
+    return final;
+}
+
 //Esta função permite obter o estado atual da casa. Nota: esta função recebe as coordenadas no format "linha,coluna"
 CASA obter_estado_casa(ESTADO *e, COORDENADA c){
     int i = c.coluna;
