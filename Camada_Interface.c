@@ -58,6 +58,7 @@ int interpretador(ESTADO *e) {
     char col[2], lin[2];
     char nome_ficheiro[BUF_SIZE];
     int joga, i = obter_pos(e);    
+    COORDENADA c;
     if (obter_numero_de_jogadas(e) == 0 && obter_num_mov(e) == 0) {
         printf("#00 PLAYER2 (0) -> e5 \n");
         faz_primeira_jogada(e);
