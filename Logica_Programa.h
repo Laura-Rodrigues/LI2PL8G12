@@ -20,12 +20,6 @@ Definição da função jogar e funções associadas a essa
 */
 int vizinha(ESTADO *e, COORDENADA c);
 
-/**
-\brief Função que troca a coluna pela linha e vice-versa
-@param c A coordenada
-@returns A nova coordenada
-*/
-COORDENADA troca_ordem (COORDENADA c);
 
 /**
 \brief Testa se a Jogada é válida
