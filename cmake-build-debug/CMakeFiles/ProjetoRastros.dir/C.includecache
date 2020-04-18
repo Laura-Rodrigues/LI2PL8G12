@@ -6,15 +6,27 @@
 
 #IncludeRegexTransform: 
 
-/home/laura/Desktop/LI2PL8G12/Listas/listas.c
+/home/laura/Desktop/LI2PL8G12/Camada_Interface.c
 stdio.h
--
-stdlib.h
 -
 string.h
 -
-listas.h
-/home/laura/Desktop/LI2PL8G12/Listas/listas.h
+Logica_Programa.h
+/home/laura/Desktop/LI2PL8G12/Logica_Programa.h
+Camada_dados.h
+/home/laura/Desktop/LI2PL8G12/Camada_dados.h
+Funcoes_Ficheiro.h
+/home/laura/Desktop/LI2PL8G12/Funcoes_Ficheiro.h
 
-/home/laura/Desktop/LI2PL8G12/Listas/listas.h
+/home/laura/Desktop/LI2PL8G12/Camada_dados.h
+
+/home/laura/Desktop/LI2PL8G12/Funcoes_Ficheiro.h
+stdio.h
+-
+Camada_dados.h
+/home/laura/Desktop/LI2PL8G12/Camada_dados.h
+
+/home/laura/Desktop/LI2PL8G12/Logica_Programa.h
+Camada_dados.h
+/home/laura/Desktop/LI2PL8G12/Camada_dados.h
 

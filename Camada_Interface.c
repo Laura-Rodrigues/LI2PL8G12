@@ -116,6 +116,7 @@ int interpretador(ESTADO *e) {
         c = jog(e);
         jogar(e, c);
         mostrar_tabuleiro(e);
+        interpretador(e);
     }
     else if (sscanf(linha, "gr %s", nome_ficheiro)) {
         if ( strcmp(nome_ficheiro, "v_ant_estado") == 0){
