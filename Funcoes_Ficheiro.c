@@ -5,6 +5,7 @@
 #include "Funcoes_Ficheiro.h"
 #include "Camada_Interface.h"
 #include "Camada_dados.h"
+#include "Logica_Programa.h"
 #include "Listas/listas.h"
 #include <stdio.h>
 #include <stdlib.h>
@@ -178,12 +179,12 @@ COORDENADA jog ( ESTADO *e ){
     void *lis, *t;
     for(i = 0; i < 8; i++) {
         ls[i] = coordvizinho(e, i);
-        if(obter_estado_casa(e,troca_ordem(ls[i])) == VAZIO)
+        if(obter_estado_casa(e,troca_ordem(ls[i])) == VAZIO && !(cond_canto(ls[i])))
             k++;
     }
     COORDENADA f[k];
     for ( i = 0; h < k && i < 8 ; i++){
-        if(obter_estado_casa(e,troca_ordem(ls[i])) == VAZIO){
+        if(obter_estado_casa(e,troca_ordem(ls[i])) == VAZIO && !(cond_canto(ls[i]))){
             f[h] = ls[i];
             h++;
         }
