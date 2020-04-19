@@ -33,29 +33,23 @@ void fptabuleiro(FILE *Projeto_Rastros, ESTADO *e){
 int movsficheiro (ESTADO *e, FILE *nome) {
     char c1, c2;
     int i, l1, l2;
-    int jogada = obter_numero_de_jogadas(e);
-    int mov = obter_num_mov(e);
-    for ( i = 0; i <= jogada && mov > 0; i++) {
-        if ( i == 0) {
-            fprintf(nome,"00: e5 \n");
-            mov--;
-        }
-        else {
-            COORDENADA jog1 = obter_jogada(e, i, 1);
-            c1 = jog1.coluna + 'a';
-            l1 = jog1.linha + 1;
-            COORDENADA jog2 = obter_jogada(e, i, 2);
-            c2 = jog2.coluna + 'a';
-            l2 = jog2.linha + 1;
-            if (mov < 2 && mov %2 != 0){
+    int jogada = obter_numero_de_jogadas(e), jogador = obter_jogador_atual(e);
+    if ( jogador == 1) jogada--;
+    for ( i = 1; i <= jogada ; i++) {
+        COORDENADA jog1 = obter_jogada(e, i, 1);
+        c1 = jog1.coluna + 'a';
+        l1 = jog1.linha + 1;
+        COORDENADA jog2 = obter_jogada(e, i, 2);
+        c2 = jog2.coluna + 'a';
+        l2 = jog2.linha + 1;
+        if (i < jogada) {
+            fprintf(nome,"%02d: %c%d %c%d \n", i, c1, l1, c2, l2);
+        } else {
+            if ( jogador == 2)
                 fprintf(nome,"%02d: %c%d \n", i, c1, l1);
-            }
-            else{
+            else
                 fprintf(nome,"%02d: %c%d %c%d \n", i, c1, l1, c2, l2);
-                mov -= 2;
-            }
         }
-
     }
     return 0;
 }
@@ -99,27 +93,22 @@ ESTADO *ler(char nomeficheiro[], ESTADO *e){
 int movs (ESTADO *e) {
     char c1, c2;
     int i, l1, l2;
-    int jogada = obter_numero_de_jogadas(e);
-    int mov = obter_num_mov(e);
-    for ( i = 0; i <= jogada && mov > 0; i++) {
-        if ( i == 0) {
-            printf("00: e5 \n");
-            mov--;
-        }
-        else {
-            COORDENADA jog1 = obter_jogada(e, i, 1);
-            c1 = jog1.coluna + 'a';
-            l1 = jog1.linha + 1;
-            COORDENADA jog2 = obter_jogada(e, i, 2);
-            c2 = jog2.coluna + 'a';
-            l2 = jog2.linha + 1;
-            if ( mov < 2 && mov % 2 != 0)
+    int jogada = obter_numero_de_jogadas(e), jogador = obter_jogador_atual(e);
+    if ( jogador == 1) jogada--;
+    for ( i = 1; i <= jogada ; i++) {
+        COORDENADA jog1 = obter_jogada(e, i, 1);
+        c1 = jog1.coluna + 'a';
+        l1 = jog1.linha + 1;
+        COORDENADA jog2 = obter_jogada(e, i, 2);
+        c2 = jog2.coluna + 'a';
+        l2 = jog2.linha + 1;
+        if (i < jogada) {
+            printf("%02d: %c%d %c%d \n", i, c1, l1, c2, l2);
+        } else {
+            if ( jogador == 2)
                 printf("%02d: %c%d \n", i , c1, l1);
             else
-                {
                 printf("%02d: %c%d %c%d \n", i, c1, l1, c2, l2);
-                mov -= 2;
-            }
         }
     }
     return 0;
