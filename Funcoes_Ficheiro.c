@@ -163,7 +163,6 @@ COORDENADA coordvizinho(ESTADO *e, int i){
 
 int det_dist(COORDENADA c, int nj){
     int cc = c.coluna, cl = c.linha, total;
-    int cd = 0, ld = 0;
     if( nj == 1){
         total = cc+cl;
     } else {
