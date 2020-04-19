@@ -93,20 +93,19 @@ int interpretador(ESTADO *e) {
         }
         if (joga < 0 || joga >= obter_numero_de_jogadas(e)) {
             printf("Número de jogada inválido.\n");
-            interpretador(e);
         }
         else {
             if (obter_pos(e) == 0){
                 strcpy(nome_ficheiro, "v_ant_estado");
                 gr (nome_ficheiro, e);
                 e = pos(e, joga);
-                interpretador(e);
             }
-            else {
+            else
                 e = pos(e, joga);
-                interpretador(e);
-            }
         }
+    mostrar_tabuleiro(e);
+    movs(e);
+    interpretador(e);
     }
     else if (strcmp(linha, "movs\n") == 0) {
         movs(e);
