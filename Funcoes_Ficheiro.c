@@ -130,8 +130,6 @@ ESTADO* pos (ESTADO *e, int dado){
         altera_estado(e,c2);
     }
     aumenta_pos(e, i);
-    mostrar_tabuleiro(e);
-    movs(e);
     e -> num_movimentos = m+obter_pos(e);
     return e;
 }
