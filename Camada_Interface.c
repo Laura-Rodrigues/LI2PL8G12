@@ -112,11 +112,20 @@ int interpretador(ESTADO *e) {
         movs(e);
         interpretador(e);
     }
-    else if (strcmp(linha, "jog\n") == 0) {
+     else if (strcmp(linha, "jog\n") == 0) {
         c = jog(e);
-        jogar(e, c);
+        int resultado = jogar(e, c);
+        if (resultado == 3) {
+            printf("Jogada inválida! \n");
+        }
+        else if (resultado != 0) {
+            mostrar_tabuleiro(e);
+            Resposta(resultado);
+            return 0;
+        }
         mostrar_tabuleiro(e);
         interpretador(e);
+        
     }
     else if (sscanf(linha, "gr %s", nome_ficheiro)) {
         if ( strcmp(nome_ficheiro, "v_ant_estado") == 0){
