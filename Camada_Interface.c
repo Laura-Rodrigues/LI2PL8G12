@@ -52,12 +52,10 @@ int Resposta (int resultado){
     return 0;
 }
 
-
 int interpretador(ESTADO *e) {
     char linha[BUF_SIZE];
-    char col[2], lin[2];
-    char nome_ficheiro[BUF_SIZE];
-    int joga, i = obter_pos(e);    
+    char col[2], lin[2],  nome_ficheiro[BUF_SIZE];
+    int joga, i = obter_pos(e);
     COORDENADA c;
     if (obter_numero_de_jogadas(e) == 0 && obter_num_mov(e) == 0) {
         printf("#00 PLAYER2 (0) -> e5 \n");
@@ -70,7 +68,9 @@ int interpretador(ESTADO *e) {
     prompt(e);
     if (fgets(linha, BUF_SIZE, stdin) == NULL)
         return 0;
+
     if (strcmp(linha, "Q\n") == 0) return 0;
+
     if (strlen(linha) == 3 && sscanf(linha, "%[a-h]%[1-8]", col, lin) == 2) {
         COORDENADA coord = {*col - 'a', *lin - '1'};
         int resultado = jogar(e, coord);
@@ -83,8 +83,8 @@ int interpretador(ESTADO *e) {
             return 0;
         }
         mostrar_tabuleiro(e);
-        interpretador(e);
     }
+
     else if (sscanf(linha, "pos %d", &joga)) {
         if ( i != 0 ){
             strcpy(nome_ficheiro, "v_ant_estado");
@@ -98,20 +98,18 @@ int interpretador(ESTADO *e) {
             if (obter_pos(e) == 0){
                 strcpy(nome_ficheiro, "v_ant_estado");
                 gr (nome_ficheiro, e);
-                e = pos(e, joga);
             }
-            else
-                e = pos(e, joga);
+            e = pos(e, joga);
         }
-    mostrar_tabuleiro(e);
-    movs(e);
-    interpretador(e);
+        mostrar_tabuleiro(e);
+        movs(e);
     }
+
     else if (strcmp(linha, "movs\n") == 0) {
         movs(e);
-        interpretador(e);
     }
-     else if (strcmp(linha, "jog\n") == 0) {
+
+    else if (strcmp(linha, "jog\n") == 0) {
         c = jog(e);
         int resultado = jogar(e, c);
         if (resultado == 3) {
@@ -123,9 +121,8 @@ int interpretador(ESTADO *e) {
             return 0;
         }
         mostrar_tabuleiro(e);
-        interpretador(e);
-        
     }
+
     else if (sscanf(linha, "gr %s", nome_ficheiro)) {
         if ( strcmp(nome_ficheiro, "v_ant_estado") == 0){
             printf("Nome inválido. \n");
@@ -134,18 +131,19 @@ int interpretador(ESTADO *e) {
             gr(nome_ficheiro, e);
             printf("Guardado! \n");
         }
-        interpretador(e);
     }
+
     else if (sscanf(linha, "ler %s", nome_ficheiro)) {
-        printf("O ficheiro: \n");
         e = ler(nome_ficheiro, e);
         mostrar_tabuleiro(e);
         movs(e);
-        interpretador(e);
     }
+
     else{
         printf("Comando inválido! Tente outra vez!\n");
-        interpretador(e);
     }
+
+    interpretador(e);
     return 1;
 }
+
