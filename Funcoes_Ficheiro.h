@@ -60,4 +60,21 @@ int det_dist(COORDENADA c, int nj);
 
 COORDENADA jog ( ESTADO *e);
 
+//vizinhas livres numa lista
+LISTA listvizinho(ESTADO *e, COORDENADA c):
+
+//distancia as casas objetico
+int *distcasa(int nj, COORDENADA c);
+
+//Vê qual e a vizinha com mais casa pretas em volta;
+int max(int *l);
+
+//Escolhe a casa para mover
+COORDENADA len_Viz(COORDENADA c, ESTADO *e);
+
+//novaheuristica
+ESTADO floodfill (ESTADO *e, LISTA li);
+
+ESTADO jog2 (ESTADO *e);
+
 #endif //PROJETORASTROS_FUNCOES_FICHEIRO_H
