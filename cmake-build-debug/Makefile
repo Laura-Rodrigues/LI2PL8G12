@@ -123,6 +123,60 @@ ProjetoRastros/fast:
 	$(MAKE) -f CMakeFiles/ProjetoRastros.dir/build.make CMakeFiles/ProjetoRastros.dir/build
 .PHONY : ProjetoRastros/fast
 
+Bot/Bot.o: Bot/Bot.c.o
+
+.PHONY : Bot/Bot.o
+
+# target to build an object file
+Bot/Bot.c.o:
+	$(MAKE) -f CMakeFiles/ProjetoRastros.dir/build.make CMakeFiles/ProjetoRastros.dir/Bot/Bot.c.o
+.PHONY : Bot/Bot.c.o
+
+Bot/Bot.i: Bot/Bot.c.i
+
+.PHONY : Bot/Bot.i
+
+# target to preprocess a source file
+Bot/Bot.c.i:
+	$(MAKE) -f CMakeFiles/ProjetoRastros.dir/build.make CMakeFiles/ProjetoRastros.dir/Bot/Bot.c.i
+.PHONY : Bot/Bot.c.i
+
+Bot/Bot.s: Bot/Bot.c.s
+
+.PHONY : Bot/Bot.s
+
+# target to generate assembly for a file
+Bot/Bot.c.s:
+	$(MAKE) -f CMakeFiles/ProjetoRastros.dir/build.make CMakeFiles/ProjetoRastros.dir/Bot/Bot.c.s
+.PHONY : Bot/Bot.c.s
+
+Bot/main.o: Bot/main.c.o
+
+.PHONY : Bot/main.o
+
+# target to build an object file
+Bot/main.c.o:
+	$(MAKE) -f CMakeFiles/ProjetoRastros.dir/build.make CMakeFiles/ProjetoRastros.dir/Bot/main.c.o
+.PHONY : Bot/main.c.o
+
+Bot/main.i: Bot/main.c.i
+
+.PHONY : Bot/main.i
+
+# target to preprocess a source file
+Bot/main.c.i:
+	$(MAKE) -f CMakeFiles/ProjetoRastros.dir/build.make CMakeFiles/ProjetoRastros.dir/Bot/main.c.i
+.PHONY : Bot/main.c.i
+
+Bot/main.s: Bot/main.c.s
+
+.PHONY : Bot/main.s
+
+# target to generate assembly for a file
+Bot/main.c.s:
+	$(MAKE) -f CMakeFiles/ProjetoRastros.dir/build.make CMakeFiles/ProjetoRastros.dir/Bot/main.c.s
+.PHONY : Bot/main.c.s
+
 Camada_Interface.o: Camada_Interface.c.o
 
 .PHONY : Camada_Interface.o
@@ -321,6 +375,12 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... ProjetoRastros"
+	@echo "... Bot/Bot.o"
+	@echo "... Bot/Bot.i"
+	@echo "... Bot/Bot.s"
+	@echo "... Bot/main.o"
+	@echo "... Bot/main.i"
+	@echo "... Bot/main.s"
 	@echo "... Camada_Interface.o"
 	@echo "... Camada_Interface.i"
 	@echo "... Camada_Interface.s"

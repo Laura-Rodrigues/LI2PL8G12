@@ -9,7 +9,7 @@
 #include "listas.h"
 #define BUF_SIZE 1024
 
-int main() {
+int main1() {
     LISTA L = criar_lista(); // Criar uma lista vazia
     char linha[BUF_SIZE];
 
