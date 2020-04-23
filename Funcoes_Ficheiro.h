@@ -51,14 +51,30 @@ int movs ( ESTADO *e);
 \brief Permitir ao utilizador aceder a uma jogada anterior
 @param e Apontador para o estado
 @param dado Apontador para a jogada pretendida
-@returns estado
+@returns Apontador do estado
 */
 ESTADO* pos (ESTADO *e, int dado);
 
-COORDENADA coordvizinho(ESTADO *e, int i);
+/**
+\brief Coloca num array as coordenadas vizinhas à ultima jogada
+@param e Apontador para o estado
+@param ls Array de coordenadas
+*/
+void coordvizinho(ESTADO *e, COORDENADA ls[]);
 
+/**
+\brief Permitir calcular a distância de uma coordenada à casa final
+@param c Coordenada 
+@param nj Numero do jogador atual
+@returns int
+*/
 int det_dist(COORDENADA c, int nj);
 
+/**
+\brief Determina a melhor jogada tendo em consideração a distância à casa objetivo
+@param e Apontador para o estado
+@returns coordenada
+*/
 COORDENADA jog ( ESTADO *e);
 
 //vizinhas livres numa lista
