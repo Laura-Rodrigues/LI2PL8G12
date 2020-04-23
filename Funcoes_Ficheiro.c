@@ -193,5 +193,124 @@ COORDENADA jog ( ESTADO *e ){
     return *c;
 }
 
+LISTA listvizinho(ESTADO *e, COORDENADA c){
+    LISTA l = criar_lista();
+    COORDENADA c0 = {c.coluna +1,c.linha +1};
+    COORDENADA c1 = {c.coluna +1,c.linha };
+    COORDENADA c2 = {c.coluna +1,c.linha -1};
+    COORDENADA c3 = {c.coluna ,c.linha +1};
+    COORDENADA c4 = {c.coluna ,c.linha -1};
+    COORDENADA c5 = {c.coluna -1,c.linha +1};
+    COORDENADA c6 = {c.coluna -1,c.linha};
+    COORDENADA c7 = {c.coluna -1,c.linha -1};
+    COORDENADA ls[8] = {c0,c1,c2,c3,c4,c5,c6,c7};
+    for(int i = 0; i < 8; i++){
+        if(obter_estado_casa(e,ls[i]) == VAZIO)
+            insere_cabeca(l,&ls[i]);
+    }
+    return l;
+}
+
+
+int *distcasa(int nj, COORDENADA c){
+    int cc = c.coluna, cl = c.linha;
+    int cd = 0, ld = 0;
+    if( nj == 1){
+        while(cl != 0){
+            cd++;
+            cl--;
+        }
+        while(cc != 0){
+            ld++;
+            cc--;
+        }
+    } else {
+        while(cl != 7){
+            cd++;
+            cl++;
+        }
+        while(cc != 7){
+            ld++;
+            cc++;
+        }
+    }
+    int arr[2] = {cd,ld};
+    return arr;
+}
+
+int max(int *l){
+    int i = 0;
+    int ans = 0;
+    while(*l != '\0'){
+        if(l[i] < l[i+1]){
+            ans = i+1;
+            i++;
+        } else {
+            ans = i;
+            i++;
+        }
+    }
+    return ans;
+}
+
+COORDENADA len_Viz(COORDENADA c, ESTADO *e){
+    int *d;
+    COORDENADA c0 = {c.coluna +1,c.linha +1};
+    COORDENADA c1 = {c.coluna +1,c.linha };
+    COORDENADA c2 = {c.coluna +1,c.linha -1};
+    COORDENADA c3 = {c.coluna ,c.linha +1};
+    COORDENADA c4 = {c.coluna ,c.linha -1};
+    COORDENADA c5 = {c.coluna -1,c.linha +1};
+    COORDENADA c6 = {c.coluna -1,c.linha};
+    COORDENADA c7 = {c.coluna -1,c.linha -1};
+    COORDENADA ls[8] = {c0,c1,c2,c3,c4,c5,c6,c7};
+    for(int i = 0; i<8 ; i++){
+        COORDENADA cf = ls[i];
+        d[i]=len_Lista(listvizinho(e,cf));
+    }
+    return ls[max(d)];
+}
+
+ESTADO floodfill (ESTADO *e, LISTA li) {
+    COORDENADA c = obter_ultima_jogada(e);
+    int nj = obter_jogador_atual(e);
+    int *d = distcasa(nj, c);
+    int cd = d[0], ld = d[1];
+    if (nj == 1) {
+        COORDENADA c1 = {c.coluna, c.linha - 1};
+        COORDENADA c2 = {c.coluna - 1, c.linha};
+        COORDENADA c3 = {c.coluna - 1, c.linha - 1};
+        if ((cd == ld) && dent_Lista(li, &c3)) {
+            altera_estado(e, c3);
+        } else if (cd < ld && dent_Lista(li, &c1)) {
+            altera_estado(e, c1);
+        } else if (cd > ld && dent_Lista(li, &c2)) {
+            altera_estado(e, c1);
+        } else {
+            altera_estado(e, len_Viz(c, e));
+        }
+    } else {
+        COORDENADA c4 = {c.coluna, c.linha + 1};
+        COORDENADA c5 = {c.coluna + 1, c.linha};
+        COORDENADA c6 = {c.coluna + 1, c.linha + 1};
+        if ((cd == ld) && dent_Lista(li, &c6)) {
+            altera_estado(e, c6);
+        } else if (cd < ld && dent_Lista(li, &c4)) {
+            altera_estado(e, c4);
+        } else if (cd > ld && dent_Lista(li, &c5)) {
+            altera_estado(e, c5);
+        } else {
+            altera_estado(e, len_Viz(c, e));
+        }
+    }
+    return *e;
+}
+
+ESTADO jog2 (ESTADO *e) {
+    COORDENADA c = obter_ultima_jogada(e);
+    LISTA li = listvizinho(e, c);
+    floodfill(e,li);
+    return *e;
+}
 
 
