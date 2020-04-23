@@ -7,6 +7,7 @@
 
 #include <stdio.h>
 #include "Camada_dados.h"
+#include "Listas/listas.h"
 
 /**
 \brief Permite imprimir o tabuleiro no ficheiro
@@ -61,7 +62,7 @@ int det_dist(COORDENADA c, int nj);
 COORDENADA jog ( ESTADO *e);
 
 //vizinhas livres numa lista
-LISTA listvizinho(ESTADO *e, COORDENADA c):
+LISTA listvizinho(ESTADO *e, COORDENADA c);
 
 //distancia as casas objetico
 int *distcasa(int nj, COORDENADA c);
