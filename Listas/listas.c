@@ -48,3 +48,15 @@ int lista_esta_vazia(LISTA L){
     if (L == NULL) x = 1;
     return x;
 }
+
+int len_Lista(LISTA l){
+    if(lista_esta_vazia(l)) return 0;
+    else return 1 + len_Lista(proximo(l));
+}
+
+int dent_Lista (LISTA L, void *x){
+    if (!lista_esta_vazia(L)){
+        if( x == L->valor) return 1;
+        else dent_Lista(proximo(L),x);
+    } else return 0;
+}
