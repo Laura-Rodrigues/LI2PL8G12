@@ -77,5 +77,21 @@ int det_dist(COORDENADA c, int nj);
 */
 COORDENADA jog ( ESTADO *e);
 
+// Coloca numa Lista as casas vizinhas vaziaz
+LISTA listvizinho(ESTADO *e, COORDENADA c);
+
+//Coloca numa lista as casas com numero para de casas vizinhas vazias
+LISTA len_Viz(LISTA l, ESTADO *e);
+
+//Compara qual Casa tem menor numero de casas livres
+COORDENADA min(LISTA l, ESTADO *e);
+
+//Devolve a nova Coordenada
+COORDENADA heu_par(LISTA l, ESTADO *e);
+
+//Nova jog com heuristica paridade
+COORDENADA jog2(ESTADO *e);
+
+
 
 #endif //PROJETORASTROS_FUNCOES_FICHEIRO_H
