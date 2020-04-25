@@ -139,20 +139,50 @@ ESTADO* pos (ESTADO *e, int dado){
     return e;
 }
 
-void coordvizinho(ESTADO *e, COORDENADA ls[]) {
-    COORDENADA c = obter_ultima_jogada(e), c0;
-    int i, j, ind = 0;
-    for (i = -1; i <= 1; i++)
-        for (j = -1; j <= 1; j++) {
-            if (i == 0 && j == 0);
-            else {
-                c0.coluna = c.coluna + i;
-                c0.linha = c.linha + j;
-                ls[ind] = c0;
-                ind++;
+int vitoria (ESTADO *e, COORDENADA C){
+    int r = 0, j = obter_jogador_atual(e);
+    if (j == 1 && C.coluna == 0 && C.coluna == 0) r = 1;
+    else if ( j == 2 && C.coluna == 7 && C.linha == 7) r = 1;
+    else if ( vizivalide(e, C) >= 7){
+        r = 1;
+    }
+    return r;
+}
+
+int derrota (ESTADO *e, COORDENADA c){
+    int r = 0, j = obter_jogador_atual(e);
+    if (j == 2 && c.coluna == 0 && c.linha == 0) r = 1;
+    else if ( j == 1 && c.coluna == 7 && c.linha == 7) r = 1;
+    return r;
+}
+
+
+LISTA remove_opcoes (ESTADO *e, LISTA l){
+    LISTA T  = l, FINAL = criar_lista();
+    int i, falha = 0;
+    COORDENADA *c, f, ls[8] ;
+    while (!lista_esta_vazia(proximo(T))){
+        c = (COORDENADA *) devolve_cabeca(T);
+        f = *c;
+        coordvizinho(e,ls, f);
+        for ( i = 0; i < 8; i++) {
+            if (possivel(e, ls[i]) && !(cond_canto(ls[i]))) {
+                if (vitoria ( e, ls[i]))
+                    falha = 1;
             }
         }
+        if ( falha == 1){
+            printf("Removendo: %c%d \n", (c->coluna)+'a', c->linha+1);
+            falha = 0;
+        }
+        else{
+            FINAL = insere_cabeca(FINAL, c);
+        }
+        T = remove_cabeca(T);
+    }
+    return FINAL;
 }
+
 
 int det_dist(COORDENADA c, int nj){
     int cc = c.coluna, cl = c.linha, total;
@@ -164,27 +194,53 @@ int det_dist(COORDENADA c, int nj){
     return total;
 }
 
-COORDENADA jog ( ESTADO *e ){
-    COORDENADA ls[8], *c, t;
-    coordvizinho(e, ls);
-    LISTA L = criar_lista();
-    int i, j = obter_jogador_atual(e), max = 32, dist;
-    for ( i = 0; i < 8 ; i++) {
-        if (jogada_valida(e, ls[i]) && !(cond_canto(ls[i]))) {
-            dist = det_dist(ls[i], j);
-            if (dist < max) {
-                max = dist;
-                t = ls[i];
-            } else
-                L = insere_cabeca(L, ls + i);
+COORDENADA dist_euclidiana ( LISTA L , int jog) {
+    int max = 32, dist;
+    COORDENADA t, c;
+    while ( !lista_esta_vazia( proximo(L) ) ){
+        c = * (COORDENADA *)devolve_cabeca(L);
+        dist = det_dist(c, jog);
+        if ( dist < max){
+            max = dist;
+            t = c;
         }
+        L = proximo(L);
     }
-    L = insere_cabeca(L, &t);
-    c = (COORDENADA *) devolve_cabeca(L);
-    printf("A jogada recomendada é: %c%d. \n", c->coluna+'a', c->linha+1);
-    return *c;
+    return t;
 }
 
+
+COORDENADA heuristica (ESTADO *e) {
+    int i, jogador = obter_jogador_atual(e);
+    COORDENADA c, ls[8], coord = obter_ultima_jogada(e);
+    coordvizinho(e, ls, coord);
+    LISTA L = criar_lista();
+    for ( i = 0; i < 8; i++){
+        if (possivel(e, ls[i]) && !(cond_canto(ls[i])) ) {
+            if ( vitoria ( e, ls[i] ))
+                return ls[i];
+            if ( !(derrota (e , ls[i])) ){
+                L = insere_cabeca(L, ls+i);
+            }
+        }
+    }
+    if ( len_Lista(L) == 1 ) c = *(COORDENADA *)devolve_cabeca(L);
+    else {
+        if ( remove_opcoes(e, L) == NULL);
+        else {
+            L = remove_opcoes(e,L);
+            if ( len_Lista(L) > 1 ) c = dist_euclidiana ( L , jogador );
+            else  c = * (COORDENADA *)devolve_cabeca(L);
+        }
+    }
+    return c;
+}
+
+COORDENADA jog ( ESTADO *e ) {
+    COORDENADA c = heuristica(e);
+    printf("A jogada recomendada é: %c%d. \n", c.coluna + 'a', c.linha + 1);
+    return c;
+}
 LISTA listvizinho(ESTADO *e, COORDENADA c){
     LISTA l = criar_lista();
     COORDENADA c0 = {c.coluna +1,c.linha +1};
