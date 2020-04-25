@@ -194,21 +194,6 @@ int det_dist(COORDENADA c, int nj){
     return total;
 }
 
-COORDENADA dist_euclidiana ( LISTA L , int jog) {
-    int max = 32, dist;
-    COORDENADA t, c;
-    while ( !lista_esta_vazia( proximo(L) ) ){
-        c = * (COORDENADA *)devolve_cabeca(L);
-        dist = det_dist(c, jog);
-        if ( dist < max){
-            max = dist;
-            t = c;
-        }
-        L = proximo(L);
-    }
-    return t;
-}
-
 
 COORDENADA heuristica (ESTADO *e) {
     int i, jogador = obter_jogador_atual(e);
@@ -236,11 +221,36 @@ COORDENADA heuristica (ESTADO *e) {
     return c;
 }
 
-COORDENADA jog ( ESTADO *e ) {
+COORDENADA jog3 ( ESTADO *e ) {
     COORDENADA c = heuristica(e);
     printf("A jogada recomendada é: %c%d. \n", c.coluna + 'a', c.linha + 1);
     return c;
 }
+
+
+COORDENADA jog ( ESTADO *e ){
+    COORDENADA ls[8], *c, t;
+    coordvizinho(e, ls);
+    LISTA L = criar_lista();
+    int i, j = obter_jogador_atual(e), max = 32, dist;
+    for ( i = 0; i < 8 ; i++) {
+        if (jogada_valida(e, ls[i]) && !(cond_canto(ls[i]))) {
+            dist = det_dist(ls[i], j);
+            if (dist < max) {
+                max = dist;
+                t = ls[i];
+            } else
+                L = insere_cabeca(L, ls + i);
+        }
+    }
+    L = insere_cabeca(L, &t);
+    c = (COORDENADA *) devolve_cabeca(L);
+    printf("A jogada recomendada é: %c%d. \n", c->coluna+'a', c->linha+1);
+    return *c;
+}
+
+
+
 LISTA listvizinho(ESTADO *e, COORDENADA c){
     LISTA l = criar_lista();
     COORDENADA c0 = {c.coluna +1,c.linha +1};
