@@ -226,4 +226,17 @@ int fim(ESTADO *e, COORDENADA c);
 */
 int jogar(ESTADO *estado, COORDENADA c);
 
+/**
+\brief Mostra a lista de movimentos
+@param e Apontador para o estado
+@returns 0
+*/
+int movs ( ESTADO *e);
+
+/**
+\brief Permite mostrar o tabuleiro
+@param estado Apontador para o estado
+*/
+void mostrar_tabuleiro(ESTADO *estado);
+
 #endif //PROJETORASTROS_FUNCOES_AUX_H

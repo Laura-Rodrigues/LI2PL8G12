@@ -242,3 +242,48 @@ int fim(ESTADO *e, COORDENADA c){
     }
     else return 0;
 }
+
+int movs (ESTADO *e) {
+    char c1, c2;
+    int i, l1, l2;
+    int jogada = obter_numero_de_jogadas(e), jogador = obter_jogador_atual(e);
+    if ( jogador == 1) jogada--;
+    for ( i = 1; i <= jogada ; i++) {
+        COORDENADA jog1 = obter_jogada(e, i, 1);
+        c1 = jog1.coluna + 'a';
+        l1 = jog1.linha + 1;
+        COORDENADA jog2 = obter_jogada(e, i, 2);
+        c2 = jog2.coluna + 'a';
+        l2 = jog2.linha + 1;
+        if (i < jogada) {
+            printf("%02d: %c%d %c%d \n", i, c1, l1, c2, l2);
+        } else {
+            if ( jogador == 2)
+                printf("%02d: %c%d \n", i , c1, l1);
+            else
+                printf("%02d: %c%d %c%d \n", i, c1, l1, c2, l2);
+        }
+    }
+    return 0;
+}
+
+void mostrar_tabuleiro(ESTADO *estado){
+    for (int i = 0; i < 8; i++) {
+        printf("%c ", '8' - i );
+        for (int j = 0; j < 8; j++) {
+            COORDENADA c = {i,j};
+            if (obter_estado_casa(estado ,c) == DOIS) printf("2 ");
+            else if (obter_estado_casa(estado ,c) == UM) printf("1 ");
+            else if (obter_estado_casa(estado ,c) == VAZIO) printf(". ");
+            else if (obter_estado_casa(estado ,c) == PRETA) printf("# ");
+            else if (obter_estado_casa(estado ,c) == BRANCA) printf("* ");
+        }
+        printf("\n");
+    }
+    printf("  ");
+    for(int i = 0; i < 8; i++) {
+        printf("%c ", 'a' + i);
+    };
+    printf("\n");
+
+}
