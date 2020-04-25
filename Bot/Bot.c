@@ -3,7 +3,55 @@
 //
 
 
-#include "Bot.h"
+#include <stdio.h>
+#include <bits/types/FILE.h>
+#include "bot.h"
+#include "funcoes_aux.h"
+#define BUF_SIZE 1024
+
+void fptabuleiro(FILE *Projeto_Rastros, ESTADO *e){
+    for (int i = 0; i < 8; i++) {
+        fprintf(Projeto_Rastros, "%c ", '8' - i );
+        for (int j = 0; j < 8; j++) {
+            COORDENADA c = {i,j};
+            if (obter_estado_casa(e,c) == DOIS) fprintf(Projeto_Rastros, "2 ");
+            else if (obter_estado_casa(e ,c) == UM) fprintf(Projeto_Rastros, "1 ");
+            else if (obter_estado_casa(e ,c) == VAZIO) fprintf(Projeto_Rastros, ". ");
+            else if (obter_estado_casa(e ,c) == PRETA) fprintf(Projeto_Rastros, "# ");
+            else if (obter_estado_casa(e ,c) == BRANCA) fprintf(Projeto_Rastros, "* ");
+        }
+        fprintf(Projeto_Rastros, "\n");
+    }
+    fprintf(Projeto_Rastros, "  ");
+    for(int i = 0; i < 8; i++) {
+        fprintf(Projeto_Rastros, "%c ", 'a' + i);
+    };
+    fprintf(Projeto_Rastros, "\n");
+}
+
+int movsficheiro (ESTADO *e, FILE *nome) {
+    char c1, c2;
+    int i, l1, l2;
+    int jogada = obter_numero_de_jogadas(e), jogador = obter_jogador_atual(e);
+    if ( jogador == 1) jogada--;
+    for ( i = 1; i <= jogada ; i++) {
+        COORDENADA jog1 = obter_jogada(e, i, 1);
+        c1 = jog1.coluna + 'a';
+        l1 = jog1.linha + 1;
+        COORDENADA jog2 = obter_jogada(e, i, 2);
+        c2 = jog2.coluna + 'a';
+        l2 = jog2.linha + 1;
+        if (i < jogada) {
+            fprintf(nome,"%02d: %c%d %c%d \n", i, c1, l1, c2, l2);
+        } else {
+            if ( jogador == 2)
+                fprintf(nome,"%02d: %c%d \n", i, c1, l1);
+            else
+                fprintf(nome,"%02d: %c%d %c%d \n", i, c1, l1, c2, l2);
+        }
+    }
+    return 0;
+}
 
 int gr( char nomeficheiro[], ESTADO *e){
     FILE *fp = fopen(nomeficheiro, "w");
@@ -62,4 +110,9 @@ COORDENADA jog ( ESTADO *e ){
     return *c;
 }
 
-COORDENADA bot
+//receber o estado do tabuleiro, analisar as jogadas possíveis,
+// aplicar uma heurística para escolher a melhor jogada e
+// jogar nessa jogada, devolvendo o tabuleiro atualizado.
+COORDENADA bot (ESTADO *e){
+    jog (e);
+}
