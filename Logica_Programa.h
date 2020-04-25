@@ -20,6 +20,8 @@ Definição da função jogar e funções associadas a essa
 */
 int vizinha(ESTADO *e, COORDENADA c);
 
+int possivel ( ESTADO *e, COORDENADA c);
+
 
 /**
 \brief Testa se a Jogada é válida
@@ -35,6 +37,9 @@ int jogada_valida (ESTADO *estado, COORDENADA c);
 @returns 1 ou 0 para verdadeiro ou falso
 */
 int cond_canto (COORDENADA c);
+
+void coordvizinho(ESTADO *e, COORDENADA ls[], COORDENADA c);
+
 
 /**
 \brief Testar se tem vizinhos validos
