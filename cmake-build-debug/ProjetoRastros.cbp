@@ -78,15 +78,6 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/laura/Desktop/LI2PL8G12/Bot/Bot.c">
-			<Option target="ProjetoRastros"/>
-		</Unit>
-		<Unit filename="/home/laura/Desktop/LI2PL8G12/Bot/Bot.h">
-			<Option target="ProjetoRastros"/>
-		</Unit>
-		<Unit filename="/home/laura/Desktop/LI2PL8G12/Bot/main.c">
-			<Option target="ProjetoRastros"/>
-		</Unit>
 		<Unit filename="/home/laura/Desktop/LI2PL8G12/Camada_Interface.c">
 			<Option target="ProjetoRastros"/>
 		</Unit>

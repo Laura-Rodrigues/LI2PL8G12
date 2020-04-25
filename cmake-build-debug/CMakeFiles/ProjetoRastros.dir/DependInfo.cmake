@@ -4,8 +4,6 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/home/laura/Desktop/LI2PL8G12/Bot/Bot.c" "/home/laura/Desktop/LI2PL8G12/cmake-build-debug/CMakeFiles/ProjetoRastros.dir/Bot/Bot.c.o"
-  "/home/laura/Desktop/LI2PL8G12/Bot/main.c" "/home/laura/Desktop/LI2PL8G12/cmake-build-debug/CMakeFiles/ProjetoRastros.dir/Bot/main.c.o"
   "/home/laura/Desktop/LI2PL8G12/Camada_Interface.c" "/home/laura/Desktop/LI2PL8G12/cmake-build-debug/CMakeFiles/ProjetoRastros.dir/Camada_Interface.c.o"
   "/home/laura/Desktop/LI2PL8G12/Camada_dados.c" "/home/laura/Desktop/LI2PL8G12/cmake-build-debug/CMakeFiles/ProjetoRastros.dir/Camada_dados.c.o"
   "/home/laura/Desktop/LI2PL8G12/Funcoes_Ficheiro.c" "/home/laura/Desktop/LI2PL8G12/cmake-build-debug/CMakeFiles/ProjetoRastros.dir/Funcoes_Ficheiro.c.o"
