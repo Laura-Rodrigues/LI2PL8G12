@@ -185,5 +185,65 @@ COORDENADA jog ( ESTADO *e ){
     return *c;
 }
 
+LISTA listvizinho(ESTADO *e, COORDENADA c){
+    LISTA l = criar_lista();
+    COORDENADA c0 = {c.coluna +1,c.linha +1};
+    COORDENADA c1 = {c.coluna +1,c.linha };
+    COORDENADA c2 = {c.coluna +1,c.linha -1};
+    COORDENADA c3 = {c.coluna ,c.linha +1};
+    COORDENADA c4 = {c.coluna ,c.linha -1};
+    COORDENADA c5 = {c.coluna -1,c.linha +1};
+    COORDENADA c6 = {c.coluna -1,c.linha};
+    COORDENADA c7 = {c.coluna -1,c.linha -1};
+    COORDENADA ls[8] = {c0,c1,c2,c3,c4,c5,c6,c7};
+    for(int i = 0; i < 8; i++){
+        if(obter_estado_casa(e,ls[i]) == VAZIO)
+            insere_cabeca(l,&ls[i]);
+    }
+    return l;
+}
+
+LISTA len_Viz(LISTA l, ESTADO *e){
+    LISTA lf = criar_lista();
+    while (!lista_esta_vazia(l)){
+        COORDENADA *c = (COORDENADA*) devolve_cabeca(l);
+        if(((len_Lista(listvizinho (e, *c))) % 2) == 0){
+            insere_cabeca(lf,c);
+            l = proximo(l);
+        } else l = proximo(l);
+    }
+    return lf;
+}
+
+COORDENADA min(LISTA l, ESTADO *e){
+    COORDENADA *cf = devolve_cabeca(l);
+    while(!lista_esta_vazia(l) && !lista_esta_vazia(proximo(l))){
+        COORDENADA *c1 = (COORDENADA*) devolve_cabeca(l);
+        COORDENADA *c2 = (COORDENADA*) devolve_cabeca(proximo(l));
+        if((len_Lista(listvizinho (e, *c1))) < (len_Lista(listvizinho (e, *c2)))){
+            *cf = *c1;
+        } else {
+            *cf = *c2;
+        }
+        l = proximo(l);
+    }
+    return *cf;
+}
+
+COORDENADA heu_par(LISTA l, ESTADO *e){
+    LISTA li = len_Viz(l,e);
+    COORDENADA c = min(li, e);
+    return c;
+}
+
+
+COORDENADA jog2(ESTADO *e){
+    COORDENADA c = obter_ultima_jogada(e);
+    LISTA li = listvizinho(e, c);
+    COORDENADA cf = heu_par(li, e);
+    printf("A jogada recomendada é: %c%d. \n", cf.coluna, cf.linha);
+    return cf;
+}
+
 
 
