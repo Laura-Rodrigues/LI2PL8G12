@@ -1,0 +1,8 @@
+//
+// Created by laura on 25/04/20.
+//
+
+#ifndef PROJETORASTROS_FUNCOES_AUX_H
+#define PROJETORASTROS_FUNCOES_AUX_H
+
+#endif //PROJETORASTROS_FUNCOES_AUX_H

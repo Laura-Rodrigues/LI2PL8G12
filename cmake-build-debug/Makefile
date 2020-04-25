@@ -123,6 +123,33 @@ ProjetoRastros/fast:
 	$(MAKE) -f CMakeFiles/ProjetoRastros.dir/build.make CMakeFiles/ProjetoRastros.dir/build
 .PHONY : ProjetoRastros/fast
 
+Bot/funcoes_aux.o: Bot/funcoes_aux.c.o
+
+.PHONY : Bot/funcoes_aux.o
+
+# target to build an object file
+Bot/funcoes_aux.c.o:
+	$(MAKE) -f CMakeFiles/ProjetoRastros.dir/build.make CMakeFiles/ProjetoRastros.dir/Bot/funcoes_aux.c.o
+.PHONY : Bot/funcoes_aux.c.o
+
+Bot/funcoes_aux.i: Bot/funcoes_aux.c.i
+
+.PHONY : Bot/funcoes_aux.i
+
+# target to preprocess a source file
+Bot/funcoes_aux.c.i:
+	$(MAKE) -f CMakeFiles/ProjetoRastros.dir/build.make CMakeFiles/ProjetoRastros.dir/Bot/funcoes_aux.c.i
+.PHONY : Bot/funcoes_aux.c.i
+
+Bot/funcoes_aux.s: Bot/funcoes_aux.c.s
+
+.PHONY : Bot/funcoes_aux.s
+
+# target to generate assembly for a file
+Bot/funcoes_aux.c.s:
+	$(MAKE) -f CMakeFiles/ProjetoRastros.dir/build.make CMakeFiles/ProjetoRastros.dir/Bot/funcoes_aux.c.s
+.PHONY : Bot/funcoes_aux.c.s
+
 Camada_Interface.o: Camada_Interface.c.o
 
 .PHONY : Camada_Interface.o
@@ -321,6 +348,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... ProjetoRastros"
+	@echo "... Bot/funcoes_aux.o"
+	@echo "... Bot/funcoes_aux.i"
+	@echo "... Bot/funcoes_aux.s"
 	@echo "... Camada_Interface.o"
 	@echo "... Camada_Interface.i"
 	@echo "... Camada_Interface.s"

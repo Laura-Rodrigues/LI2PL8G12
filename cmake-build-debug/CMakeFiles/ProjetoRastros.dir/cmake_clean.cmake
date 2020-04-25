@@ -1,4 +1,5 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/ProjetoRastros.dir/Bot/funcoes_aux.c.o"
   "CMakeFiles/ProjetoRastros.dir/Camada_Interface.c.o"
   "CMakeFiles/ProjetoRastros.dir/Camada_dados.c.o"
   "CMakeFiles/ProjetoRastros.dir/Funcoes_Ficheiro.c.o"
