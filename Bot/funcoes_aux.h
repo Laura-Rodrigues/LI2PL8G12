@@ -204,4 +204,26 @@ int det_dist(COORDENADA c, int nj);
 */
 int cond_canto (COORDENADA c);
 
+/**
+\brief Testar se tem vizinhos validos
+@param e Apontador para o estado
+@returns 1 ou 0 para verdadeiro ou falso, respetivamente
+*/
+int vizivalide(ESTADO *e, COORDENADA c);
+
+/**
+\brief Testa se a Coordenada é igual à final
+@param c A coordenada
+@returns 0 ou 1 para verdadeiro ou falso
+*/
+int fim(ESTADO *e, COORDENADA c);
+
+/**
+\brief Modifica o estado ao jogar na casa correta se a jogada for válida
+@param estado Apontador para o estado
+@param c A coordenada
+@returns 0 ou 1 para verdadeiro ou falso
+*/
+int jogar(ESTADO *estado, COORDENADA c);
+
 #endif //PROJETORASTROS_FUNCOES_AUX_H

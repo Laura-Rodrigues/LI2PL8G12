@@ -205,3 +205,40 @@ int cond_canto (COORDENADA c) {
     if (c.coluna > 7 || c.linha > 7 || c.coluna < 0 || c.linha < 0) return 1;
     else return 0;
 }
+
+//Testar se tem vizinhos validos
+int vizivalide(ESTADO *e, COORDENADA c){
+    COORDENADA c0 = {c.coluna +1,c.linha +1};
+    COORDENADA c1 = {c.coluna +1,c.linha };
+    COORDENADA c2 = {c.coluna +1,c.linha -1};
+    COORDENADA c3 = {c.coluna ,c.linha +1};
+    COORDENADA c4 = {c.coluna +1,c.linha -1};
+    COORDENADA c5 = {c.coluna -1,c.linha +1};
+    COORDENADA c6 = {c.coluna -1,c.linha};
+    COORDENADA c7 = {c.coluna -1,c.linha -1};
+    COORDENADA arr[8] = {c0,c1,c2,c3,c4,c5,c6,c7};
+    int r = 0, resultado = 0;
+    for (int i = 0; i < 8; i++){
+        if (obter_estado_casa(e, troca_ordem(arr[i])) == PRETA || cond_canto (arr[i])) r++;
+    }
+    if ( r == 8 ) resultado = 1;
+    return resultado;
+}
+
+//Testa se a Coordenada é igual á final
+int fim(ESTADO *e, COORDENADA c){
+    if ((c.coluna) == 0 && (c.linha)== 0){
+        return 1;
+    }
+    else if((c.coluna) == 7 && (c.linha) == 7){
+        return 2;
+    }
+    else if (vizivalide(e,c) == 1){
+        int i = obter_jogador_atual(e);
+        int jogador;
+        if ( i == 1) jogador = 2;
+        else jogador = 1;
+        return jogador;
+    }
+    else return 0;
+}

@@ -89,6 +89,18 @@ ESTADO *ler(char nomeficheiro[], ESTADO *e){
     return e;
 }
 
+int jogar(ESTADO *estado, COORDENADA c){
+    int resultado = 0 , r = 0;
+    if (jogada_valida(estado,c)){
+        r = 1;
+        altera_estado(estado,c);
+        resultado = fim(estado,c);
+    }
+    if (r == 0)
+        resultado = 3;
+    return resultado;
+}
+
 COORDENADA jog ( ESTADO *e ){
     COORDENADA ls[8], *c, t;
     coordvizinho(e, ls);
