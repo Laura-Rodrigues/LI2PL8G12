@@ -5,7 +5,7 @@
 
 #include <stdio.h>
 #include <bits/types/FILE.h>
-#include "bot.h"
+#include "Bot.h"
 #include "funcoes_aux.h"
 #define BUF_SIZE 1024
 
