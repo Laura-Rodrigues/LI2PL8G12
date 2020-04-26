@@ -126,5 +126,8 @@ COORDENADA jog ( ESTADO *e ){
 // aplicar uma heurística para escolher a melhor jogada e
 // jogar nessa jogada, devolvendo o tabuleiro atualizado.
 COORDENADA bot (ESTADO *e){
-    jog (e);
+    COORDENADA c;
+    c = jog (e);
+    jogar(e, c);
+    return c;
 }

@@ -68,6 +68,11 @@ int gr(char nomeficheiro[], ESTADO *e);
 */
 ESTADO *ler(char nomeficheiro[], ESTADO *e);
 
+/**
+\brief Analisa as jogadas possíveis e aplica uma heurística para jogar na melhor coordenada
+@param e Apontador para o estado
+@returns coordenada
+*/
 COORDENADA bot (ESTADO *e);
 
 #endif //PROJETORASTROS_BOT_H
