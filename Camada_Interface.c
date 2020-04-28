@@ -31,30 +31,46 @@ void mostrar_tabuleiro(ESTADO *estado){
     printf("\n");
 
 }
-void prompt (ESTADO*e){
-    int numerojogadas = obter_numero_de_jogadas (e);
-    int njogador = obter_jogador_atual (e);
-    int n_mov = obter_num_mov(e);
-    printf ("#%02d PLAYER%d (%d) -> ", n_mov , njogador,numerojogadas);
+
+void prompt ( ESTADO *estado ){
+    int numerojogadas = obter_numero_de_jogadas ( estado );
+    int njogador = obter_jogador_atual ( estado );
+    int n_mov = obter_num_mov( estado );
+    printf ("#%02d PLAYER%d (%d) -> ", n_mov, njogador, numerojogadas );
 }
 
-int Resposta (int resultado){
-    switch (resultado){
-        case 1: {
-            printf("O Jogador 1 venceu!");
+int Resposta ( int resultado ){
+    switch ( resultado ){
+        case 1:
+            {
+            printf("O Jogador 1 venceu!" );
             break;
-        }
-        case 2: {
-            printf("O Jogador 2 venceu!");
+            }
+        case 2: 
+            {
+            printf( "O Jogador 2 venceu!" );
             break;
-        }
+            }
     }
     return 0;
 }
 
+int jogar_coord (ESTADO *estado, COORDENADA coord){
+    int resultado = jogar(estado, coord), v_final = 0;
+    if (resultado == 3) {
+        printf("Jogada inválida! \n");
+    }
+    else
+        if (resultado != 0) {
+            mostrar_tabuleiro(estado);
+            Resposta(resultado);
+            v_final = 1;
+    }
+    return v_final;
+}
+
 int interpretador(ESTADO *e) {
-    char linha[BUF_SIZE];
-    char col[2], lin[2],  nome_ficheiro[BUF_SIZE];
+    char linha[BUF_SIZE], col[2], lin[2],  nome_ficheiro[BUF_SIZE];
     int joga, i = obter_pos(e);
     COORDENADA c;
     if (obter_numero_de_jogadas(e) == 0 && obter_num_mov(e) == 0) {
@@ -62,29 +78,19 @@ int interpretador(ESTADO *e) {
         faz_primeira_jogada(e);
         mostrar_tabuleiro(e);
     }
-    else
-        if (obter_numero_de_jogadas(e) == 0)
-            faz_primeira_jogada(e);
+    else if (obter_numero_de_jogadas(e) == 0)
+             faz_primeira_jogada(e);
     prompt(e);
     if (fgets(linha, BUF_SIZE, stdin) == NULL)
         return 0;
-
     if (strcmp(linha, "Q\n") == 0) return 0;
 
     if (strlen(linha) == 3 && sscanf(linha, "%[a-h]%[1-8]", col, lin) == 2) {
         COORDENADA coord = {*col - 'a', *lin - '1'};
-        int resultado = jogar(e, coord);
-        if (resultado == 3) {
-            printf("Jogada inválida! \n");
-        }
-        else if (resultado != 0) {
-            mostrar_tabuleiro(e);
-            Resposta(resultado);
-            return 0;
-        }
+        joga = jogar_coord (e, coord);
+        if ( joga == 1 ) return 0;
         mostrar_tabuleiro(e);
     }
-
     else if (sscanf(linha, "pos %d", &joga)) {
         if ( i != 0 ){
             strcpy(nome_ficheiro, "v_ant_estado");
@@ -104,25 +110,15 @@ int interpretador(ESTADO *e) {
         mostrar_tabuleiro(e);
         movs(e);
     }
-
     else if (strcmp(linha, "movs\n") == 0) {
         movs(e);
     }
-
     else if (strcmp(linha, "jog\n") == 0) {
         c = jog(e);
-        int resultado = jogar(e, c);
-        if (resultado == 3) {
-            printf("Jogada inválida! \n");
-        }
-        else if (resultado != 0) {
-            mostrar_tabuleiro(e);
-            Resposta(resultado);
-            return 0;
-        }
+        joga = jogar_coord (e, c);
+        if ( joga == 1 ) return 0;
         mostrar_tabuleiro(e);
     }
-
     else if (sscanf(linha, "gr %s", nome_ficheiro)) {
         if ( strcmp(nome_ficheiro, "v_ant_estado") == 0){
             printf("Nome inválido. \n");
@@ -132,18 +128,12 @@ int interpretador(ESTADO *e) {
             printf("Guardado! \n");
         }
     }
-
     else if (sscanf(linha, "ler %s", nome_ficheiro)) {
         e = ler(nome_ficheiro, e);
         mostrar_tabuleiro(e);
         movs(e);
     }
-
-    else{
-        printf("Comando inválido! Tente outra vez!\n");
-    }
-
+    else printf("Comando inválido! Tente outra vez!\n");
     interpretador(e);
     return 1;
 }
-
