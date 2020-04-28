@@ -11,25 +11,24 @@
 #define BUF_SIZE 1024
 
 // Função que permite mostrar o tabuleiro;
-void mostrar_tabuleiro(ESTADO *estado){
-    for (int i = 0; i < 8; i++) {
-        printf("%c ", '8' - i );
-        for (int j = 0; j < 8; j++) {
-            COORDENADA c = {i,j};
-            if (obter_estado_casa(estado ,c) == DOIS) printf("2 ");
-            else if (obter_estado_casa(estado ,c) == UM) printf("1 ");
-            else if (obter_estado_casa(estado ,c) == VAZIO) printf(". ");
-            else if (obter_estado_casa(estado ,c) == PRETA) printf("# ");
-            else if (obter_estado_casa(estado ,c) == BRANCA) printf("* ");
+void mostrar_tabuleiro ( ESTADO *estado ){
+    for ( int i = 0; i < 8; i++ ) {
+        printf( "%c ", '8' - i );
+        for ( int j = 0; j < 8; j++ ) {
+            COORDENADA coord = {i,j};
+            if ( obter_estado_casa(estado, coord ) == DOIS) printf("2 " );
+            else if ( obter_estado_casa(estado, coord ) == UM) printf("1 " );
+            else if ( obter_estado_casa(estado, coord ) == VAZIO) printf(". " );
+            else if ( obter_estado_casa(estado, coord ) == PRETA) printf("# " );
+            else if ( obter_estado_casa(estado, coord ) == BRANCA) printf("* " );
         }
-        printf("\n");
+        printf( "\n" );
     }
-    printf("  ");
-    for(int i = 0; i < 8; i++) {
-        printf("%c ", 'a' + i);
+    printf( "  " );
+    for ( int i = 0; i < 8; i++ ) {
+        printf( "%c ", 'a' + i );
     }
-    printf("\n");
-
+    printf( "\n" );
 }
 
 void prompt ( ESTADO *estado ){
@@ -55,15 +54,15 @@ int Resposta ( int resultado ){
     return 0;
 }
 
-int jogar_coord (ESTADO *estado, COORDENADA coord){
-    int resultado = jogar(estado, coord), v_final = 0;
-    if (resultado == 3) {
-        printf("Jogada inválida! \n");
+int jogar_coord ( ESTADO *estado, COORDENADA coord ){
+    int resultado = jogar( estado, coord ), v_final = 0;
+    if ( resultado == 3 ) {
+        printf( "Jogada inválida! \n" );
     }
     else
-        if (resultado != 0) {
-            mostrar_tabuleiro(estado);
-            Resposta(resultado);
+        if ( resultado != 0 ) {
+            mostrar_tabuleiro( estado );
+            Resposta( resultado );
             v_final = 1;
     }
     return v_final;
