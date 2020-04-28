@@ -68,71 +68,69 @@ int jogar_coord ( ESTADO *estado, COORDENADA coord ){
     return v_final;
 }
 
-int interpretador(ESTADO *e) {
-    char linha[BUF_SIZE], col[2], lin[2],  nome_ficheiro[BUF_SIZE];
-    int joga, i = obter_pos(e);
-    COORDENADA c;
-    if (obter_numero_de_jogadas(e) == 0 && obter_num_mov(e) == 0) {
-        printf("#00 PLAYER2 (0) -> e5 \n");
-        faz_primeira_jogada(e);
-        mostrar_tabuleiro(e);
-    }
-    else if (obter_numero_de_jogadas(e) == 0)
-             faz_primeira_jogada(e);
-    prompt(e);
-    if (fgets(linha, BUF_SIZE, stdin) == NULL)
-        return 0;
-    if (strcmp(linha, "Q\n") == 0) return 0;
-
-    if (strlen(linha) == 3 && sscanf(linha, "%[a-h]%[1-8]", col, lin) == 2) {
-        COORDENADA coord = {*col - 'a', *lin - '1'};
-        joga = jogar_coord (e, coord);
-        if ( joga == 1 ) return 0;
-        mostrar_tabuleiro(e);
-    }
-    else if (sscanf(linha, "pos %d", &joga)) {
-        if ( i != 0 ){
-            strcpy(nome_ficheiro, "v_ant_estado");
-            e = ler (nome_ficheiro, e);
-            aumenta_pos(e, i-1);
+int interpretador( ESTADO *estado ) {
+    char linha[BUF_SIZE], nome_ficheiro[BUF_SIZE], col[2], lin[2];
+    int joga, n_pos = obter_pos( estado );
+    COORDENADA coord;
+    if ( obter_numero_de_jogadas( estado ) == 0 ){
+        if ( obter_num_mov( estado ) == 0 ){
+            printf( "#00 PLAYER2 (0) -> e5 \n" );
+            faz_primeira_jogada( estado );
+            mostrar_tabuleiro( estado );
         }
-        if (joga < 0 || joga >= obter_numero_de_jogadas(e)) {
+        else faz_primeira_jogada( estado );
+    }
+    prompt( estado );
+    if ( fgets( linha, BUF_SIZE, stdin ) == NULL )
+        return 0;
+    if ( strlen( linha ) == 3 && sscanf( linha, "%[a-h]%[1-8]", col, lin ) == 2 ) {
+        COORDENADA coord = {*col - 'a', *lin - '1'};
+        joga = jogar_coord ( estado, coord );
+        if ( joga == 1 ) return 0;
+        mostrar_tabuleiro( estado );
+    }
+    else if ( strcmp( linha, "Q\n" ) == 0 ) return 0;
+    else if ( sscanf( linha, "pos %d", &joga ) ) {
+        if ( n_pos != 0 ){
+            strcpy(nome_ficheiro, "v_ant_estado");
+            estado = ler (nome_ficheiro, estado);
+            aumenta_pos(estado, n_pos-1);
+        }
+        if (joga < 0 || joga >= obter_numero_de_jogadas(estado)) {
             printf("Número de jogada inválido.\n");
         }
         else {
-            if (obter_pos(e) == 0){
+            if (obter_pos( estado ) == 0){
                 strcpy(nome_ficheiro, "v_ant_estado");
-                gr (nome_ficheiro, e);
+                gr ( nome_ficheiro, estado );
             }
-            e = pos(e, joga);
+            estado = pos( estado, joga );
         }
-        mostrar_tabuleiro(e);
-        movs(e);
+        mostrar_tabuleiro( estado );
+        movs( estado );
     }
-    else if (strcmp(linha, "movs\n") == 0) {
-        movs(e);
-    }
-    else if (strcmp(linha, "jog\n") == 0) {
-        c = jog(e);
-        joga = jogar_coord (e, c);
+    else if ( strcmp( linha, "movs\n" ) == 0 )
+        movs( estado );
+    else if ( strcmp( linha, "jog\n" ) == 0 ){
+        coord = jog( estado );
+        joga = jogar_coord ( estado, coord );
         if ( joga == 1 ) return 0;
-        mostrar_tabuleiro(e);
+        mostrar_tabuleiro( estado );
     }
-    else if (sscanf(linha, "gr %s", nome_ficheiro)) {
-        if ( strcmp(nome_ficheiro, "v_ant_estado") == 0){
+    else if ( sscanf( linha, "gr %s", nome_ficheiro ) ) {
+        if ( strcmp(nome_ficheiro, "v_ant_estado" ) == 0 )
             printf("Nome inválido. \n");
-        }
         else {
-            gr(nome_ficheiro, e);
-            printf("Guardado! \n");
+            gr( nome_ficheiro, estado );
+            printf( "Guardado! \n" );
         }
     }
-    else if (sscanf(linha, "ler %s", nome_ficheiro)) {
-        e = ler(nome_ficheiro, e);
-        mostrar_tabuleiro(e);
-        movs(e);
+    else if ( sscanf( linha, "ler %s", nome_ficheiro ) ) {
+        estado = ler( nome_ficheiro, estado );
+        mostrar_tabuleiro( estado );
+        movs( estado );
     }
     else printf("Comando inválido! Tente outra vez!\n");
-    interpretador(e);
+    interpretador( estado );
     return 1;
 }
