@@ -11,36 +11,37 @@
 
 
 // Testa se a Coordenada é vizinha da Coordenada anterior e se encontra-se dentro do tabuleiro
-int vizinha(ESTADO *e, COORDENADA c){
-    COORDENADA ultjogada = obter_ultima_jogada(e);
-    int r=0;
-    if (ultjogada.coluna == c.coluna && ultjogada.linha == c.linha) return r;
-    if (abs(c.linha - ultjogada.linha) <= 1) {
-        if (abs(c.coluna - ultjogada.coluna) <= 1)
-                r = 1;
+int e_vizinha( ESTADO *estado, COORDENADA coord){
+    COORDENADA ultjogada = obter_ultima_jogada(estado);
+    int resultado=0;
+    if (abs(coord.linha - ultjogada.linha) <= 1) {
+        if (abs(coord.coluna - ultjogada.coluna) <= 1)
+                resultado = 1;
         }
-    return r;
+    return resultado;
 }
 
-int possivel ( ESTADO *e, COORDENADA c){
-    int r = 0;
-    COORDENADA f = troca_ordem(c);
-    if ( obter_estado_casa(e,f) != PRETA && obter_estado_casa(e,f) != BRANCA ) r = 1;
-    return r;
+int possivel ( ESTADO *estado, COORDENADA coord ){
+    int result = 0;
+    COORDENADA nova = troca_ordem( coord );
+    if ( obter_estado_casa( estado,nova ) != PRETA && obter_estado_casa( estado,nova ) != BRANCA ) result = 1;
+    return result;
 }
 
 //Testa se a Jogada é válida
-int jogada_valida (ESTADO *estado, COORDENADA c){
-    if ( possivel(estado,c) && vizinha(estado, c) )
+int jogada_valida ( ESTADO *estado, COORDENADA coord ){
+    if ( possivel( estado,coord ) && e_vizinha( estado, coord ) )
         return 1;
     else return 0;
 }
 
 // Função que determina se a coordenada se encontra fora do tabuleiro
-int cond_canto (COORDENADA c) {
-    if (c.coluna > 7 || c.linha > 7 || c.coluna < 0 || c.linha < 0) return 1;
+int cond_canto ( COORDENADA coord ) {
+    if ( coord.coluna > 7 || coord.linha > 7 || coord.coluna < 0 || coord.linha < 0 )
+        return 1;
     else return 0;
 }
+
 
 void coordvizinho(ESTADO *e, COORDENADA ls[], COORDENADA c) {
     COORDENADA c0;
