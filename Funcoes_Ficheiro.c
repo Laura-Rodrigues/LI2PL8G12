@@ -54,40 +54,39 @@ int movsficheiro (ESTADO *e, FILE *nome) {
     return 0;
 }
 
-int gr( char nomeficheiro[], ESTADO *e){
-    FILE *fp = fopen(nomeficheiro, "w");
-    if(fp==NULL){
-        fclose(fp);
+int gr( char nomeficheiro[], ESTADO *e ){
+    FILE *fp = fopen( nomeficheiro, "w" );
+    if( fp==NULL ){
+        fclose( fp );
         return 0;
-    } else {
-        fptabuleiro(fp,e);
-        movsficheiro (e, fp);
-        fclose(fp);
+    }
+    else {
+        fptabuleiro( fp,e );
+        movsficheiro ( e, fp );
+        fclose( fp );
     }
     return 1;
 }
 
 
-ESTADO *ler(char nomeficheiro[], ESTADO *e){
-    FILE *fp = fopen(nomeficheiro, "r+");
-    if (fp == NULL){
-        printf("Nome inválido. \n");
+ESTADO *ler( char nomeficheiro[], ESTADO *e ){
+    FILE *fp = fopen( nomeficheiro, "r+" );
+    if ( fp == NULL ){
+        printf( "Nome inválido. \n" );
     }
     else{
-        char s[BUF_SIZE];
-        int jog = 0;
-        int j ,l;
-        char i,k;
+        char s[BUF_SIZE], coluna1, coluna2;
+        int jog = 0, linha1, linha2;
         e = inicializar_estado();
-        faz_primeira_jogada(e);
+        faz_primeira_jogada( e );
         while ((fgets(s, BUF_SIZE, fp)) != NULL){
-            if (sscanf( s, "0%d: %c%d %c%d", &jog, &i,&j, &k, &l)){
-                COORDENADA c0 = {i- 'a', j-1};
-                COORDENADA c1 = {k -'a' , l -1};
-                if ( jog != 0 && jogada_valida(e, c0))
-                    altera_estado(e, c0);
-                if (jog != 0 && jogada_valida(e, c1))
-                    altera_estado(e, c1);
+            if ( sscanf( s, "%d: %c%d %c%d", &jog, &coluna1,&linha1, &coluna2, &linha2 ) ){
+                COORDENADA c0 = {coluna1 - 'a', linha1 - 1};
+                COORDENADA c1 = {coluna2 - 'a', linha2 - 1};
+                if ( jog != 0 && jogada_valida(e, c0) )
+                    altera_estado( e, c0 );
+                if ( jog != 0 && jogada_valida(e, c1) )
+                    altera_estado( e, c1 );
             }
         }
         fclose ( fp );
