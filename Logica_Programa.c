@@ -42,55 +42,54 @@ int cond_canto ( COORDENADA coord ) {
     else return 0;
 }
 
-
-void coordvizinho(ESTADO *e, COORDENADA ls[], COORDENADA c) {
-    COORDENADA c0;
+void coordvizinho(COORDENADA arr[], COORDENADA coord) {
+    COORDENADA coord_aux;
     int i, j, ind = 0;
-    for (i = -1; i <= 1; i++)
-        for (j = -1; j <= 1; j++) {
-            if (i == 0 && j == 0);
+    for ( i = -1; i <= 1; i++ )
+        for ( j = -1; j <= 1; j++ ) {
+            if ( i == 0 && j == 0 );
             else {
-                c0.coluna = c.coluna + i;
-                c0.linha = c.linha + j;
-                ls[ind] = c0;
+                coord_aux.coluna = coord.coluna + i;
+                coord_aux.linha = coord.linha + j;
+                arr[ind] = coord_aux;
                 ind++;
             }
         }
 }
 
 //Testar se tem vizinhos validos
-int vizivalide(ESTADO *e, COORDENADA c){
-    int r = 0;
+int vizivalide( ESTADO *estado, COORDENADA coord ){
+    int result = 0, ind;
     COORDENADA arr[8];
-    coordvizinho(e, arr, c);
-    for (int i = 0; i < 8; i++){
-        if (obter_estado_casa(e, troca_ordem(arr[i])) == PRETA || cond_canto (arr[i])) r++;
+    coordvizinho( arr, coord );
+    for (ind = 0; ind < 8; ind++){
+        if ( obter_estado_casa( estado, troca_ordem( arr[ind] ) ) == PRETA || cond_canto ( arr[ind] ) )
+            result++;
     }
-    return r;
+    return result;
 }
 
-int fim(ESTADO *e, COORDENADA c){
-    int r = 0;
-    if ((c.coluna) == 0 && (c.linha)== 0)
-        r = 1;
-    else if ( (c.coluna) == 7 && (c.linha) == 7 )
-        r = 2;
-    else if ( vizivalide(e,c) == 8 ){
-        int i = obter_jogador_atual(e);
-        if ( i == 1) r = 2;
-        else r = 1;
+//Testa se a Coordenada é igual á final
+int fim( ESTADO *estado, COORDENADA coord ){
+    int result = 0, jogador = obter_jogador_atual( estado );
+    if ( ( coord.coluna ) == 0 && ( coord.linha ) == 0 )
+        result = 1;
+    else if ( ( coord.coluna ) == 7 && ( coord.linha ) == 7 )
+        result = 2;
+    else if ( vizivalide( estado, coord ) == 8 ){
+        if ( jogador == 1 ) result = 2;
+        else result = 1;
     }
-    return r;
+    return result;
 }
 
-int jogar(ESTADO *estado, COORDENADA c){
-    int resultado = 0 , r = 0;
-    if (jogada_valida(estado,c)){
-        r = 1;
-        altera_estado(estado,c);
-        resultado = fim(estado,c);
+int jogar( ESTADO *estado, COORDENADA coord ){
+    int resultado = 0 , aux = 0;
+    if (jogada_valida( estado,coord )){
+        aux = 1;
+        altera_estado( estado,coord );
+        resultado = fim( estado,coord );
     }
-    if (r == 0)
-       resultado = 3;
+    if (aux == 0) resultado = 3;
     return resultado;
 }
