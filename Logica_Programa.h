@@ -38,7 +38,7 @@ int jogada_valida (ESTADO *estado, COORDENADA c);
 */
 int cond_canto (COORDENADA c);
 
-void coordvizinho(ESTADO *e, COORDENADA ls[], COORDENADA c);
+void coordvizinho(COORDENADA ls[], COORDENADA c);
 
 
 /**
