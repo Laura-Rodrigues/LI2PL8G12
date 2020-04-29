@@ -46,7 +46,7 @@ void coordvizinho(COORDENADA ls[], COORDENADA c);
 @param e Apontador para o estado
 @returns 1 ou 0 para verdadeiro ou falso, respetivamente
 */
-int vizivalide(ESTADO *e);
+int vizivalide( ESTADO *estado, COORDENADA coord );
 
 /**
 \brief Testa se a Coordenada é igual à final
