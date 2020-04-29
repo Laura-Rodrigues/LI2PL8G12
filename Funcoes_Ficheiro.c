@@ -68,31 +68,29 @@ int gr( char nomeficheiro[], ESTADO *e){
 }
 
 
-ESTADO *ler(char nomeficheiro[], ESTADO *e){
-    FILE *fp = fopen(nomeficheiro, "r+");
-    if (fp == NULL){
+ESTADO *ler ( char nomeficheiro[], ESTADO *estado ){
+    FILE *fp = fopen( nomeficheiro, "r+" );
+    if ( fp == NULL )
         printf("Nome inválido. \n");
-    }
     else{
-        char s[BUF_SIZE];
-        int jog = 0;
-        int j ,l;
-        char i,k;
-        e = inicializar_estado();
-        faz_primeira_jogada(e);
-        while ((fgets(s, BUF_SIZE, fp)) != NULL){
-            if (sscanf( s, "0%d: %c%d %c%d", &jog, &i,&j, &k, &l)){
-                COORDENADA c0 = {i- 'a', j-1};
-                COORDENADA c1 = {k -'a' , l -1};
-                if ( jog != 0 && jogada_valida(e, c0))
-                    altera_estado(e, c0);
-                if (jog != 0 && jogada_valida(e, c1))
-                    altera_estado(e, c1);
+        char str[BUF_SIZE];
+        int jog, lin1 ,lin2;
+        char col1, col2;
+        estado = inicializar_estado();
+        faz_primeira_jogada( estado );
+        while ( ( fgets( str, BUF_SIZE, fp ) ) != NULL ){
+            if ( sscanf( str, "0%d: %c%d %c%d", &jog, &col1, &lin1, &col2, &lin2 ) ){
+                COORDENADA c0 = {col1 - 'a', lin1 - 1 };
+                COORDENADA c1 = {col2 -'a' , lin2 - 1 };
+                if ( jog != 0 && jogada_valida( estado, c0 ) )
+                    altera_estado(estado, c0);
+                if ( jog != 0 && jogada_valida( estado, c1 ) )
+                    altera_estado( estado, c1 );
             }
         }
         fclose ( fp );
     }
-    return e;
+    return estado;
 }
 
 int movs ( ESTADO *estado ) {
