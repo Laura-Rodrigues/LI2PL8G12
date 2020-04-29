@@ -56,13 +56,6 @@ int movs ( ESTADO *e);
 ESTADO* pos (ESTADO *e, int dado);
 
 /**
-\brief Coloca num array as coordenadas vizinhas à ultima jogada
-@param e Apontador para o estado
-@param ls Array de coordenadas
-*/
-void coordvizinho(ESTADO *e, COORDENADA ls[]);
-
-/**
 \brief Permitir calcular a distância de uma coordenada à casa final
 @param c Coordenada 
 @param nj Numero do jogador atual
