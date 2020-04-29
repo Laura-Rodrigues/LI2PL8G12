@@ -59,7 +59,4 @@ int lista_esta_vazia(LISTA L);
 //Comprimento de uma lista
 int len_Lista(LISTA l);
 
-//procura elemento na lista
-int dent_Lista (LISTA L, void *x);
-
 #endif //PROJETORASTROS_LISTAS_H
