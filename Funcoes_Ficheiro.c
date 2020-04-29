@@ -167,7 +167,7 @@ COORDENADA dist_euclidiana ( ESTADO *e, LISTA L){
 
 int vitoria (ESTADO *e, COORDENADA C){
     int r = 0, j = obter_jogador_atual(e);
-    if (j == 1 && C.coluna == 0 && C.coluna == 0) r = 1;
+    if (j == 1 && C.coluna == 0 && C.linha == 0) r = 1;
     else if ( j == 2 && C.coluna == 7 && C.linha == 7) r = 1;
     else if ( vizivalide(e, C) >= 7){
         r = 1;
