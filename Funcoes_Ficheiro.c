@@ -30,43 +30,42 @@ void fptabuleiro(FILE *Projeto_Rastros, ESTADO *e){
     fprintf(Projeto_Rastros, "\n");
 }
 
-int movsficheiro (ESTADO *e, FILE *nome) {
-    char c1, c2;
-    int i, l1, l2;
-    int jogada = obter_numero_de_jogadas(e), jogador = obter_jogador_atual(e);
-    if ( jogador == 1) jogada--;
-    for ( i = 1; i <= jogada ; i++) {
-        COORDENADA jog1 = obter_jogada(e, i, 1);
-        c1 = jog1.coluna + 'a';
-        l1 = jog1.linha + 1;
-        COORDENADA jog2 = obter_jogada(e, i, 2);
-        c2 = jog2.coluna + 'a';
-        l2 = jog2.linha + 1;
-        if (i < jogada) {
-            fprintf(nome,"%02d: %c%d %c%d \n", i, c1, l1, c2, l2);
-        } else {
+int movsficheiro (ESTADO *estado, FILE *nome_fich) {
+    char col1, col2;
+    int ind, lin1, lin2, jogada = obter_numero_de_jogadas( estado ), jogador = obter_jogador_atual( estado );
+    COORDENADA jog1, jog2;
+    if ( jogador == 1 ) jogada--;
+    for ( ind = 1; ind <= jogada ; ind++ ) {
+        jog1 = obter_jogada( estado, ind, 1 );
+        jog2 = obter_jogada( estado, ind, 2 );
+        col1 = jog1.coluna + 'a';
+        lin1 = jog1.linha + 1;
+        col2 = jog2.coluna + 'a';
+        lin2 = jog2.linha + 1;
+        if ( ind < jogada )
+            fprintf( nome_fich, "%02d: %c%d %c%d \n", ind, col1, lin1, col2, lin2 );
+        else {
             if ( jogador == 2)
-                fprintf(nome,"%02d: %c%d \n", i, c1, l1);
+                fprintf(nome_fich, "%02d: %c%d \n", ind , col1, lin1 );
             else
-                fprintf(nome,"%02d: %c%d %c%d \n", i, c1, l1, c2, l2);
+                fprintf( nome_fich,"%02d: %c%d %c%d \n", ind, col1, lin1, col2, lin2 );
         }
     }
     return 0;
 }
 
-int gr( char nomeficheiro[], ESTADO *e){
-    FILE *fp = fopen(nomeficheiro, "w");
-    if(fp==NULL){
-        fclose(fp);
+int gr ( char nomeficheiro[], ESTADO *estado ){
+    FILE *fp = fopen( nomeficheiro, "w" );
+    if( fp == NULL ){
+        fclose( fp );
         return 0;
     } else {
-        fptabuleiro(fp,e);
-        movsficheiro (e, fp);
+        fptabuleiro( fp, estado );
+        movsficheiro ( estado, fp );
         fclose(fp);
     }
     return 1;
 }
-
 
 ESTADO *ler ( char nomeficheiro[], ESTADO *estado ){
     FILE *fp = fopen( nomeficheiro, "r+" );
