@@ -8,7 +8,6 @@
 #include <stdio.h>
 #include "Camada_dados.h"
 #include "Listas/listas.h"
-
 /**
 \brief Permite imprimir o tabuleiro no ficheiro
 @param Projeto_Rastros Apontador para o ficheiro
@@ -18,35 +17,35 @@ void fptabuleiro(FILE *Projeto_Rastros, ESTADO *e);
 
 /**
 \brief Mostra a lista de movimentos no ficheiro
-@param e Apontador para o estado
+@param estado Apontador para o estado
 @param nome Apontador para o ficheiro
 @returns 0
 */
-int movsficheiro (ESTADO *e, FILE *nome);
+int movsficheiro (ESTADO *estado, FILE *nome_fich);
 
 /**
 \brief Grava o tabuleiro
-@param e Apontador para o estado
+@param estado Apontador para o estado
 @param nomeficheiro Apontador para o ficheiro
 @returns 1
 */
-int gr(char nomeficheiro[], ESTADO *e);
+int gr ( char nomeficheiro[], ESTADO *estado );
 
 /**
 \brief Lê o tabuleiro e atualiza o estado
-@param e Apontador para o estado
+@param estado Apontador para o estado
 @param nomeficheiro Apontador para o ficheiro
 @returns o estado alterado
 */
-ESTADO *ler(char nomeficheiro[], ESTADO *e);
+ESTADO *ler ( char nomeficheiro[], ESTADO *estado );
 
 /**
 \brief Permitir ao utilizador aceder a uma jogada anterior
-@param e Apontador para o estado
+@param estado Apontador para o estado
 @param dado Apontador para a jogada pretendida
 @returns Apontador do estado
 */
-ESTADO* pos (ESTADO *e, int dado);
+ESTADO* pos (ESTADO *estado, int dado);
 
 /**
 \brief Permitir calcular a distância de uma coordenada à casa final
@@ -55,6 +54,18 @@ ESTADO* pos (ESTADO *e, int dado);
 @returns int
 */
 int det_dist(COORDENADA c, int nj);
+
+COORDENADA dist_euclidiana ( ESTADO *e, LISTA L);
+
+int vitoria (ESTADO *e, COORDENADA C);
+
+int derrota (ESTADO *e, COORDENADA c);
+
+LISTA remove_opcoes (ESTADO *e, LISTA l);
+
+COORDENADA heuristica (ESTADO *e);
+
+COORDENADA jog2 ( ESTADO *e );
 
 /**
 \brief Determina a melhor jogada tendo em consideração a distância à casa objetivo
