@@ -18,10 +18,9 @@ Definição da função jogar e funções associadas a essa
 @param c A coordenada
 @returns 0 ou 1 para verdadeiro ou falso
 */
-int vizinha(ESTADO *e, COORDENADA c);
+int e_vizinha( ESTADO *estado, COORDENADA coord);
 
 int possivel ( ESTADO *e, COORDENADA c);
-
 
 /**
 \brief Testa se a Jogada é válida
@@ -39,7 +38,6 @@ int jogada_valida (ESTADO *estado, COORDENADA c);
 int cond_canto (COORDENADA c);
 
 void coordvizinho(COORDENADA ls[], COORDENADA c);
-
 
 /**
 \brief Testar se tem vizinhos validos
