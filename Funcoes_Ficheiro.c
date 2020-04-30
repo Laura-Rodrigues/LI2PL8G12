@@ -163,7 +163,7 @@ LISTA remove_opcoes (ESTADO *e, LISTA l){
     while (!lista_esta_vazia(proximo(T))){
         c = (COORDENADA *) devolve_cabeca(T);
         f = *c;
-        coordvizinho(e,ls, f);
+        coordvizinho(ls, f);
         for ( i = 0; i < 8; i++) {
             if (possivel(e, ls[i]) && !(cond_canto(ls[i]))) {
                 if (vitoria ( e, ls[i]))
@@ -186,7 +186,7 @@ LISTA remove_opcoes (ESTADO *e, LISTA l){
 COORDENADA heuristica (ESTADO *e) {
     int i, jogador = obter_jogador_atual(e);
     COORDENADA c, ls[8], coord = obter_ultima_jogada(e);
-    coordvizinho(e, ls, coord);
+    coordvizinho(ls, coord);
     LISTA L = criar_lista();
     for ( i = 0; i < 8; i++){
         if (possivel(e, ls[i]) && !(cond_canto(ls[i])) ) {
@@ -212,10 +212,10 @@ COORDENADA jog ( ESTADO *e ) {
     return c;
 }
 
-COORDENADA jog3 ( ESTADO *e ){
+COORDENADA jog2 ( ESTADO *e ){
     COORDENADA ls[8], atual = obter_ultima_jogada(e), final;
     int i;
-    coordvizinho(e, ls, atual);
+    coordvizinho(ls, atual);
     LISTA L = criar_lista();
     for ( i = 0; i < 8; i++){
         if ( possivel (e, ls[i]) && !(cond_canto(ls[i])) ){
@@ -281,7 +281,7 @@ COORDENADA heu_par(LISTA l, ESTADO *e){
 }
 
 
-COORDENADA jog2(ESTADO *e){
+COORDENADA jog3(ESTADO *e){
     COORDENADA c = obter_ultima_jogada(e);
     LISTA li = listvizinho(e, c);
     COORDENADA cf = heu_par(li, e);
