@@ -68,6 +68,11 @@ int jogar_coord ( ESTADO *estado, COORDENADA coord ){
     return v_final;
 }
 
+/**
+\brief Mostra a lista de movimentos
+@param e Apontador para o estado
+@returns 0
+*/
 int movs ( ESTADO *estado ) {
     char col1, col2;
     int ind, lin1, lin2, jogada = obter_numero_de_jogadas( estado ), jogador = obter_jogador_atual( estado );
