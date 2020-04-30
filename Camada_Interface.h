@@ -42,6 +42,13 @@ void prompt (ESTADO*e);
 int Resposta (int resultado);
 
 /**
+\brief Mostra a lista de movimentos
+@param e Apontador para o estado
+@returns 0
+*/
+int movs ( ESTADO *e);
+
+/**
 \brief Interpretador
 @param e Apontador para o estado
 @returns 0 ou 1
