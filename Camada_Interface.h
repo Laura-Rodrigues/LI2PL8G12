@@ -40,8 +40,19 @@ void prompt (ESTADO *e);
 */
 int Resposta (int resultado);
 
+/**
+\brief Joga uma coordenada
+@param estado Apontador para o estado
+@param coord Apontador para a coordenada
+@returns valor final (verdadeiro ou falso)
+*/
 int jogar_coord ( ESTADO *estado, COORDENADA coord );
 
+/**
+\brief Mostra a lista de movimentos
+@param estado Apontador para o estado
+@returns 0
+*/
 int movs ( ESTADO *estado );
 
 /**
