@@ -7,8 +7,14 @@
 
 #include "../Camada_dados.h"
 
+/**
+\brief Tipo de dados para as listas
+*/
 typedef struct listas *LISTA;
 
+/**
+\brief Tipo de dados para os nodos
+*/
 typedef struct listas {
     COORDENADA *valor;
     LISTA prox;

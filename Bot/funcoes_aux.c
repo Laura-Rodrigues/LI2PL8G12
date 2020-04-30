@@ -2,7 +2,6 @@
 // Created by laura on 25/04/20.
 //
 
-#include "funcoes_aux.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include "Bot.h"
