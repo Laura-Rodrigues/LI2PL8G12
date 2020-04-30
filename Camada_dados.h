@@ -10,7 +10,6 @@ Definição do estado e das funções que o manipulam
 #ifndef PROJETORASTROS_CAMADA_DADOS_H
 #define PROJETORASTROS_CAMADA_DADOS_H
 
-
 /**
 \brief Tipo de dados para a casa
 */
@@ -131,12 +130,6 @@ int obter_pos (ESTADO *e);
 void aumenta_pos (ESTADO* e, int i);
 
 /**
-\brief Altera detalhes do estado inicial
-@param estado Apontador para o estado
-*/
-void faz_primeira_jogada (ESTADO *e);
-
-/**
 \brief Permite alterar o valor da variavel alt_pos
 @param e Apontador para o estado
 */
@@ -170,17 +163,23 @@ void altera_jogadas (ESTADO *e, COORDENADA c);
 void altera_jogadoratual(ESTADO *e);
 
 /**
-\brief Aumenta o numero de jogadas
-@param e Apontador para o estado
-*/
-void altera_numjogadas (ESTADO *e);
-
-/**
 \brief Aumenta o numero de movimentos
 @param e Apontador para o estado
 @param n_mov O inteiro
 */
 void altera_num_mov (ESTADO *e, int n_mov);
+
+/**
+\brief Aumenta o numero de jogadas
+@param e Apontador para o estado
+*/
+void altera_numjogadas ( ESTADO *e );
+
+/**
+\brief Altera detalhes do estado inicial
+@param estado Apontador para o estado
+*/
+void faz_primeira_jogada (ESTADO *e);
 
 /**
 \brief Altera o estado
