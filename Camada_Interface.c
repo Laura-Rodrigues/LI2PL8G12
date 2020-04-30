@@ -116,8 +116,7 @@ int interpretador( ESTADO *estado ) {
     else if ( strcmp( linha, "Q\n" ) == 0 ) return 0;
     else if ( sscanf( linha, "pos %d", &joga ) ) {
         if ( n_pos != 0 ){
-            strcpy(nome_ficheiro, "v_ant_estado");
-            estado = ler (nome_ficheiro, estado);
+            estado = ler ("v_ant_estado", estado);
             aumenta_pos(estado, n_pos-1);
         }
         if (joga < 0 || joga >= obter_numero_de_jogadas(estado)) {
@@ -125,8 +124,7 @@ int interpretador( ESTADO *estado ) {
         }
         else {
             if (obter_pos( estado ) == 0){
-                strcpy(nome_ficheiro, "v_ant_estado");
-                gr ( nome_ficheiro, estado );
+                gr ( "v_ant_estado", estado );
             }
             estado = pos( estado, joga );
         }
@@ -137,6 +135,13 @@ int interpretador( ESTADO *estado ) {
         movs( estado );
     else if ( strcmp( linha, "jog\n" ) == 0 ){
         coord = jog( estado );
+        joga = jogar_coord ( estado, coord );
+        if ( joga == 1 ) return 0;
+        mostrar_tabuleiro( estado );
+    }
+
+    else if ( strcmp( linha, "jog2\n" ) == 0 ){
+        coord = jog2( estado );
         joga = jogar_coord ( estado, coord );
         if ( joga == 1 ) return 0;
         mostrar_tabuleiro( estado );
