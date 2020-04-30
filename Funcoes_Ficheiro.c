@@ -92,24 +92,24 @@ ESTADO *ler ( char nomeficheiro[], ESTADO *estado ){
     return estado;
 }
 
-ESTADO* pos (ESTADO *e, int dado){
-    int m = obter_num_mov(e), i = obter_pos(e);
-    JOGADAS t;
+ESTADO* pos (ESTADO *estado, int dado){
+    int n_mov = obter_num_mov(estado), n_pos = obter_pos(estado);
+    JOGADAS jogadas;
     for (int i = 1;i <= dado; i++) {
-        t[i].jogador1 = obter_jogada(e, i, 1);
-        t[i].jogador2 = obter_jogada(e, i, 2);
+        jogadas[i].jogador1 = obter_jogada(estado, i, 1);
+        jogadas[i].jogador2 = obter_jogada(estado, i, 2);
     }
-    e = inicializar_estado();
-    faz_primeira_jogada(e);
+    estado = inicializar_estado();
+    faz_primeira_jogada(estado);
     for (int i = 1;i <= dado; i++){
-        COORDENADA c1 = t[i].jogador1;
-        altera_estado(e,c1);
-        COORDENADA c2 = t[i].jogador2;
-        altera_estado(e,c2);
+        COORDENADA c1 = jogadas[i].jogador1;
+        altera_estado(estado,c1);
+        COORDENADA c2 = jogadas[i].jogador2;
+        altera_estado(estado,c2);
     }
-    aumenta_pos(e, i);
-    e -> num_movimentos = m+obter_pos(e);
-    return e;
+    aumenta_pos( estado, n_pos );
+    altera_num_mov(estado, n_mov+obter_pos(estado));
+    return estado;
 }
 
 
