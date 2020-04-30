@@ -52,24 +52,11 @@ typedef struct {
 } ESTADO;
 
 
-/**
-\brief Grava o tabuleiro
-@param e Apontador para o estado
-@param nomeficheiro Apontador para o ficheiro
-@returns 1
-*/
-int gr(char nomeficheiro[], ESTADO *e);
+
+COORDENADA jog ( ESTADO *e );
 
 /**
-\brief Lê o tabuleiro e atualiza o estado
-@param e Apontador para o estado
-@param nomeficheiro Apontador para o ficheiro
-@returns o estado alterado
-*/
-ESTADO *ler(char nomeficheiro[], ESTADO *e);
-
-/**
-\brief Analisa as jogadas possíveis e aplica uma heurística para jogar na melhor coordenada
+\brief Aplica a heurística e joga no tabuleiro a melhor jogada
 @param e Apontador para o estado
 @returns coordenada
 */
