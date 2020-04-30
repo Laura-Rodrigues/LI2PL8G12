@@ -5,6 +5,7 @@
 #ifndef PROJETORASTROS_FUNCOES_AUX_H
 #define PROJETORASTROS_FUNCOES_AUX_H
 
+#include <bits/types/FILE.h>
 #include "Bot.h"
 
 /**
@@ -162,8 +163,14 @@ int jogada_valida (ESTADO *estado, COORDENADA c);
 */
 void coordvizinho(ESTADO *e, COORDENADA ls[]);
 
+/**
+\brief Tipo de dados para as listas
+*/
 typedef struct listas *LISTA;
 
+/**
+\brief Tipo de dados para os nodos
+*/
 typedef struct listas {
     COORDENADA *valor;
     LISTA prox;
@@ -238,5 +245,44 @@ int movs ( ESTADO *e);
 @param estado Apontador para o estado
 */
 void mostrar_tabuleiro(ESTADO *estado);
+
+/**
+\brief Permite imprimir o tabuleiro no ficheiro
+@param Projeto_Rastros Apontador para o ficheiro
+@param e Apontador para o estado
+*/
+void fptabuleiro(FILE *Projeto_Rastros, ESTADO *e);
+
+/**
+\brief Mostra a lista de movimentos no ficheiro
+@param estado Apontador para o estado
+@param nome Apontador para o ficheiro
+@returns 0
+*/
+int movsficheiro (ESTADO *estado, FILE *nome_fich);
+
+/**
+\brief Grava o tabuleiro
+@param estado Apontador para o estado
+@param nomeficheiro Apontador para o ficheiro
+@returns 1
+*/
+int gr ( char nomeficheiro[], ESTADO *estado );
+
+/**
+\brief Lê o tabuleiro e atualiza o estado
+@param estado Apontador para o estado
+@param nomeficheiro Apontador para o ficheiro
+@returns o estado alterado
+*/
+ESTADO *ler ( char nomeficheiro[], ESTADO *estado );
+
+/**
+\brief Modifica o estado ao jogar na casa correta se a jogada for válida
+@param estado Apontador para o estado
+@param c A coordenada
+@returns 0 ou 1 para verdadeiro ou falso
+*/
+int jogar(ESTADO *estado, COORDENADA c);
 
 #endif //PROJETORASTROS_FUNCOES_AUX_H
