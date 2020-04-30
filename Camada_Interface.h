@@ -16,7 +16,6 @@ Definição do interpretador e mostrar tabuleiro e das funções associadas
 #include "Camada_Interface.h"
 #include "Camada_dados.h"
 #include "Funcoes_Ficheiro.h"
-
 /**
 \brief Definição do tamanho do buf
 */
@@ -32,7 +31,7 @@ void mostrar_tabuleiro(ESTADO *estado);
 \brief Permite apresentar um prompt
 @param e Apontador para o estado
 */
-void prompt (ESTADO*e);
+void prompt (ESTADO *e);
 
 /**
 \brief Permite dar uma resposta no final do jogo
@@ -41,12 +40,9 @@ void prompt (ESTADO*e);
 */
 int Resposta (int resultado);
 
-/**
-\brief Mostra a lista de movimentos
-@param e Apontador para o estado
-@returns 0
-*/
-int movs ( ESTADO *e);
+int jogar_coord ( ESTADO *estado, COORDENADA coord );
+
+int movs ( ESTADO *estado );
 
 /**
 \brief Interpretador
