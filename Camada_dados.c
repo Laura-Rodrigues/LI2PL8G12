@@ -119,6 +119,7 @@ void faz_primeira_jogada ( ESTADO *estado ){
 }
 
 void altera_estado (ESTADO *estado, COORDENADA coord){
+    int n_mov_atual = obter_num_mov( estado ) +1;
     altera_pos( estado );
     altera_tabuleiro( estado, coord );
     altera_ultimajogada( estado, coord );
