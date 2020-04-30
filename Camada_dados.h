@@ -178,8 +178,9 @@ void altera_numjogadas (ESTADO *e);
 /**
 \brief Aumenta o numero de movimentos
 @param e Apontador para o estado
+@param n_mov O inteiro
 */
-void altera_num_mov (ESTADO *e);
+void altera_num_mov (ESTADO *e, int n_mov);
 
 /**
 \brief Altera o estado
