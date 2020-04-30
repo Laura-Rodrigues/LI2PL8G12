@@ -34,10 +34,10 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /snap/clion/111/bin/cmake/linux/bin/cmake
+CMAKE_COMMAND = /snap/clion/112/bin/cmake/linux/bin/cmake
 
 # The command to remove a file.
-RM = /snap/clion/111/bin/cmake/linux/bin/cmake -E remove -f
+RM = /snap/clion/112/bin/cmake/linux/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
@@ -135,32 +135,6 @@ CMakeFiles/ProjetoRastros.dir/Listas/listas.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/ProjetoRastros.dir/Listas/listas.c.s"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/laura/Desktop/LI2PL8G12/Listas/listas.c -o CMakeFiles/ProjetoRastros.dir/Listas/listas.c.s
 
-CMakeFiles/ProjetoRastros.dir/Listas/main.c.o: CMakeFiles/ProjetoRastros.dir/flags.make
-CMakeFiles/ProjetoRastros.dir/Listas/main.c.o: ../Listas/main.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/laura/Desktop/LI2PL8G12/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/ProjetoRastros.dir/Listas/main.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ProjetoRastros.dir/Listas/main.c.o   -c /home/laura/Desktop/LI2PL8G12/Listas/main.c
-
-CMakeFiles/ProjetoRastros.dir/Listas/main.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/ProjetoRastros.dir/Listas/main.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/laura/Desktop/LI2PL8G12/Listas/main.c > CMakeFiles/ProjetoRastros.dir/Listas/main.c.i
-
-CMakeFiles/ProjetoRastros.dir/Listas/main.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/ProjetoRastros.dir/Listas/main.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/laura/Desktop/LI2PL8G12/Listas/main.c -o CMakeFiles/ProjetoRastros.dir/Listas/main.c.s
-
-CMakeFiles/ProjetoRastros.dir/Bot/funcoes_aux.c.o: CMakeFiles/ProjetoRastros.dir/flags.make
-CMakeFiles/ProjetoRastros.dir/Bot/funcoes_aux.c.o: ../Bot/funcoes_aux.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/laura/Desktop/LI2PL8G12/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object CMakeFiles/ProjetoRastros.dir/Bot/funcoes_aux.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ProjetoRastros.dir/Bot/funcoes_aux.c.o   -c /home/laura/Desktop/LI2PL8G12/Bot/funcoes_aux.c
-
-CMakeFiles/ProjetoRastros.dir/Bot/funcoes_aux.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/ProjetoRastros.dir/Bot/funcoes_aux.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/laura/Desktop/LI2PL8G12/Bot/funcoes_aux.c > CMakeFiles/ProjetoRastros.dir/Bot/funcoes_aux.c.i
-
-CMakeFiles/ProjetoRastros.dir/Bot/funcoes_aux.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/ProjetoRastros.dir/Bot/funcoes_aux.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/laura/Desktop/LI2PL8G12/Bot/funcoes_aux.c -o CMakeFiles/ProjetoRastros.dir/Bot/funcoes_aux.c.s
-
 # Object files for target ProjetoRastros
 ProjetoRastros_OBJECTS = \
 "CMakeFiles/ProjetoRastros.dir/main.c.o" \
@@ -168,9 +142,7 @@ ProjetoRastros_OBJECTS = \
 "CMakeFiles/ProjetoRastros.dir/Camada_Interface.c.o" \
 "CMakeFiles/ProjetoRastros.dir/Camada_dados.c.o" \
 "CMakeFiles/ProjetoRastros.dir/Funcoes_Ficheiro.c.o" \
-"CMakeFiles/ProjetoRastros.dir/Listas/listas.c.o" \
-"CMakeFiles/ProjetoRastros.dir/Listas/main.c.o" \
-"CMakeFiles/ProjetoRastros.dir/Bot/funcoes_aux.c.o"
+"CMakeFiles/ProjetoRastros.dir/Listas/listas.c.o"
 
 # External object files for target ProjetoRastros
 ProjetoRastros_EXTERNAL_OBJECTS =
@@ -181,11 +153,9 @@ ProjetoRastros: CMakeFiles/ProjetoRastros.dir/Camada_Interface.c.o
 ProjetoRastros: CMakeFiles/ProjetoRastros.dir/Camada_dados.c.o
 ProjetoRastros: CMakeFiles/ProjetoRastros.dir/Funcoes_Ficheiro.c.o
 ProjetoRastros: CMakeFiles/ProjetoRastros.dir/Listas/listas.c.o
-ProjetoRastros: CMakeFiles/ProjetoRastros.dir/Listas/main.c.o
-ProjetoRastros: CMakeFiles/ProjetoRastros.dir/Bot/funcoes_aux.c.o
 ProjetoRastros: CMakeFiles/ProjetoRastros.dir/build.make
 ProjetoRastros: CMakeFiles/ProjetoRastros.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/laura/Desktop/LI2PL8G12/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking C executable ProjetoRastros"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/laura/Desktop/LI2PL8G12/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking C executable ProjetoRastros"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/ProjetoRastros.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

@@ -39,10 +39,10 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /snap/clion/111/bin/cmake/linux/bin/cmake
+CMAKE_COMMAND = /snap/clion/112/bin/cmake/linux/bin/cmake
 
 # The command to remove a file.
-RM = /snap/clion/111/bin/cmake/linux/bin/cmake -E remove -f
+RM = /snap/clion/112/bin/cmake/linux/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
@@ -59,7 +59,7 @@ CMAKE_BINARY_DIR = /home/laura/Desktop/LI2PL8G12/cmake-build-debug
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/snap/clion/111/bin/cmake/linux/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/snap/clion/112/bin/cmake/linux/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -70,7 +70,7 @@ rebuild_cache/fast: rebuild_cache
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/snap/clion/111/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	/snap/clion/112/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -122,33 +122,6 @@ ProjetoRastros: cmake_check_build_system
 ProjetoRastros/fast:
 	$(MAKE) -f CMakeFiles/ProjetoRastros.dir/build.make CMakeFiles/ProjetoRastros.dir/build
 .PHONY : ProjetoRastros/fast
-
-Bot/funcoes_aux.o: Bot/funcoes_aux.c.o
-
-.PHONY : Bot/funcoes_aux.o
-
-# target to build an object file
-Bot/funcoes_aux.c.o:
-	$(MAKE) -f CMakeFiles/ProjetoRastros.dir/build.make CMakeFiles/ProjetoRastros.dir/Bot/funcoes_aux.c.o
-.PHONY : Bot/funcoes_aux.c.o
-
-Bot/funcoes_aux.i: Bot/funcoes_aux.c.i
-
-.PHONY : Bot/funcoes_aux.i
-
-# target to preprocess a source file
-Bot/funcoes_aux.c.i:
-	$(MAKE) -f CMakeFiles/ProjetoRastros.dir/build.make CMakeFiles/ProjetoRastros.dir/Bot/funcoes_aux.c.i
-.PHONY : Bot/funcoes_aux.c.i
-
-Bot/funcoes_aux.s: Bot/funcoes_aux.c.s
-
-.PHONY : Bot/funcoes_aux.s
-
-# target to generate assembly for a file
-Bot/funcoes_aux.c.s:
-	$(MAKE) -f CMakeFiles/ProjetoRastros.dir/build.make CMakeFiles/ProjetoRastros.dir/Bot/funcoes_aux.c.s
-.PHONY : Bot/funcoes_aux.c.s
 
 Camada_Interface.o: Camada_Interface.c.o
 
@@ -258,33 +231,6 @@ Listas/listas.c.s:
 	$(MAKE) -f CMakeFiles/ProjetoRastros.dir/build.make CMakeFiles/ProjetoRastros.dir/Listas/listas.c.s
 .PHONY : Listas/listas.c.s
 
-Listas/main.o: Listas/main.c.o
-
-.PHONY : Listas/main.o
-
-# target to build an object file
-Listas/main.c.o:
-	$(MAKE) -f CMakeFiles/ProjetoRastros.dir/build.make CMakeFiles/ProjetoRastros.dir/Listas/main.c.o
-.PHONY : Listas/main.c.o
-
-Listas/main.i: Listas/main.c.i
-
-.PHONY : Listas/main.i
-
-# target to preprocess a source file
-Listas/main.c.i:
-	$(MAKE) -f CMakeFiles/ProjetoRastros.dir/build.make CMakeFiles/ProjetoRastros.dir/Listas/main.c.i
-.PHONY : Listas/main.c.i
-
-Listas/main.s: Listas/main.c.s
-
-.PHONY : Listas/main.s
-
-# target to generate assembly for a file
-Listas/main.c.s:
-	$(MAKE) -f CMakeFiles/ProjetoRastros.dir/build.make CMakeFiles/ProjetoRastros.dir/Listas/main.c.s
-.PHONY : Listas/main.c.s
-
 Logica_Programa.o: Logica_Programa.c.o
 
 .PHONY : Logica_Programa.o
@@ -348,9 +294,6 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... ProjetoRastros"
-	@echo "... Bot/funcoes_aux.o"
-	@echo "... Bot/funcoes_aux.i"
-	@echo "... Bot/funcoes_aux.s"
 	@echo "... Camada_Interface.o"
 	@echo "... Camada_Interface.i"
 	@echo "... Camada_Interface.s"
@@ -363,9 +306,6 @@ help:
 	@echo "... Listas/listas.o"
 	@echo "... Listas/listas.i"
 	@echo "... Listas/listas.s"
-	@echo "... Listas/main.o"
-	@echo "... Listas/main.i"
-	@echo "... Listas/main.s"
 	@echo "... Logica_Programa.o"
 	@echo "... Logica_Programa.i"
 	@echo "... Logica_Programa.s"
