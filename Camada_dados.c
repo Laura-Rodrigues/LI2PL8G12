@@ -108,14 +108,14 @@ void altera_jogadoratual( ESTADO *estado ){
     else estado -> jogador_atual = 1;
 }
 
-void altera_num_mov ( ESTADO *estado ){
-    estado -> num_movimentos++;
+void altera_num_mov ( ESTADO *estado, int n_mov ){
+    estado -> num_movimentos = n_mov;
 }
 
 void faz_primeira_jogada ( ESTADO *estado ){
     altera_numjogadas( estado );
     altera_jogadoratual( estado );
-    altera_num_mov( estado );
+    altera_num_mov( estado, 1 );
 }
 
 void altera_estado (ESTADO *estado, COORDENADA coord){
@@ -125,6 +125,6 @@ void altera_estado (ESTADO *estado, COORDENADA coord){
     altera_jogadas( estado, coord );
     altera_numjogadas( estado );
     altera_jogadoratual( estado );
-    altera_num_mov( estado );
+    altera_num_mov( estado, n_mov_atual );
 }
 
