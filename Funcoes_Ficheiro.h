@@ -41,13 +41,6 @@ int gr(char nomeficheiro[], ESTADO *e);
 ESTADO *ler(char nomeficheiro[], ESTADO *e);
 
 /**
-\brief Mostra a lista de movimentos
-@param e Apontador para o estado
-@returns 0
-*/
-int movs ( ESTADO *e);
-
-/**
 \brief Permitir ao utilizador aceder a uma jogada anterior
 @param e Apontador para o estado
 @param dado Apontador para a jogada pretendida
