@@ -35,7 +35,7 @@ COORDENADA jog ( ESTADO *e ){
 // jogar nessa jogada, devolvendo o tabuleiro atualizado.
 COORDENADA bot (ESTADO *e){
     COORDENADA c;
-    c = jog2 (e);
+    c = jog (e);
     jogar(e, c);
     return c;
 }

@@ -12,7 +12,7 @@
 
 void fptabuleiro(FILE *Projeto_Rastros, ESTADO *e){
     for (int i = 0; i < 8; i++) {
-        fprintf(Projeto_Rastros, "%c ", '8' - i );
+        //fprintf(Projeto_Rastros, "%c ", '8' - i );
         for (int j = 0; j < 8; j++) {
             COORDENADA c = {i,j};
             if (obter_estado_casa(e,c) == DOIS) fprintf(Projeto_Rastros, "2 ");
@@ -24,9 +24,9 @@ void fptabuleiro(FILE *Projeto_Rastros, ESTADO *e){
         fprintf(Projeto_Rastros, "\n");
     }
     fprintf(Projeto_Rastros, "  ");
-    for(int i = 0; i < 8; i++) {
-        fprintf(Projeto_Rastros, "%c ", 'a' + i);
-    };
+    //for(int i = 0; i < 8; i++) {
+    //    fprintf(Projeto_Rastros, "%c ", 'a' + i);
+    //}
     fprintf(Projeto_Rastros, "\n");
 }
 
