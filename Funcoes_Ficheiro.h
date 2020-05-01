@@ -114,6 +114,9 @@ LISTA listvizinho(ESTADO *e, COORDENADA c);
 //Coloca numa lista as casas com numero para de casas vizinhas vazias
 LISTA len_Viz(LISTA l, ESTADO *e);
 
+//Compara qual Casa tem maior numero de casas livres
+COORDENADA max(LISTA l, ESTADO *e);
+
 //Compara qual Casa tem menor numero de casas livres
 COORDENADA min(LISTA l, ESTADO *e);
 
