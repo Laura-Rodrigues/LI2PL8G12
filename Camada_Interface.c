@@ -116,20 +116,22 @@ int interpretador( ESTADO *estado ) {
     else if ( strcmp( linha, "Q\n" ) == 0 ) return 0;
     else if ( sscanf( linha, "pos %d", &joga ) ) {
         if ( n_pos != 0 ){
+            gr ("v_novo", estado);
             estado = ler ("v_ant_estado", estado);
             aumenta_pos(estado, n_pos-1);
         }
         if (joga < 0 || joga >= obter_numero_de_jogadas(estado)) {
             printf("Número de jogada inválido.\n");
+            if ( n_pos != 0 ) estado = ler("v_novo", estado);
         }
         else {
             if (obter_pos( estado ) == 0){
                 gr ( "v_ant_estado", estado );
             }
             estado = pos( estado, joga );
+            mostrar_tabuleiro( estado );
+            movs( estado );
         }
-        mostrar_tabuleiro( estado );
-        movs( estado );
     }
     else if ( strcmp( linha, "movs\n" ) == 0 )
         movs( estado );
