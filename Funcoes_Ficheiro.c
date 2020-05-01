@@ -26,7 +26,7 @@ void fptabuleiro(FILE *Projeto_Rastros, ESTADO *e){
     fprintf(Projeto_Rastros, "  ");
     for(int i = 0; i < 8; i++) {
         fprintf(Projeto_Rastros, "%c ", 'a' + i);
-    };
+    }
     fprintf(Projeto_Rastros, "\n");
 }
 
