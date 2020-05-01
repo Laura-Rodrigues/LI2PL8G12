@@ -62,24 +62,12 @@ COORDENADA obter_ultima_jogada (ESTADO *estado){
     return ultima;
 }
 
-int obter_num_mov (ESTADO *e){
-    return e->num_movimentos;
-}
-
 COORDENADA obter_jogada (ESTADO *e, int njogada, int jogador){
     COORDENADA r;
     JOGADA jogada = e-> jogadas [njogada];
     if ( jogador == 1) r = jogada.jogador1;
     else r = jogada.jogador2;
     return r;
-}
-
-int obter_pos (ESTADO *e){
-    return e->alt_pos;
-}
-
-void aumenta_pos (ESTADO* e, int i){
-    e->alt_pos = i + 1;
 }
 
 void faz_primeira_jogada (ESTADO *e){
@@ -146,6 +134,13 @@ int vizinha(ESTADO *e, COORDENADA c){
     return r;
 }
 
+int possivel ( ESTADO *estado, COORDENADA coord ){
+    int result = 0;
+    COORDENADA nova = troca_ordem( coord );
+    if ( obter_estado_casa( estado,nova ) != PRETA && obter_estado_casa( estado,nova ) != BRANCA ) result = 1;
+    return result;
+}
+
 int jogada_valida (ESTADO *estado, COORDENADA c){
     COORDENADA final = troca_ordem (c);
     CASA j = (obter_estado_casa(estado,final));
@@ -191,14 +186,29 @@ void *devolve_cabeca(LISTA L){
     return c;
 }
 
-int det_dist(COORDENADA c, int nj){
-    int cc = c.coluna, cl = c.linha, total;
-    if( nj == 1){
-        total = cc+cl;
-    } else {
-        total = abs(cc-7) + abs(cl-7);
-    }
-    return total;
+LISTA proximo(LISTA L){
+    LISTA c=L->prox;
+    if(L == NULL) c = NULL;
+    return c;
+}
+
+LISTA remove_cabeca(LISTA L){
+    LISTA cabeca;
+    cabeca = L;
+    L = proximo (L);
+    free (cabeca);
+    return L;
+}
+
+int lista_esta_vazia(LISTA L){
+    int x = 0;
+    if (L == NULL) x = 1;
+    return x;
+}
+
+int len_Lista(LISTA l){
+    if(lista_esta_vazia(l)) return 0;
+    else return 1 + len_Lista(proximo(l));
 }
 
 int cond_canto (COORDENADA c) {

@@ -5,55 +5,61 @@
 #ifndef PROJETORASTROS_BOT_H
 #define PROJETORASTROS_BOT_H
 
-/**
-\brief Tipo de dados para a casa
-*/
-typedef enum {VAZIO, BRANCA, PRETA, UM, DOIS} CASA;
+#include "funcoes_aux.h"
 
 /**
-\brief Tipo de dados para as coordenadas
+\brief Permitir calcular a distância de uma coordenada à casa final
+@param c Coordenada
+@param nj Numero do jogador atual
+@returns int
 */
-typedef struct {
-    int coluna;
-    int linha;
-} COORDENADA;
+int det_dist(COORDENADA c, int nj);
 
 /**
-\brief Tipo de dados para a jogada
+\brief Heurística para distância euclidiana
+@param e Apontador para estado
+@param L Apontador para lista
+@returns coordenada
 */
-typedef struct {
-    COORDENADA jogador1;
-    COORDENADA jogador2;
-} JOGADA;
+COORDENADA dist_euclidiana ( ESTADO *e, LISTA L);
 
 /**
-\brief Tipo de dados para as jogadas
+\brief Vê se ganhou
+@param e Apontador para estado
+@param C Apontador para coordenada
+@returns verdadeiro ou falso
 */
-typedef JOGADA JOGADAS[32];
+int vitoria (ESTADO *e, COORDENADA C);
 
 /**
-\brief Tipo de dados para o estado
+\brief Vê se perdeu
+@param e Apontador para estado
+@param c Apontador para coordenada
+@returns verdadeiro ou falso
 */
-typedef struct {
-    /** O tabuleiro */
-    CASA tab[8][8]; //tab- armazena informação sobre o tabuleiro
-    /** A coordenada da última jogada */
-    COORDENADA ultima_jogada; //ultima_jogada- a coordenada da ultima jogada
-    /** As jogadas */
-    JOGADAS jogadas; //jogadas - armazena informação sobre as jogadas
-    /** O número das jogadas, usado no prompt */
-    int num_jogadas; //num_jogadas - indica quantas jogadas foram efetuadas
-    /** O jogador atual */
-    int jogador_atual; //jogador_atual - indica qual é o jogador a jogar
-    /** Número de movimentos*/
-    int num_movimentos; //Número total de movimentos feitos
-    /**Jogada anterior foi pos **/
-    int alt_pos; // Se for 1 então jogada anterior foi pos; se for 0, a jogada anterior não foi a pos
-} ESTADO;
+int derrota (ESTADO *e, COORDENADA c);
 
+/**
+\brief Tendo em conta as coordenadas vizinhas das vizinhas, remove da lista se permitir a vitória do adversário
+@param e Apontador para estado
+@param l Apontador para lista
+@returns lista
+*/
+LISTA remove_opcoes (ESTADO *e, LISTA l);
 
+/**
+\brief Tendo em conta as jogadas possíveis, escolhe a melhor
+@param e Apontador para estado
+@returns coordenada
+*/
+COORDENADA heuristica (ESTADO *e);
 
-COORDENADA jog ( ESTADO *e );
+/**
+\brief Invoca a heurística e devolve uma coordenada
+@param e Apontador para estado
+@returns coordenada
+*/
+COORDENADA jog2 ( ESTADO *e );
 
 /**
 \brief Aplica a heurística e joga no tabuleiro a melhor jogada

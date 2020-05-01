@@ -8,6 +8,67 @@
 #include <bits/types/FILE.h>
 #include "Bot.h"
 
+
+/**
+\brief Tipo de dados para a casa
+*/
+typedef enum {VAZIO, BRANCA, PRETA, UM, DOIS} CASA;
+
+/**
+\brief Tipo de dados para as coordenadas
+*/
+typedef struct {
+    int coluna;
+    int linha;
+} COORDENADA;
+
+/**
+\brief Tipo de dados para a jogada
+*/
+typedef struct {
+    COORDENADA jogador1;
+    COORDENADA jogador2;
+} JOGADA;
+
+/**
+\brief Tipo de dados para as jogadas
+*/
+typedef JOGADA JOGADAS[32];
+
+/**
+\brief Tipo de dados para o estado
+*/
+typedef struct {
+    /** O tabuleiro */
+    CASA tab[8][8]; //tab- armazena informação sobre o tabuleiro
+    /** A coordenada da última jogada */
+    COORDENADA ultima_jogada; //ultima_jogada- a coordenada da ultima jogada
+    /** As jogadas */
+    JOGADAS jogadas; //jogadas - armazena informação sobre as jogadas
+    /** O número das jogadas, usado no prompt */
+    int num_jogadas; //num_jogadas - indica quantas jogadas foram efetuadas
+    /** O jogador atual */
+    int jogador_atual; //jogador_atual - indica qual é o jogador a jogar
+    /** Número de movimentos*/
+    int num_movimentos; //Número total de movimentos feitos
+    /**Jogada anterior foi pos **/
+    int alt_pos; // Se for 1 então jogada anterior foi pos; se for 0, a jogada anterior não foi a pos
+} ESTADO;
+
+/**
+\brief Tipo de dados para as listas
+*/
+typedef struct listas *LISTA;
+
+/**
+\brief Tipo de dados para os nodos
+*/
+typedef struct listas {
+    COORDENADA *valor;
+    LISTA prox;
+} Nodo;
+
+
 /**
 \brief Inicializa o valor do estado
 Esta função inicializa o valor do estado. Isso implica o tabuleiro ser colocado na posição inicial e todos os campos do estado estarem com o valor por omissão.
@@ -52,13 +113,6 @@ CASA obter_estado_casa(ESTADO *e, COORDENADA c);
 COORDENADA obter_ultima_jogada (ESTADO *estado);
 
 /**
-\brief Devolve o número de movimentos feitos
-@param estado Apontador para o estado
-@returns O inteiro correspondente ao número de movimentos
-*/
-int obter_num_mov (ESTADO *e);
-
-/**
 \brief Permite obter a jogada
 @param e Apontador para o estado
 @param njogada inteiro para o número da jogada
@@ -66,20 +120,6 @@ int obter_num_mov (ESTADO *e);
 @returns Coordenada
 */
 COORDENADA obter_jogada (ESTADO *e, int njogada, int jogador);
-
-/**
-\brief Permite obter o valor da variavel alt_pos
-@param e Apontador para o estado
-@returns int
-*/
-int obter_pos (ESTADO *e);
-
-/**
-\brief Altera a variavel da alt_pos e incrementa um
-@param e Apontador para o estado
-@param i Inteiro
-*/
-void aumenta_pos (ESTADO* e, int i);
 
 /**
 \brief Altera detalhes do estado inicial
@@ -147,6 +187,13 @@ void altera_estado (ESTADO *e, COORDENADA c);
 */
 int vizinha(ESTADO *e, COORDENADA c);
 
+/**
+\brief Testa se a jogada é possível
+@param e Apontador para o estado
+@param c A coordenada
+@returns 0 ou 1 para verdadeiro ou falso
+*/
+int possivel ( ESTADO *e, COORDENADA c);
 
 /**
 \brief Testa se a Jogada é válida
@@ -162,19 +209,6 @@ int jogada_valida (ESTADO *estado, COORDENADA c);
 @param ls Array de coordenadas
 */
 void coordvizinho(ESTADO *e, COORDENADA ls[]);
-
-/**
-\brief Tipo de dados para as listas
-*/
-typedef struct listas *LISTA;
-
-/**
-\brief Tipo de dados para os nodos
-*/
-typedef struct listas {
-    COORDENADA *valor;
-    LISTA prox;
-} Nodo;
 
 /**
 \brief Cria uma lista vazia
@@ -197,12 +231,32 @@ LISTA insere_cabeca(LISTA L, COORDENADA *valor);
 void *devolve_cabeca(LISTA L);
 
 /**
-\brief Permitir calcular a distância de uma coordenada à casa final
-@param c Coordenada
-@param nj Numero do jogador atual
-@returns int
+\brief Devolve a cauda da lista
+@param L Apontador para a lista
+@returns lista
 */
-int det_dist(COORDENADA c, int nj);
+LISTA proximo(LISTA L);
+
+/**
+\brief Remove a cabeça da lista (libertando o espaço ocupado) e devolve a cauda
+@param L Apontador para a lista
+@returns lista
+*/
+LISTA remove_cabeca(LISTA L);
+
+/**
+\brief Devolve verdareiro se a lista é vazia
+@param L Apontador para a lista
+@returns verdadeiro ou falso
+*/
+int lista_esta_vazia(LISTA L);
+
+/**
+\brief descobre o comprimento da lista
+@param l Apontador para a lista
+@returns tamanho da lista
+*/
+int len_Lista(LISTA l);
 
 /**
 \brief Função que determina se a coordenada se encontra fora do tabuleiro
@@ -224,14 +278,6 @@ int vizivalide(ESTADO *e, COORDENADA c);
 @returns 0 ou 1 para verdadeiro ou falso
 */
 int fim(ESTADO *e, COORDENADA c);
-
-/**
-\brief Modifica o estado ao jogar na casa correta se a jogada for válida
-@param estado Apontador para o estado
-@param c A coordenada
-@returns 0 ou 1 para verdadeiro ou falso
-*/
-int jogar(ESTADO *estado, COORDENADA c);
 
 /**
 \brief Mostra a lista de movimentos
