@@ -184,7 +184,7 @@ LISTA remove_opcoes (ESTADO *e, LISTA l){
 
 
 COORDENADA heuristica (ESTADO *e) {
-    int i, jogador = obter_jogador_atual(e);
+    int i;
     COORDENADA c, ls[8], coord = obter_ultima_jogada(e);
     coordvizinho(ls, coord);
     LISTA L = criar_lista();
