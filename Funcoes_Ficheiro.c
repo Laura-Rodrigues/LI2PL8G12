@@ -248,15 +248,34 @@ LISTA listvizinho(ESTADO *e, COORDENADA c){
 }
 
 LISTA len_Viz(LISTA l, ESTADO *e){
-    LISTA lf = criar_lista();
+    LISTA lp = criar_lista(), li = criar_lista();
     while (!lista_esta_vazia(l)){
-        COORDENADA *c = (COORDENADA*) devolve_cabeca(l);
-        if(((len_Lista(listvizinho (e, *c))) % 2) == 0){
-            insere_cabeca(lf,c);
+        COORDENADA *c = (COORDENADA*)devolve_cabeca(l);
+        if((((len_Lista(listvizinho (e, *c))) % 2) == 0) || lista_esta_vazia(listvizinho (e, *c))){
+            insere_cabeca(lp,c);
             l = proximo(l);
-        } else l = proximo(l);
+        } else {
+            insere_cabeca(li,c);
+            l = proximo(l);
+        }
     }
-    return lf;
+    if(lista_esta_vazia(lp)) return li;
+    else return lp;
+}
+
+COORDENADA max(LISTA l, ESTADO *e){
+    COORDENADA cf = * (COORDENADA *)devolve_cabeca(l);
+    while(!lista_esta_vazia(l) && !lista_esta_vazia(proximo(l))){
+        COORDENADA c1 = * (COORDENADA *)devolve_cabeca(l);
+        COORDENADA c2 = * (COORDENADA *)devolve_cabeca(proximo(l));
+        if((len_Lista(listvizinho (e, c1))) > (len_Lista(listvizinho (e, c2)))){
+            cf = c2;
+        } else {
+            cf = c1;
+        }
+        l = proximo(l);
+    }
+    return cf;
 }
 
 COORDENADA min(LISTA l, ESTADO *e){
@@ -276,9 +295,13 @@ COORDENADA min(LISTA l, ESTADO *e){
 
 COORDENADA heu_par(LISTA l, ESTADO *e){
     LISTA li = len_Viz(l,e);
-    COORDENADA c = min(li, e);
+    COORDENADA ci = * (COORDENADA *)devolve_cabeca(li);
+    COORDENADA c;
+    if(((len_Lista(listvizinho (e, ci))) % 2) == 0) c = min(li, e);
+    else c = max(li, e);
     return c;
 }
+
 
 
 COORDENADA jog3(ESTADO *e){
