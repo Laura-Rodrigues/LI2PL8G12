@@ -78,6 +78,36 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/home/laura/Desktop/LI2PL8G12/Bot/Camada_Interface.c">
+			<Option target="ProjetoRastros"/>
+		</Unit>
+		<Unit filename="/home/laura/Desktop/LI2PL8G12/Bot/Camada_Interface.h">
+			<Option target="ProjetoRastros"/>
+		</Unit>
+		<Unit filename="/home/laura/Desktop/LI2PL8G12/Bot/Camada_dados.c">
+			<Option target="ProjetoRastros"/>
+		</Unit>
+		<Unit filename="/home/laura/Desktop/LI2PL8G12/Bot/Camada_dados.h">
+			<Option target="ProjetoRastros"/>
+		</Unit>
+		<Unit filename="/home/laura/Desktop/LI2PL8G12/Bot/Funcoes_Ficheiro.c">
+			<Option target="ProjetoRastros"/>
+		</Unit>
+		<Unit filename="/home/laura/Desktop/LI2PL8G12/Bot/Funcoes_Ficheiro.h">
+			<Option target="ProjetoRastros"/>
+		</Unit>
+		<Unit filename="/home/laura/Desktop/LI2PL8G12/Bot/Logica_Programa.c">
+			<Option target="ProjetoRastros"/>
+		</Unit>
+		<Unit filename="/home/laura/Desktop/LI2PL8G12/Bot/Logica_Programa.h">
+			<Option target="ProjetoRastros"/>
+		</Unit>
+		<Unit filename="/home/laura/Desktop/LI2PL8G12/Bot/listas.c">
+			<Option target="ProjetoRastros"/>
+		</Unit>
+		<Unit filename="/home/laura/Desktop/LI2PL8G12/Bot/listas.h">
+			<Option target="ProjetoRastros"/>
+		</Unit>
 		<Unit filename="/home/laura/Desktop/LI2PL8G12/Camada_Interface.c">
 			<Option target="ProjetoRastros"/>
 		</Unit>
