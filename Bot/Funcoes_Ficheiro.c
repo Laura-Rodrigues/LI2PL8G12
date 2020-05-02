@@ -78,12 +78,17 @@ ESTADO *ler ( char nomeficheiro[], ESTADO *estado ){
         estado = inicializar_estado();
         faz_primeira_jogada( estado );
         while ( ( fgets( str, BUF_SIZE, fp ) ) != NULL ){
+            if (sscanf( str, "0%d: %c%d", &jog, &col1, &lin1 )){
+                COORDENADA c0 = {col1 - 'a', lin1 - 1 };
+                if ( jog != 0 && jogada_valida( estado, c0 ) )
+                    altera_estado(estado, c0);
+            }
             if ( sscanf( str, "0%d: %c%d %c%d", &jog, &col1, &lin1, &col2, &lin2 ) ){
                 COORDENADA c0 = {col1 - 'a', lin1 - 1 };
                 COORDENADA c1 = {col2 -'a' , lin2 - 1 };
                 if ( jog != 0 && jogada_valida( estado, c0 ) )
                     altera_estado(estado, c0);
-                if ( jog != 0 && jogada_valida( estado, c1 ) )
+                if (  jog != 0 && jogada_valida( estado, c1 ) )
                     altera_estado( estado, c1 );
             }
         }
