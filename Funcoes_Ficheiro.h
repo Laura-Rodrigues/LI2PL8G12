@@ -39,13 +39,23 @@ int gr ( char nomeficheiro[], ESTADO *estado );
 */
 ESTADO *ler ( char nomeficheiro[], ESTADO *estado );
 
+
 /**
 \brief Permitir ao utilizador aceder a uma jogada anterior
 @param estado Apontador para o estado
-@param dado Apontador para a jogada pretendida
+@param dado Inteiro que indica a jogada pretendida
 @returns Apontador do estado
 */
 ESTADO* pos (ESTADO *estado, int dado);
+
+/**
+\brief Função que transforma uma array de coordenadas numa lista
+@param arr Array de coordenadas
+@param L Lista ligada
+@param e Apontador para estado
+@returns int
+*/
+LISTA from_Array ( COORDENADA arr[], LISTA L, ESTADO *e)
 
 /**
 \brief Permitir calcular a distância de uma coordenada à casa final
@@ -64,25 +74,40 @@ int det_dist(COORDENADA c, int nj);
 COORDENADA dist_euclidiana ( ESTADO *e, LISTA L);
 
 /**
+\brief Determina a melhor jogada tendo em consideração a distância à casa objetivo
+@param e Apontador para o estado
+@returns coordenada
+*/
+COORDENADA jog ( ESTADO *e);
+
+/**
 \brief Vê se ganhou
-@param e Apontador para estado
-@param C Apontador para coordenada
+@param estado Apontador para estado
+@param Coord Apontador para coordenada
 @returns verdadeiro ou falso
 */
-int vitoria (ESTADO *e, COORDENADA C);
+int vitoria (ESTADO *estado, COORDENADA Coord);
 
 /**
 \brief Vê se perdeu
-@param e Apontador para estado
-@param c Apontador para coordenada
+@param estado Apontador para estado
+@param coord Coordenada
 @returns verdadeiro ou falso
 */
-int derrota (ESTADO *e, COORDENADA c);
+int derrota (ESTADO *estado, COORDENADA coord);
+
+/**
+\brief Remove da lista a coordenada dada
+@param inicial Lista ligada
+@param c Coordenada dada
+@returns lista
+*/
+LISTA remove_elementos ( LISTA inicial, COORDENADA c)
 
 /**
 \brief Tendo em conta as coordenadas vizinhas das vizinhas, remove da lista se permitir a vitória do adversário
 @param e Apontador para estado
-@param l Apontador para lista
+@param l Lista
 @returns lista
 */
 LISTA remove_opcoes (ESTADO *e, LISTA l);
@@ -101,12 +126,6 @@ COORDENADA heuristica (ESTADO *e);
 */
 COORDENADA jog2 ( ESTADO *e );
 
-/**
-\brief Determina a melhor jogada tendo em consideração a distância à casa objetivo
-@param e Apontador para o estado
-@returns coordenada
-*/
-COORDENADA jog ( ESTADO *e);
 
 // Coloca numa Lista as casas vizinhas vaziaz
 LISTA listvizinho(ESTADO *e, COORDENADA c);
