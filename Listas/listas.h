@@ -29,7 +29,7 @@ LISTA criar_lista();
 
 /**
 \brief Insere um valor na cabeça da lista
-@param L Apontador para a lista
+@param L Apontador para a lista ligada
 @param valor Apontador para a cabeça da lista
 @returns lista
 */
@@ -37,13 +37,13 @@ LISTA insere_cabeca(LISTA L, COORDENADA *valor);
 
 /**
 \brief Devolve a cabeça da lista
-@param L Apontador para a lista
+@param L Lista ligada
 */
 void *devolve_cabeca(LISTA L);
 
 /**
 \brief Devolve a cauda da lista
-@param L Apontador para a lista
+@param L Lista ligada
 @returns lista
 */
 LISTA proximo(LISTA L);
@@ -63,9 +63,9 @@ LISTA remove_cabeca(LISTA L);
 int lista_esta_vazia(LISTA L);
 
 /**
-\brief descobre o comprimento da lista
-@param l Apontador para a lista
-@returns tamanho da lista
+\brief Descobre o comprimento da lista
+@param l Lista ligada
+@returns int, tamanho da lista
 */
 int len_Lista(LISTA l);
 
