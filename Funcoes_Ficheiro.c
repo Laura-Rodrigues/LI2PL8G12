@@ -206,13 +206,13 @@ COORDENADA heuristica (ESTADO *e) {
     return c;
 }
 
-COORDENADA jog ( ESTADO *e ) {
+COORDENADA jog2 ( ESTADO *e ) {
     COORDENADA c = heuristica(e);
     printf("A jogada recomendada é: %c%d. \n", c.coluna + 'a', c.linha + 1);
     return c;
 }
 
-COORDENADA jog2 ( ESTADO *e ){
+COORDENADA jog ( ESTADO *e ){
     COORDENADA ls[8], atual = obter_ultima_jogada(e), final;
     int i;
     coordvizinho(ls, atual);
