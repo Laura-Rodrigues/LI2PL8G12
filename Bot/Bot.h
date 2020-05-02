@@ -11,8 +11,8 @@
 /**
 \brief Aplica a heurística e joga no tabuleiro a melhor jogada
 @param e Apontador para o estado
-@returns coordenada
+@returns int
 */
-COORDENADA bot (ESTADO *e);
+int bot (ESTADO *e);
 
 #endif //PROJETORASTROS_BOT_H
