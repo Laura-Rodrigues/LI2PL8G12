@@ -1,6 +1,5 @@
 #include "Camada_dados.h"
 #include "Camada_Interface.h"
-#include "Funcoes_Ficheiro.h"
 #include <stdlib.h>
 
 int main(){
