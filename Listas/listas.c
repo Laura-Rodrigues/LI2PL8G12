@@ -50,7 +50,10 @@ int lista_esta_vazia(LISTA L){
 }
 
 int len_Lista(LISTA l){
-    if(lista_esta_vazia(l)) return 0;
-    else return 1 + len_Lista(proximo(l));
+    int r = 0;
+    while(!lista_esta_vazia(proximo(l))){
+        r++;
+        l = l->prox;
+    }
+    return r;
 }
-
