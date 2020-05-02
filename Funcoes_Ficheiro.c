@@ -56,10 +56,9 @@ int movsficheiro (ESTADO *estado, FILE *nome_fich) {
 
 int gr ( char nomeficheiro[], ESTADO *estado ){
     FILE *fp = fopen( nomeficheiro, "w" );
-    if( fp == NULL ){
+    if( fp == NULL )
         fclose( fp );
-        return 0;
-    } else {
+    else {
         fptabuleiro( fp, estado );
         movsficheiro ( estado, fp );
         fclose(fp);
