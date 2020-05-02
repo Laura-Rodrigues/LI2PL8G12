@@ -55,7 +55,7 @@ ESTADO* pos (ESTADO *estado, int dado);
 @param e Apontador para estado
 @returns int
 */
-LISTA from_Array ( COORDENADA arr[], LISTA L, ESTADO *e)
+LISTA from_Array ( COORDENADA arr[], LISTA L, ESTADO *e);
 
 /**
 \brief Permitir calcular a distância de uma coordenada à casa final
@@ -102,7 +102,7 @@ int derrota (ESTADO *estado, COORDENADA coord);
 @param c Coordenada dada
 @returns lista
 */
-LISTA remove_elementos ( LISTA inicial, COORDENADA c)
+LISTA remove_elementos ( LISTA inicial, COORDENADA c);
 
 /**
 \brief Tendo em conta as coordenadas vizinhas das vizinhas, remove da lista se permitir a vitória do adversário
