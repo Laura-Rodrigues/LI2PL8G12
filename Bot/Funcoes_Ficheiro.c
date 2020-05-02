@@ -12,21 +12,17 @@
 
 void fptabuleiro(FILE *Projeto_Rastros, ESTADO *e){
     for (int i = 0; i < 8; i++) {
-        //fprintf(Projeto_Rastros, "%c ", '8' - i );
         for (int j = 0; j < 8; j++) {
             COORDENADA c = {i,j};
-            if (obter_estado_casa(e,c) == DOIS) fprintf(Projeto_Rastros, "2 ");
-            else if (obter_estado_casa(e ,c) == UM) fprintf(Projeto_Rastros, "1 ");
-            else if (obter_estado_casa(e ,c) == VAZIO) fprintf(Projeto_Rastros, ". ");
-            else if (obter_estado_casa(e ,c) == PRETA) fprintf(Projeto_Rastros, "# ");
-            else if (obter_estado_casa(e ,c) == BRANCA) fprintf(Projeto_Rastros, "* ");
+            if (obter_estado_casa(e,c) == DOIS) fprintf(Projeto_Rastros, "2");
+            else if (obter_estado_casa(e ,c) == UM) fprintf(Projeto_Rastros, "1");
+            else if (obter_estado_casa(e ,c) == VAZIO) fprintf(Projeto_Rastros, ".");
+            else if (obter_estado_casa(e ,c) == PRETA) fprintf(Projeto_Rastros, "#");
+            else if (obter_estado_casa(e ,c) == BRANCA) fprintf(Projeto_Rastros, "*");
         }
         fprintf(Projeto_Rastros, "\n");
     }
     fprintf(Projeto_Rastros, "  ");
-    //for(int i = 0; i < 8; i++) {
-    //    fprintf(Projeto_Rastros, "%c ", 'a' + i);
-    //}
     fprintf(Projeto_Rastros, "\n");
 }
 
@@ -67,6 +63,11 @@ int gr ( char nomeficheiro[], ESTADO *estado ){
     return 1;
 }
 
+int coordeval( COORDENADA c ){
+    if (c.coluna < 0 || c.coluna > 7 || c.linha < 0 || c.linha > 7) return 0;
+    else return 1;
+}
+
 ESTADO *ler ( char nomeficheiro[], ESTADO *estado ){
     FILE *fp = fopen( nomeficheiro, "r+" );
     if ( fp == NULL )
@@ -88,7 +89,7 @@ ESTADO *ler ( char nomeficheiro[], ESTADO *estado ){
                 COORDENADA c1 = {col2 -'a' , lin2 - 1 };
                 if ( jog != 0 && jogada_valida( estado, c0 ) )
                     altera_estado(estado, c0);
-                if (  jog != 0 && jogada_valida( estado, c1 ) )
+                if (  coordeval (c1) && jog != 0 && jogada_valida( estado, c1 ) )
                     altera_estado( estado, c1 );
             }
         }
