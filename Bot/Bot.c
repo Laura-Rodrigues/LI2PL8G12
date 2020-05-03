@@ -12,7 +12,7 @@
 // jogar nessa jogada, devolvendo o tabuleiro atualizado.
 int bot (ESTADO *e){
     COORDENADA c;
-    c = jog2 (e);
+    c = jog (e);
     jogar(e, c);
     return 0;
 }
