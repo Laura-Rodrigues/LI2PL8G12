@@ -1,7 +1,3 @@
-//
-// Created by laura on 26/03/20.
-//
-
 #ifndef PROJETORASTROS_FUNCOES_FICHEIRO_H
 #define PROJETORASTROS_FUNCOES_FICHEIRO_H
 
