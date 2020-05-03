@@ -15,8 +15,10 @@ Definição de funções associadas ao acesso direto às listas, entre outras fu
  * Por outras palavras, a qualidade permite identificar se a coordenada é a melhor jogada a ser feita.
 */
 typedef struct par_dados{
-    COORDENADA coord; /** < Uma coordenada */
-    int qualid; /** < A qualidade da coordenada com a qual faz um par */
+    /** Uma coordenada */
+    COORDENADA coord;
+    /** A qualidade da coordenada com a qual faz um par */
+    int qualid; 
 } par;
 
 /** @LISTA
@@ -28,8 +30,10 @@ typedef struct listas *LISTA;
 \brief Tipo de dados para os nodos
 */
 typedef struct listas {
-    par *valor; /** < A cabeça da lista, que será neste caso um par */
-    LISTA prox; /** < A "cauda" da lista, que é uma lista */
+    /** A cabeça da lista, que será neste caso um par */
+    par *valor; 
+    /** A "cauda" da lista, que é uma lista */
+    LISTA prox; 
 } Nodo;
 
 /**
