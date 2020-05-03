@@ -1,0 +1,356 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="Logica__Programa_8h" kind="file" language="C++">
+    <compoundname>Logica_Programa.h</compoundname>
+    <includes refid="Camada__dados_8h" local="yes">Camada_dados.h</includes>
+    <includedby refid="Camada__Interface_8c" local="yes">Camada_Interface.c</includedby>
+    <includedby refid="Camada__Interface_8h" local="yes">Camada_Interface.h</includedby>
+    <includedby refid="Funcoes__Ficheiro_8c" local="yes">Funcoes_Ficheiro.c</includedby>
+    <incdepgraph>
+      <node id="47">
+        <label>Camada_dados.h</label>
+        <link refid="Camada__dados_8h"/>
+      </node>
+      <node id="46">
+        <label>Logica_Programa.h</label>
+        <link refid="Logica__Programa_8h"/>
+        <childnode refid="47" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="48">
+        <label>Logica_Programa.h</label>
+        <link refid="Logica__Programa_8h"/>
+        <childnode refid="49" relation="include">
+        </childnode>
+      </node>
+      <node id="49">
+        <label>Camada_Interface.h</label>
+        <link refid="Camada__Interface_8h"/>
+        <childnode refid="49" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="Logica__Programa_8h_1a5c1d1c99ff9d180fb521119bdb4802cb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int e_vizinha</definition>
+        <argsstring>(ESTADO *estado, COORDENADA coord)</argsstring>
+        <name>e_vizinha</name>
+        <param>
+          <type><ref refid="structESTADO" kindref="compound">ESTADO</ref> *</type>
+          <declname>estado</declname>
+        </param>
+        <param>
+          <type><ref refid="structCOORDENADA" kindref="compound">COORDENADA</ref></type>
+          <declname>coord</declname>
+        </param>
+        <briefdescription>
+<para>Testa se a Coordenada é vizinha da Coordenada anterior e se se encontra dentro do tabuleiro. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>estado</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Apontador para o estado </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>coord</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A coordenada </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>0 ou 1 para verdadeiro ou falso </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Logica_Programa.h" line="21" column="1" bodyfile="Logica_Programa.c" bodystart="14" bodyend="22"/>
+      </memberdef>
+      <memberdef kind="function" id="Logica__Programa_8h_1a58d9b18fb2ee96d48677648152f6dace" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int possivel</definition>
+        <argsstring>(ESTADO *e, COORDENADA c)</argsstring>
+        <name>possivel</name>
+        <param>
+          <type><ref refid="structESTADO" kindref="compound">ESTADO</ref> *</type>
+          <declname>e</declname>
+        </param>
+        <param>
+          <type><ref refid="structCOORDENADA" kindref="compound">COORDENADA</ref></type>
+          <declname>c</declname>
+        </param>
+        <briefdescription>
+<para>Testa se a jogada é possível. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>e</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Apontador para o estado </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>c</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A coordenada </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>0 ou 1 para verdadeiro ou falso </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Logica_Programa.h" line="29" column="1" bodyfile="Logica_Programa.c" bodystart="24" bodyend="29"/>
+      </memberdef>
+      <memberdef kind="function" id="Logica__Programa_8h_1a097ad6a7dc0606956897ad1c5d3a097a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int jogada_valida</definition>
+        <argsstring>(ESTADO *estado, COORDENADA c)</argsstring>
+        <name>jogada_valida</name>
+        <param>
+          <type><ref refid="structESTADO" kindref="compound">ESTADO</ref> *</type>
+          <declname>estado</declname>
+        </param>
+        <param>
+          <type><ref refid="structCOORDENADA" kindref="compound">COORDENADA</ref></type>
+          <declname>c</declname>
+        </param>
+        <briefdescription>
+<para>Testa se a Jogada é válida. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>estado</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Apontador para o estado </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>c</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A coordenada </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>0 ou 1 para verdadeiro ou falso </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Logica_Programa.h" line="37" column="1" bodyfile="Logica_Programa.c" bodystart="32" bodyend="36"/>
+      </memberdef>
+      <memberdef kind="function" id="Logica__Programa_8h_1a065b9800844c5eac8568cfb601efc316" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int cond_canto</definition>
+        <argsstring>(COORDENADA c)</argsstring>
+        <name>cond_canto</name>
+        <param>
+          <type><ref refid="structCOORDENADA" kindref="compound">COORDENADA</ref></type>
+          <declname>c</declname>
+        </param>
+        <briefdescription>
+<para>Função que determina se a coordenada se encontra fora do tabuleiro. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>c</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Apontador para coordenada </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>1 ou 0 para verdadeiro ou falso </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Logica_Programa.h" line="44" column="1" bodyfile="Logica_Programa.c" bodystart="39" bodyend="43"/>
+      </memberdef>
+      <memberdef kind="function" id="Logica__Programa_8h_1a69eb26e048042f9beabd54d863d50599" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void coordvizinho</definition>
+        <argsstring>(COORDENADA ls[], COORDENADA c)</argsstring>
+        <name>coordvizinho</name>
+        <param>
+          <type><ref refid="structCOORDENADA" kindref="compound">COORDENADA</ref></type>
+          <declname>ls</declname>
+          <array>[]</array>
+        </param>
+        <param>
+          <type><ref refid="structCOORDENADA" kindref="compound">COORDENADA</ref></type>
+          <declname>c</declname>
+        </param>
+        <briefdescription>
+<para>Cria um array das coordenadas vizinhas. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>ls</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>array de coordenadas </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>c</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Apontador para coordenada </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Logica_Programa.h" line="51" column="1" bodyfile="Logica_Programa.c" bodystart="45" bodyend="58"/>
+      </memberdef>
+      <memberdef kind="function" id="Logica__Programa_8h_1a8656f33867e98b6c41bcc00f594c63e9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int vizivalide</definition>
+        <argsstring>(ESTADO *estado, COORDENADA coord)</argsstring>
+        <name>vizivalide</name>
+        <param>
+          <type><ref refid="structESTADO" kindref="compound">ESTADO</ref> *</type>
+          <declname>estado</declname>
+        </param>
+        <param>
+          <type><ref refid="structCOORDENADA" kindref="compound">COORDENADA</ref></type>
+          <declname>coord</declname>
+        </param>
+        <briefdescription>
+<para>Testar se tem vizinhos validos. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>estado</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Apontador para o estado </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>coord</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Apontador para coordenada </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>1 ou 0 para verdadeiro ou falso, respetivamente </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Logica_Programa.h" line="59" column="1" bodyfile="Logica_Programa.c" bodystart="61" bodyend="70"/>
+      </memberdef>
+      <memberdef kind="function" id="Logica__Programa_8h_1a01b01396434b28ecd0f04546ebb28b1f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int fim</definition>
+        <argsstring>(ESTADO *estado, COORDENADA coord)</argsstring>
+        <name>fim</name>
+        <param>
+          <type><ref refid="structESTADO" kindref="compound">ESTADO</ref> *</type>
+          <declname>estado</declname>
+        </param>
+        <param>
+          <type><ref refid="structCOORDENADA" kindref="compound">COORDENADA</ref></type>
+          <declname>coord</declname>
+        </param>
+        <briefdescription>
+<para>Testa se a Coordenada é igual à final. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>estado</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Apontador para estado </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>coord</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A coordenada </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>0 ou 1 para verdadeiro ou falso </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Logica_Programa.h" line="67" column="1" bodyfile="Logica_Programa.c" bodystart="73" bodyend="84"/>
+      </memberdef>
+      <memberdef kind="function" id="Logica__Programa_8h_1a53472e75f056ceb02b5387193021838a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int jogar</definition>
+        <argsstring>(ESTADO *estado, COORDENADA c)</argsstring>
+        <name>jogar</name>
+        <param>
+          <type><ref refid="structESTADO" kindref="compound">ESTADO</ref> *</type>
+          <declname>estado</declname>
+        </param>
+        <param>
+          <type><ref refid="structCOORDENADA" kindref="compound">COORDENADA</ref></type>
+          <declname>c</declname>
+        </param>
+        <briefdescription>
+<para>Modifica o estado ao jogar na casa correta se a jogada for válida. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>estado</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Apontador para o estado </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>c</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A coordenada </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>0 ou 1 para verdadeiro ou falso </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Logica_Programa.h" line="75" column="1" bodyfile="Logica_Programa.c" bodystart="86" bodyend="95"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Definição da função jogar e funções associadas a essa </para>    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Created<sp/>by<sp/>laura<sp/>on<sp/>12/03/20.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="preprocessor">#ifndef<sp/>PROJETORASTROS_LOGICA_PROGRAMA_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PROJETORASTROS_LOGICA_PROGRAMA_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Camada__dados_8h" kindref="compound">Camada_dados.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="Logica__Programa_8h_1a5c1d1c99ff9d180fb521119bdb4802cb" kindref="member">e_vizinha</ref>(<sp/><ref refid="structESTADO" kindref="compound">ESTADO</ref><sp/>*estado,<sp/><ref refid="structCOORDENADA" kindref="compound">COORDENADA</ref><sp/>coord);</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="Logica__Programa_8h_1a58d9b18fb2ee96d48677648152f6dace" kindref="member">possivel</ref><sp/>(<sp/><ref refid="structESTADO" kindref="compound">ESTADO</ref><sp/>*e,<sp/><ref refid="structCOORDENADA" kindref="compound">COORDENADA</ref><sp/>c);</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="Logica__Programa_8h_1a097ad6a7dc0606956897ad1c5d3a097a" kindref="member">jogada_valida</ref><sp/>(<ref refid="structESTADO" kindref="compound">ESTADO</ref><sp/>*estado,<sp/><ref refid="structCOORDENADA" kindref="compound">COORDENADA</ref><sp/>c);</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="Logica__Programa_8h_1a065b9800844c5eac8568cfb601efc316" kindref="member">cond_canto</ref><sp/>(<ref refid="structCOORDENADA" kindref="compound">COORDENADA</ref><sp/>c);</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="Logica__Programa_8h_1a69eb26e048042f9beabd54d863d50599" kindref="member">coordvizinho</ref>(<ref refid="structCOORDENADA" kindref="compound">COORDENADA</ref><sp/>ls[],<sp/><ref refid="structCOORDENADA" kindref="compound">COORDENADA</ref><sp/>c);</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="Logica__Programa_8h_1a8656f33867e98b6c41bcc00f594c63e9" kindref="member">vizivalide</ref>(<ref refid="structESTADO" kindref="compound">ESTADO</ref><sp/>*estado,<sp/><ref refid="structCOORDENADA" kindref="compound">COORDENADA</ref><sp/>coord);</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="Logica__Programa_8h_1a01b01396434b28ecd0f04546ebb28b1f" kindref="member">fim</ref>(<ref refid="structESTADO" kindref="compound">ESTADO</ref><sp/>*estado,<sp/><ref refid="structCOORDENADA" kindref="compound">COORDENADA</ref><sp/>coord<sp/>);</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="Logica__Programa_8h_1a53472e75f056ceb02b5387193021838a" kindref="member">jogar</ref>(<ref refid="structESTADO" kindref="compound">ESTADO</ref><sp/>*estado,<sp/><ref refid="structCOORDENADA" kindref="compound">COORDENADA</ref><sp/>c);</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//PROJETORASTROS_LOGICA_PROGRAMA_H</highlight></codeline>
+    </programlisting>
+    <location file="Logica_Programa.h"/>
+  </compounddef>
+</doxygen>
