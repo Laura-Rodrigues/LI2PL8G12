@@ -173,7 +173,6 @@ COORDENADA heuristica ( ESTADO *e ) {
             else{
                 q = atualiza_qualidade(c, obter_qualid(p), e, 2, 0);
                 principal = alterar_qualid(principal, (cria_par(c, q)));
-                printf("%d%d:%d\n", c.coluna,c.linha, q);
             }
         }
     }
@@ -184,6 +183,5 @@ COORDENADA heuristica ( ESTADO *e ) {
 
 COORDENADA jog ( ESTADO *e ) {
     COORDENADA c = heuristica(e);
-    printf("A jogada recomendada é: %c%d. \n", c.coluna + 'a', c.linha + 1);
     return c;
 }
