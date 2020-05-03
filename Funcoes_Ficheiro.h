@@ -56,17 +56,8 @@ ESTADO *ler ( char nomeficheiro[], ESTADO *estado );
 ESTADO* pos (ESTADO *estado, int dado);
 
 /**
-\brief Função que transforma uma array de coordenadas numa lista
-@param arr Array de coordenadas
-@param L Lista ligada
-@param e Apontador para estado
-@returns int
-*/
-LISTA from_Array ( COORDENADA arr[], LISTA L, ESTADO *e);
-
-/**
 \brief Permitir calcular a distância de uma coordenada à casa final
-@param c Coordenada 
+@param c Coordenada
 @param nj Numero do jogador atual
 @returns int
 */
@@ -88,20 +79,13 @@ COORDENADA dist_euclidiana ( ESTADO *e, LISTA L);
 COORDENADA jog ( ESTADO *e);
 
 /**
-\brief Vê se ganhou
-@param estado Apontador para estado
-@param Coord Apontador para coordenada
-@returns verdadeiro ou falso
+\brief Função que transforma uma array de coordenadas numa lista
+@param arr Array de coordenadas
+@param L Lista ligada
+@param e Apontador para estado
+@returns int
 */
-int vitoria (ESTADO *estado, COORDENADA Coord);
-
-/**
-\brief Vê se perdeu
-@param estado Apontador para estado
-@param coord Coordenada
-@returns verdadeiro ou falso
-*/
-int derrota (ESTADO *estado, COORDENADA coord);
+LISTA from_Array ( COORDENADA arr[], LISTA L, ESTADO *e);
 
 /**
 \brief Remove da lista a coordenada dada
@@ -112,12 +96,25 @@ int derrota (ESTADO *estado, COORDENADA coord);
 LISTA remove_elementos ( LISTA inicial, COORDENADA c);
 
 /**
-\brief Tendo em conta as coordenadas vizinhas das vizinhas, remove da lista se permitir a vitória do adversário
-@param e Apontador para estado
-@param l Lista
-@returns lista
+\brief Função dá um valor (1,0 ou -1) conforme a coordenada dá uma vitoria, uma derrota, ou outra.
+@param estado Apontador para o estado
+@param coord Coordenada dada
+@param ronda A ronda (int) em q se encontra
+@returns int, valor da coordenada
 */
-LISTA remove_opcoes (ESTADO *e, LISTA l);
+int valor_coord (ESTADO *estado, COORDENADA coord, int ronda);
+
+
+/**
+\brief Função que determina a qualidade de uma coordenada em função das coordenadas vizinhas
+@param coord Coordenada dada
+@param qualid Inteiro - qualidade da coordenada
+@param estado Apontador para o estado
+@param repete Inteiro - quantidade de vezes que repete o codigo; indicativo da profundidade
+@param ronda A ronda(int) em q se encontra
+@returns int, valor da coordenada
+*/
+int atualiza_qualidade (COORDENADA coord, int qualid, ESTADO *estado, int repete, int ronda);
 
 /**
 \brief Tendo em conta as jogadas possíveis, escolhe a melhor
@@ -132,26 +129,6 @@ COORDENADA heuristica (ESTADO *e);
 @returns coordenada
 */
 COORDENADA jog2 ( ESTADO *e );
-
-
-// Coloca numa Lista as casas vizinhas vaziaz
-LISTA listvizinho(ESTADO *e, COORDENADA c);
-
-//Coloca numa lista as casas com numero para de casas vizinhas vazias
-LISTA len_Viz(LISTA l, ESTADO *e);
-
-//Compara qual Casa tem maior numero de casas livres
-COORDENADA max(LISTA l, ESTADO *e);
-
-//Compara qual Casa tem menor numero de casas livres
-COORDENADA min(LISTA l, ESTADO *e);
-
-//Devolve a nova Coordenada
-COORDENADA heu_par(LISTA l, ESTADO *e);
-
-//Nova jog com heuristica paridade
-COORDENADA jog3(ESTADO *e);
-
 
 
 #endif //PROJETORASTROS_FUNCOES_FICHEIRO_H
