@@ -3,12 +3,13 @@
 //
 
 #include "Funcoes_Ficheiro.h"
-#include "Camada_Interface.h"
 #include "Camada_dados.h"
 #include "Logica_Programa.h"
 #include "listas.h"
 #include <stdio.h>
 #include <stdlib.h>
+
+#define BUF_SIZE 1024
 
 void fptabuleiro(FILE *Projeto_Rastros, ESTADO *e){
     for (int i = 0; i < 8; i++) {
