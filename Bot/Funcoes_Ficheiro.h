@@ -49,38 +49,6 @@ ESTADO *ler ( char nomeficheiro[], ESTADO *estado );
 LISTA from_Array ( COORDENADA arr[], LISTA L, ESTADO *e);
 
 /**
-\brief Permitir calcular a distância de uma coordenada à casa final
-@param c Coordenada
-@param nj Numero do jogador atual
-@returns int
-*/
-int det_dist(COORDENADA c, int nj);
-
-/**
-\brief Heurística para distância euclidiana
-@param e Apontador para estado
-@param L Apontador para lista
-@returns coordenada
-*/
-COORDENADA dist_euclidiana ( ESTADO *e, LISTA L);
-
-/**
-\brief Vê se ganhou
-@param estado Apontador para estado
-@param Coord Apontador para coordenada
-@returns verdadeiro ou falso
-*/
-int vitoria (ESTADO *estado, COORDENADA Coord);
-
-/**
-\brief Vê se perdeu
-@param estado Apontador para estado
-@param coord Coordenada
-@returns verdadeiro ou falso
-*/
-int derrota (ESTADO *estado, COORDENADA coord);
-
-/**
 \brief Remove da lista a coordenada dada
 @param inicial Lista ligada
 @param c Coordenada dada
@@ -89,12 +57,25 @@ int derrota (ESTADO *estado, COORDENADA coord);
 LISTA remove_elementos ( LISTA inicial, COORDENADA c);
 
 /**
-\brief Tendo em conta as coordenadas vizinhas das vizinhas, remove da lista se permitir a vitória do adversário
-@param e Apontador para estado
-@param l Lista
-@returns lista
+\brief Função dá um valor (1,0 ou -1) conforme a coordenada dá uma vitoria, uma derrota, ou outra.
+@param estado Apontador para o estado
+@param coord Coordenada dada
+@param ronda A ronda (int) em q se encontra
+@returns int, valor da coordenada
 */
-LISTA remove_opcoes (ESTADO *e, LISTA l);
+int valor_coord (ESTADO *estado, COORDENADA coord, int ronda);
+
+
+/**
+\brief Função que determina a qualidade de uma coordenada em função das coordenadas vizinhas
+@param coord Coordenada dada
+@param qualid Inteiro - qualidade da coordenada
+@param estado Apontador para o estado
+@param repete Inteiro - quantidade de vezes que repete o codigo; indicativo da profundidade
+@param ronda A ronda(int) em q se encontra
+@returns int, valor da coordenada
+*/
+int atualiza_qualidade (COORDENADA coord, int qualid, ESTADO *estado, int repete, int ronda);
 
 /**
 \brief Tendo em conta as jogadas possíveis, escolhe a melhor
@@ -108,7 +89,7 @@ COORDENADA heuristica (ESTADO *e);
 @param e Apontador para estado
 @returns coordenada
 */
-COORDENADA jog2 ( ESTADO *e );
+COORDENADA jog ( ESTADO *e );
 
 
 #endif //PROJETORASTROS_FUNCOES_FICHEIRO_H
