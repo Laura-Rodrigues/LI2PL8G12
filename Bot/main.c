@@ -12,8 +12,6 @@ int main (int argc, char *argv[]) {
         char* tabf = argv[2];
         ESTADO *e = inicializar_estado();
         e = ler(tabi, e);
-        //mostrar_tabuleiro(e);
-        //movs(e);
         bot(e);
         gr(tabf, e);
         return 0;
