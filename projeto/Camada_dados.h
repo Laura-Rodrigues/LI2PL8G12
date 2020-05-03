@@ -1,42 +1,43 @@
-//
-// Created by laura on 12/03/20.
-//
+#ifndef PROJETORASTROS_CAMADA_DADOS_H
+#define PROJETORASTROS_CAMADA_DADOS_H
 
 /**
 @file Camada_dados.h
 Definição do estado e das funções que o manipulam
 */
 
-#ifndef PROJETORASTROS_CAMADA_DADOS_H
-#define PROJETORASTROS_CAMADA_DADOS_H
-
-/**
+/** @CASA
 \brief Tipo de dados para a casa
 */
 typedef enum {VAZIO, BRANCA, PRETA, UM, DOIS} CASA;
 
-/**
+
+/** @COORDENADA
 \brief Tipo de dados para as coordenadas
 */
 typedef struct {
-    int coluna;
-    int linha;
+    int coluna;/** < Inteiro que representa a coluna da coordenada*/
+    int linha;/** < Inteiro que representa a linha da coordenada */
 } COORDENADA;
 
-/**
+/** @JOGADA
 \brief Tipo de dados para a jogada
+ *
+ * Cada jogada é constituida por um par de coordenadas correspondentes aos movimentos de cada jogador
 */
 typedef struct {
-    COORDENADA jogador1;
-    COORDENADA jogador2;
+    COORDENADA jogador1; /** <Coordenada correspondente ao movimento do jogador 1 */
+    COORDENADA jogador2; /** <Coordenada correspondente ao movimento do jogador 2 */
 } JOGADA;
 
-/**
+/** @JOGADAS
 \brief Tipo de dados para as jogadas
+ *
+ * As jogadas correspondem a uma lista de "jogada"
 */
 typedef JOGADA JOGADAS[32];
 
-/**
+/** @ESTADO
 \brief Tipo de dados para o estado
 */
 typedef struct {
