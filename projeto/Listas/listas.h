@@ -1,38 +1,36 @@
-//
-// Created by laura on 09/04/20.
-//
+#ifndef PROJETORASTROS_LISTAS_H
+#define PROJETORASTROS_LISTAS_H
 
 /**
 @file listas.h
 Definição de funções associadas ao acesso direto às listas, entre outras funções auxiliares
 */
 
-#ifndef PROJETORASTROS_LISTAS_H
-#define PROJETORASTROS_LISTAS_H
-
 #include "../Camada_dados.h"
 
-/**
+/** @par
 \brief Tipo de dados para os pares
+ *
+ * Os pares são estruturas constituidas por uma coordenada e um inteiro que classifica a qualidade dessa coordenada.
+ * Por outras palavras, a qualidade permite identificar se a coordenada é a melhor jogada a ser feita.
 */
 typedef struct par_dados{
-    COORDENADA coord;
-    int qualid;
+    COORDENADA coord; /** < Uma coordenada */
+    int qualid; /** < A qualidade da coordenada com a qual faz um par */
 } par;
 
-/**
+/** @LISTA
 \brief Tipo de dados para as listas
 */
 typedef struct listas *LISTA;
 
-/**
+/** @Nodo
 \brief Tipo de dados para os nodos
 */
 typedef struct listas {
-    par *valor;
-    LISTA prox;
+    par *valor; /** < A cabeça da lista, que será neste caso um par */
+    LISTA prox; /** < A "cauda" da lista, que é uma lista */
 } Nodo;
-
 
 /**
 \brief Cria uma lista vazia
