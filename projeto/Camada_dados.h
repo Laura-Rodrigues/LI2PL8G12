@@ -9,7 +9,18 @@ Definição do estado e das funções que o manipulam
 /** @CASA
 \brief Tipo de dados para a casa
 */
-typedef enum {VAZIO, BRANCA, PRETA, UM, DOIS} CASA;
+typedef enum {
+    /** Tipo de casa que não foi utilizada */
+    VAZIO, 
+    /** Tipo de casa onde foi feita a ultima jogadas */
+    BRANCA, 
+    /** Tipo de casa que já foi utilizada */
+    PRETA, 
+    /** Casa objetivo do jogador 1 */
+    UM, 
+    /** Casa objetivo do jogador 2 */
+    DOIS
+} CASA;
 
 
 /** @COORDENADA
