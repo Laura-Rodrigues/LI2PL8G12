@@ -9,6 +9,12 @@ Definição das funções que trabalham com ficheiros como a ler, a gr, entre ou
 #include <stdio.h>
 #include "Camada_dados.h"
 #include "listas.h"
+
+/**
+\brief Definição do tamanho do buf
+*/
+#define BUF_SIZE 1024
+
 /**
 \brief Permite imprimir o tabuleiro no ficheiro
 @param Projeto_Rastros Apontador para o ficheiro
