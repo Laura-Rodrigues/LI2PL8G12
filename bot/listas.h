@@ -2,6 +2,11 @@
 // Created by laura on 01/05/20.
 //
 
+/**
+@file listas.h
+Definição de funções associadas ao acesso direto às listas, entre outras funções auxiliares
+*/
+
 #ifndef PROJETORASTROS_LISTAS_H
 #define PROJETORASTROS_LISTAS_H
 
