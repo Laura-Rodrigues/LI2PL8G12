@@ -34,7 +34,7 @@ int gr ( char nomeficheiro[], ESTADO *estado );
 /**
 \brief Testa se a coordenada é válida
 @param c Apontador para coordenada
-@returns 1
+@returns 1 ou 0
 */
 int coordeval( COORDENADA c );
 
