@@ -1,14 +1,10 @@
-//
-// Created by laura on 12/03/20.
-//
+#ifndef PROJETORASTROS_CAMADA_INTERFACE_H
+#define PROJETORASTROS_CAMADA_INTERFACE_H
 
 /**
 @file Camada_Interface.h
 Definição do interpretador, mostrar tabuleiro e das funções associadas ao acesso direto da interface do jogo
 */
-
-#ifndef PROJETORASTROS_CAMADA_INTERFACE_H
-#define PROJETORASTROS_CAMADA_INTERFACE_H
 
 #include <stdio.h>
 #include <string.h>
