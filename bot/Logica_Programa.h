@@ -1,14 +1,10 @@
-//
-// Created by laura on 01/05/20.
-//
+#ifndef PROJETORASTROS_LOGICA_PROGRAMA_H
+#define PROJETORASTROS_LOGICA_PROGRAMA_H
 
 /**
 @file Logica_Programa.h
 Definição da função jogar e funções associadas à estrutura lógica do jogo
 */
-
-#ifndef PROJETORASTROS_LOGICA_PROGRAMA_H
-#define PROJETORASTROS_LOGICA_PROGRAMA_H
 
 #include "Camada_dados.h"
 
