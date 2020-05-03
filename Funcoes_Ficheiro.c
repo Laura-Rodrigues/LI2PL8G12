@@ -226,7 +226,7 @@ COORDENADA heuristica ( ESTADO *e) {
             if (valor_coord(e, c, 0) == 1) return c;
             else if (valor_coord(e, c, 0) == -1) principal = remove_elementos(principal, c);
             else{
-                q = atualiza_qualidade(c, obter_qualid(p), e, 2, 0);
+                q = atualiza_qualidade(c, obter_qualid(p), e, 5, 0);
                 principal = alterar_qualid(principal, (cria_par(c, q)));
             }
         }
