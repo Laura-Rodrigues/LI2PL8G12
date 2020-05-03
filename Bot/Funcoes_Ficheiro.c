@@ -23,7 +23,6 @@ void fptabuleiro(FILE *Projeto_Rastros, ESTADO *e){
         }
         fprintf(Projeto_Rastros, "\n");
     }
-    fprintf(Projeto_Rastros, "  ");
     fprintf(Projeto_Rastros, "\n");
 }
 
@@ -40,12 +39,12 @@ int movsficheiro (ESTADO *estado, FILE *nome_fich) {
         col2 = jog2.coluna + 'a';
         lin2 = jog2.linha + 1;
         if ( ind < jogada )
-            fprintf( nome_fich, "%02d: %c%d %c%d \n", ind, col1, lin1, col2, lin2 );
+            fprintf( nome_fich, "%02d: %c%d %c%d\n", ind, col1, lin1, col2, lin2 );
         else {
             if ( jogador == 2)
-                fprintf(nome_fich, "%02d: %c%d \n", ind , col1, lin1 );
+                fprintf(nome_fich, "%02d: %c%d\n", ind , col1, lin1 );
             else
-                fprintf( nome_fich,"%02d: %c%d %c%d \n", ind, col1, lin1, col2, lin2 );
+                fprintf( nome_fich,"%02d: %c%d %c%d\n", ind, col1, lin1, col2, lin2 );
         }
     }
     return 0;
