@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['li2_2dpl8_2dgrp12',['LI2-PL8-Grp12',['../md_README.html',1,'']]]
+  ['e_5fvizinha',['e_vizinha',['../Logica__Programa_8h.html#a5c1d1c99ff9d180fb521119bdb4802cb',1,'Logica_Programa.c']]],
+  ['estado',['ESTADO',['../structESTADO.html',1,'']]]
 ];
