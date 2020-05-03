@@ -1,7 +1,3 @@
-//
-// Created by laura on 12/03/20.
-//
-
 #include "Camada_dados.h"
 #include <stdio.h>
 #include <stdlib.h>
