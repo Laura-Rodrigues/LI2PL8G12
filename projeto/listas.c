@@ -5,7 +5,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include "listas.h"
-#include "../Camada_dados.h"
+#include "Camada_dados.h"
 
 LISTA criar_lista(){
     LISTA lista;

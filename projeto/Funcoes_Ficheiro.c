@@ -6,7 +6,7 @@
 #include "Camada_Interface.h"
 #include "Camada_dados.h"
 #include "Logica_Programa.h"
-#include "Listas/listas.h"
+#include "listas.h"
 #include <stdio.h>
 #include <stdlib.h>
 

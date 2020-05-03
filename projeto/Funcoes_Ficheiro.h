@@ -8,7 +8,7 @@ Definição das funções que trabalham com ficheiros como a ler, a gr, entre ou
 
 #include <stdio.h>
 #include "Camada_dados.h"
-#include "Listas/listas.h"
+#include "listas.h"
 /**
 \brief Permite imprimir o tabuleiro no ficheiro
 @param Projeto_Rastros Apontador para o ficheiro
