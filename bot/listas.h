@@ -5,7 +5,7 @@
 Definição de funções associadas ao acesso direto às listas, entre outras funções auxiliares
 */
 
-#include "../Camada_dados.h"
+#include "Camada_dados.h"
 
 /** @par
 \brief Tipo de dados para os pares
