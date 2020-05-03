@@ -4,7 +4,7 @@
 
 /**
 @file Camada_Interface.h
-Definição do interpretador e mostrar tabuleiro e das funções associadas
+Definição do interpretador, mostrar tabuleiro e das funções associadas ao acesso direto da interface do jogo
 */
 
 #ifndef PROJETORASTROS_CAMADA_INTERFACE_H
