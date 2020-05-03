@@ -4,7 +4,7 @@
 
 /**
 @file Logica_Programa.h
-Definição da função jogar e funções associadas a essa
+Definição da função jogar e funções associadas à estrutura lógica do jogo
 */
 
 #ifndef PROJETORASTROS_LOGICA_PROGRAMA_H
