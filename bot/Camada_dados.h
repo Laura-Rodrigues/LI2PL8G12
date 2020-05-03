@@ -2,6 +2,11 @@
 // Created by laura on 01/05/20.
 //
 
+/**
+@file Camada_dados.h
+Definição do estado e das funções que o manipulam
+*/
+
 #ifndef PROJETORASTROS_CAMADA_DADOS_H
 #define PROJETORASTROS_CAMADA_DADOS_H
 
