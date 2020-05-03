@@ -2,10 +2,16 @@
 // Created by laura on 09/04/20.
 //
 
+/**
+@file listas.h
+Definição de funções associadas ao acesso direto às listas, entre outras funções auxiliares
+*/
+
 #ifndef PROJETORASTROS_LISTAS_H
 #define PROJETORASTROS_LISTAS_H
 
 #include "../Camada_dados.h"
+
 /**
 \brief Tipo de dados para os pares
 */
