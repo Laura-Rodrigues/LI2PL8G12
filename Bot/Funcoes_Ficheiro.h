@@ -32,6 +32,13 @@ int movsficheiro (ESTADO *estado, FILE *nome_fich);
 int gr ( char nomeficheiro[], ESTADO *estado );
 
 /**
+\brief Testa se a coordenada é válida
+@param c Apontador para coordenada
+@returns 1
+*/
+int coordeval( COORDENADA c );
+
+/**
 \brief Lê o tabuleiro e atualiza o estado
 @param estado Apontador para o estado
 @param nomeficheiro Apontador para o ficheiro

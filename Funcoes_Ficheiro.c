@@ -66,6 +66,11 @@ int gr ( char nomeficheiro[], ESTADO *estado ){
     return 1;
 }
 
+int coordeval( COORDENADA c ){
+    if (c.coluna < 0 || c.coluna > 7 || c.linha < 0 || c.linha > 7) return 0;
+    else return 1;
+}
+
 ESTADO *ler ( char nomeficheiro[], ESTADO *estado ){
     FILE *fp = fopen( nomeficheiro, "r+" );
     if ( fp == NULL )
