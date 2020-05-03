@@ -16,8 +16,10 @@ typedef enum {VAZIO, BRANCA, PRETA, UM, DOIS} CASA;
 \brief Tipo de dados para as coordenadas
 */
 typedef struct {
-    int coluna;/** < Inteiro que representa a coluna da coordenada*/
-    int linha;/** < Inteiro que representa a linha da coordenada */
+    /** Inteiro que representa a coluna da coordenada*/
+    int coluna;
+    /** Inteiro que representa a linha da coordenada */
+    int linha;
 } COORDENADA;
 
 /** @JOGADA
@@ -26,8 +28,10 @@ typedef struct {
  * Cada jogada é constituida por um par de coordenadas correspondentes aos movimentos de cada jogador
 */
 typedef struct {
-    COORDENADA jogador1; /** <Coordenada correspondente ao movimento do jogador 1 */
-    COORDENADA jogador2; /** <Coordenada correspondente ao movimento do jogador 2 */
+    /** Coordenada correspondente ao movimento do jogador 1 */
+    COORDENADA jogador1; 
+    /** Coordenada correspondente ao movimento do jogador 2 */
+    COORDENADA jogador2; 
 } JOGADA;
 
 /** @JOGADAS
