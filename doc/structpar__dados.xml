@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="structpar__dados" kind="struct" language="C++" prot="public">
+    <compoundname>par_dados</compoundname>
+    <includes refid="listas_8h" local="no">listas.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structpar__dados_1a30b72041a858a49d386b9c948e79fab2" prot="public" static="no" mutable="no">
+        <type><ref refid="structCOORDENADA" kindref="compound">COORDENADA</ref></type>
+        <definition>COORDENADA par_dados::coord</definition>
+        <argsstring></argsstring>
+        <name>coord</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Uma coordenada </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="listas.h" line="19" column="1" bodyfile="listas.h" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structpar__dados_1a6ed2994fe87cd4c217e1fe8f9142eda3" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int par_dados::qualid</definition>
+        <argsstring></argsstring>
+        <name>qualid</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A qualidade da coordenada com a qual faz um par </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="listas.h" line="21" column="1" bodyfile="listas.h" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Tipo de dados para os pares. </para>    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="par"><title></title><para>Os pares são estruturas constituidas por uma coordenada e um inteiro que classifica a qualidade dessa coordenada. Por outras palavras, a qualidade permite identificar se a coordenada é a melhor jogada a ser feita. </para></simplesect>
+</para>    </detaileddescription>
+    <collaborationgraph>
+      <node id="15">
+        <label>COORDENADA</label>
+        <link refid="structCOORDENADA"/>
+      </node>
+      <node id="14">
+        <label>par_dados</label>
+        <link refid="structpar__dados"/>
+        <childnode refid="15" relation="usage">
+          <edgelabel>coord</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="listas.h" line="17" column="1" bodyfile="listas.h" bodystart="17" bodyend="22"/>
+    <listofallmembers>
+      <member refid="structpar__dados_1a30b72041a858a49d386b9c948e79fab2" prot="public" virt="non-virtual"><scope>par_dados</scope><name>coord</name></member>
+      <member refid="structpar__dados_1a6ed2994fe87cd4c217e1fe8f9142eda3" prot="public" virt="non-virtual"><scope>par_dados</scope><name>qualid</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,67 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="structlistas" kind="struct" language="C++" prot="public">
+    <compoundname>listas</compoundname>
+    <includes refid="listas_8h" local="no">listas.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structlistas_1aa3e227fe6ecae735858218a303844e25" prot="public" static="no" mutable="no">
+        <type><ref refid="listas_8h_1ab9e4b81ed019928fce5ba6dfc2fda69c" kindref="member">par</ref> *</type>
+        <definition>par* listas::valor</definition>
+        <argsstring></argsstring>
+        <name>valor</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A cabeça da lista, que será neste caso um par </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="listas.h" line="34" column="1" bodyfile="listas.h" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structlistas_1ac69be6c127ebe8ff1bcb81bc86496ad2" prot="public" static="no" mutable="no">
+        <type><ref refid="listas_8h_1a83adc4e797d87b6bcf1b56022c0f0134" kindref="member">LISTA</ref></type>
+        <definition>LISTA listas::prox</definition>
+        <argsstring></argsstring>
+        <name>prox</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A &quot;cauda&quot; da lista, que é uma lista </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="listas.h" line="36" column="1" bodyfile="listas.h" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Tipo de dados para os nodos. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="12">
+        <label>COORDENADA</label>
+        <link refid="structCOORDENADA"/>
+      </node>
+      <node id="11">
+        <label>par_dados</label>
+        <link refid="structpar__dados"/>
+        <childnode refid="12" relation="usage">
+          <edgelabel>coord</edgelabel>
+        </childnode>
+      </node>
+      <node id="10">
+        <label>listas</label>
+        <link refid="structlistas"/>
+        <childnode refid="11" relation="usage">
+          <edgelabel>valor</edgelabel>
+        </childnode>
+        <childnode refid="10" relation="usage">
+          <edgelabel>prox</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="listas.h" line="32" column="1" bodyfile="listas.h" bodystart="32" bodyend="37"/>
+    <listofallmembers>
+      <member refid="structlistas_1ac69be6c127ebe8ff1bcb81bc86496ad2" prot="public" virt="non-virtual"><scope>listas</scope><name>prox</name></member>
+      <member refid="structlistas_1aa3e227fe6ecae735858218a303844e25" prot="public" virt="non-virtual"><scope>listas</scope><name>valor</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>
