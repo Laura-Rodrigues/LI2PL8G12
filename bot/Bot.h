@@ -1,9 +1,10 @@
-//
-// Created by laura on 23/04/20.
-//
-
 #ifndef PROJETORASTROS_BOT_H
 #define PROJETORASTROS_BOT_H
+
+/**
+@file Bot.h
+* Definição da função essencial do bot
+*/
 
 #include "Camada_dados.h"
 #include "listas.h"
