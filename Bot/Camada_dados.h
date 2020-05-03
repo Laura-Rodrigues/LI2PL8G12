@@ -47,8 +47,6 @@ typedef struct {
     int jogador_atual; //jogador_atual - indica qual é o jogador a jogar
     /** Número de movimentos*/
     int num_movimentos; //Número total de movimentos feitos
-    /**Jogada anterior foi pos **/
-    int alt_pos; // Se for 1 então jogada anterior foi pos; se for 0, a jogada anterior não foi a pos
 } ESTADO;
 
 /**
