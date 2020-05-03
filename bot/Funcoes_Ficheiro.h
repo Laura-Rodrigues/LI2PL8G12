@@ -2,6 +2,11 @@
 // Created by laura on 01/05/20.
 //
 
+/**
+@file Funcoes_Ficheiro.h
+Definição das funções que trabalham com ficheiros como a ler, a gr, entre outras
+*/
+
 #ifndef PROJETORASTROS_FUNCOES_FICHEIRO_H
 #define PROJETORASTROS_FUNCOES_FICHEIRO_H
 
