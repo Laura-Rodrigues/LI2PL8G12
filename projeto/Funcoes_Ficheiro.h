@@ -5,6 +5,11 @@
 #ifndef PROJETORASTROS_FUNCOES_FICHEIRO_H
 #define PROJETORASTROS_FUNCOES_FICHEIRO_H
 
+/**
+@file Funcoes_Ficheiro.h
+Definição das funções que trabalham com ficheiros como a ler, a gr, entre outras
+*/
+
 #include <stdio.h>
 #include "Camada_dados.h"
 #include "Listas/listas.h"
